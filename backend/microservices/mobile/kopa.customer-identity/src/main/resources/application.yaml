@@ -1,0 +1,35 @@
+spring:
+  application:
+    name: kopa.customer-identity
+  config:
+    import: optional:file:/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/kopa-config.yml
+  jpa:
+    hibernate:
+      ddl-auto: none          # Flyway owns the schema, never Hibernate
+    open-in-view: false
+    properties:
+      hibernate:
+        default_schema: customer_identity
+
+server:
+  port: 8083
+  servlet:
+    context-path: /kopa-customer-identity
+  error:
+    include-message: always
+
+# kopa.db.*, kopa.web.allowed-origins and kopa.business.* are consumed directly from the shared
+# kopa-config.yml above - same property names, so no redeclaration needed here (DatabaseProperties/
+# SecurityConfig/KopaBusinessProperties bind straight to them). Only middleware.base-url needs
+# remapping below, since the shared file names it ktrn-base-url (to leave room for
+# middleware.sms-base-url once kopa.notifications exists).
+kopa:
+  middleware:
+    base-url: ${kopa.middleware.ktrn-base-url}
+    api-key: ${kopa.internal.middleware-ktrn-api-key}
+    connect-timeout-ms: 3000
+    read-timeout-ms: 8000
+
+notifications:
+  base-url: ${kopa.notifications.base-url}
+  api-key: ${kopa.internal.notifications-api-key}

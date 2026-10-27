@@ -1,0 +1,17 @@
+### Feature 2.1.1 - Searching Balance (svccode HP00001 / opcode HPOP001)
+### IntelliJ HTTP client / VS Code REST Client format.
+### Requires kopa.middleware-ktrn running on :8082 and Postgres reachable per application.yaml.
+@host = http://localhost:8081/kopa-customer-self-care
+
+### 1. Search balance for a subscriber (ispCd omitted - middleware applies its configured default)
+GET {{host}}/api/v1/balance/0771000050
+
+### 2. Search balance, explicit ispCd (matches the API doc's worked example)
+GET {{host}}/api/v1/balance/0771000050?ispCd=62
+
+### 3. Invalid msisdn -> expect 400 VALIDATION_ERROR
+GET {{host}}/api/v1/balance/abc
+
+### 4. Swagger UI / OpenAPI
+GET {{host}}/swagger-ui.html
+GET {{host}}/v3/api-docs

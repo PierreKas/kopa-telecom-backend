@@ -1,0 +1,17 @@
+2026-10-12 08:20:39.848 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-12 08:20:40.050 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-12 08:22:15.193 [main] INFO  com.kopa.middlewarektrn.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 507224 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn/target/kopa.middleware-ktrn-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn)
+2026-10-12 08:22:15.222 [main] INFO  com.kopa.middlewarektrn.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-12 08:22:16.870 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-12 08:22:18.667 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-10-12 08:22:18.698 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2026-10-12 08:22:18.707 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-12 08:22:18.710 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-12 08:22:18.826 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3394 ms
+2026-10-12 08:22:20.040 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2026-10-12 08:22:20.100 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/kopa-middleware-ktrn'
+2026-10-12 08:22:20.146 [main] INFO  com.kopa.middlewarektrn.Application - Started Application in 6.781 seconds (process running for 8.686)
+2026-10-12 08:22:20.152 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-12 08:22:20.153 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-12 08:22:27.487 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-12 08:22:27.507 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete

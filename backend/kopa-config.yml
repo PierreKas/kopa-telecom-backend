@@ -1,0 +1,84 @@
+kopa:
+  db:
+    url: jdbc:postgresql://localhost:5432/kopa_db
+    username: postgres
+    password: dbroot#137
+    driver: org.postgresql.Driver
+  logs:
+    repository: /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/logs
+
+  # RBSS-CCBS (KTRN) gateway. base-url confirmed reachable and live as of 2026-10-13 - it now
+  # returns real, structured KTRN error XML (MSGCODE/MESSAGE) instead of empty 200s. Confirmed
+  # wire format: form-urlencoded REQ_XML=<xml> parameter (the doc's original format - see
+  # KtrnApiClient javadoc). external-base-url (NIDA/RRA/DGIE) is still the doc's own placeholder,
+  # untested.
+  # isp-cd: doc's placeholder "62" came back "-4003 Non-unique ISP for the given parameter" live.
+  # "1" came back "-4003 The subscriber does not exist or is not active" instead - i.e. "1" was
+  # accepted as a valid/unique ISP_CD and the gateway moved on to looking up the (test) MSISDN.
+  # Strong signal "1" is the real value, but NOT yet confirmed by Kopa - ask them to confirm.
+  ktrn:
+    base-url: http://192.168.21.7:8086/cloud/ktrn/bss
+    external-base-url: http://www.4glte.rw/voucher/api/external_access.jsp
+    isp-cd: "1"
+
+  # Kopa's own KTRN-assigned identifiers - every onboarding call needs them, not user input.
+  # so-id: "62" was a placeholder, same situation as ktrn.isp-cd above. "1" is confirmed live
+  # 2026-10-13 for msisdn-suggestions (HPOP602) and msisdn-status (HPOP601) - both returned real
+  # success (MSGCODE 1001). Not yet confirmed by Kopa directly, but it's the same value that
+  # unblocked ktrn.isp-cd, and the doc itself treats SO_ID/ISP_CD as the same retailer/org concept
+  # under two names in different schema tables (see BundleServiceImpl.purchase() comment).
+  business:
+    so-id: "1"
+    org-id: NZ00000221
+    login-id: armapoc
+
+  # Where each Microservice reaches its Middleware. Only kopa.customer-identity and
+  # kopa.customer-self-care read this - kopa.middleware-ktrn itself doesn't.
+  middleware:
+    ktrn-base-url: http://localhost:8082/kopa-middleware-ktrn
+    sms-base-url: http://localhost:8086/kopa-middleware-sms
+
+  # Where customer-identity/customer-self-care reach kopa.notifications for sync OTP sends.
+  notifications:
+    base-url: http://localhost:8084/kopa-notifications
+
+  # InTouch bulk SMS gateway (http_intouch_api_1.2.pdf). Sender "KOPATELECOM" confirmed live and
+  # working 2026-10-19 (real SMS sent, messageid returned, cost deducted from account balance).
+  # Also confirmed that day: the gateway needs multipart/form-data, not JSON, despite the doc's
+  # own examples and the ".json" URL suffix - see IntouchSmsClient's javadoc.
+  sms:
+    intouch-base-url: https://www.intouchsms.co.rw/api/sendsms/.json
+    intouch-username: kopa.telecom
+    intouch-password: kopa.telecom
+    default-sender: KOPATELECOM
+
+  # X-Internal-Api-Key secrets for /internal/v1/** - one per TARGET service, not one shared value
+  # everywhere (2026-10-20 hardening pass: a single shared key meant any caller that learned it
+  # could reach every internal endpoint on every service; per-target keys limit the blast radius
+  # of one leaking, and make it possible to tell which relationship a given key belongs to). Each
+  # service that guards inbound /internal/v1/** reads only its own key below; each service that
+  # calls OUT to another one presents that target's key as an outbound header. Still not a real
+  # secret-management setup (no vault/rotation) - acceptable for this stage, same rigor as the DB
+  # password above, but random-generated rather than a guessable placeholder.
+  internal:
+    middleware-ktrn-api-key: dd0946488939a268e0cebc1d318e69ef2dcb83bef07a2786
+    middleware-sms-api-key: bf79380a1183f828f1674c9e258fd6312ba632dbae557a78
+    notifications-api-key: bca003ebff13dc842dc9cb5410196c30a399414a90a23786
+
+  # Browser origins allowed to call the Mobile-side APIs (CORS).
+  web:
+    allowed-origins: http://localhost:3000
+
+# RabbitMQ - one topic exchange "kopa.events" (see architecture-reference.md s8.1), routing key
+# <subject>.<past-tense-verb>. customer-identity publishes customer.activated, customer-self-care
+# publishes transaction.completed/.failed, kopa.notifications consumes all three.
+app:
+  messaging:
+    exchange: kopa.events
+
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: guest
+    password: guest

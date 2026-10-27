@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: kopa.middleware-ktrn
+  config:
+    import: optional:file:/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/kopa-config.yml
+
+server:
+  port: 8082
+  servlet:
+    context-path: /kopa-middleware-ktrn
+  error:
+    include-message: always
+
+# base-url/external-base-url/isp-cd come from the shared kopa-config.yml above (kopa.ktrn.*) -
+# still placeholders until Kopa Telecom confirms the real values (see backend/architecture-reference.md
+# s13). Reaching the real gateway also requires the VPN tunnel into Kopa's network -
+# www.4glte.rw does resolve correctly once inside it, but the resolved IP refuses connections on
+# port 80 even from there; that's an availability question for Kopa Telecom's KTRN team, not a
+# config problem here.
+ktrn:
+  base-url: ${kopa.ktrn.base-url}
+  external-base-url: ${kopa.ktrn.external-base-url}
+  isp-cd: ${kopa.ktrn.isp-cd}
+  default-chcode: A
+  connect-timeout-ms: 5000
+  read-timeout-ms: 8000
+
+internal:
+  api-key: ${kopa.internal.middleware-ktrn-api-key}

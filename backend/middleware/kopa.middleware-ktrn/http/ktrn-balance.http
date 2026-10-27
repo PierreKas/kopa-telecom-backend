@@ -1,0 +1,26 @@
+### Internal KTRN balance bridge (svccode HP00001 / opcode HPOP001)
+### For direct testing of the Middleware layer in isolation - the Client app and Admin portal
+### never call this; only kopa.customer-self-care does.
+@host = http://localhost:8082/kopa-middleware-ktrn
+
+### 1. Check balance (ispCd omitted - falls back to ktrn.isp-cd default)
+POST {{host}}/internal/v1/ktrn/balance
+Content-Type: application/json
+
+{ "msisdn": "0771000050" }
+
+### 2. Check balance, explicit ispCd/chcode (matches the API doc's worked example)
+POST {{host}}/internal/v1/ktrn/balance
+Content-Type: application/json
+
+{ "msisdn": "0771000050", "ispCd": "62", "chcode": "A" }
+
+### 3. Invalid msisdn -> expect 400 VALIDATION_ERROR
+POST {{host}}/internal/v1/ktrn/balance
+Content-Type: application/json
+
+{ "msisdn": "abc" }
+
+### 4. Swagger UI / OpenAPI
+GET {{host}}/swagger-ui.html
+GET {{host}}/v3/api-docs

@@ -1,0 +1,24 @@
+2026-10-09 15:11:20.801 [main] INFO  com.kopa.middlewarektrn.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 80120 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn/target/kopa.middleware-ktrn-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn)
+2026-10-09 15:11:20.842 [main] INFO  com.kopa.middlewarektrn.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-09 15:11:22.397 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-09 15:11:23.967 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-10-09 15:11:24.063 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3103 ms
+2026-10-09 15:11:25.002 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/kopa-middleware-ktrn'
+2026-10-09 15:11:25.019 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-09 15:11:25.028 [main] INFO  com.kopa.middlewarektrn.Application - Started Application in 5.372 seconds (process running for 6.947)
+2026-10-09 15:11:25.031 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-09 15:11:25.037 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-09 15:11:25.038 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-09 15:13:03.242 [main] INFO  com.kopa.middlewarektrn.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 80779 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn/target/kopa.middleware-ktrn-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn)
+2026-10-09 15:13:03.250 [main] INFO  com.kopa.middlewarektrn.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-09 15:13:04.083 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-09 15:13:05.056 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-10-09 15:13:05.071 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2026-10-09 15:13:05.075 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-09 15:13:05.075 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-09 15:13:05.130 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1761 ms
+2026-10-09 15:13:05.959 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2026-10-09 15:13:05.984 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/kopa-middleware-ktrn'
+2026-10-09 15:13:06.008 [main] INFO  com.kopa.middlewarektrn.Application - Started Application in 3.733 seconds (process running for 4.534)
+2026-10-09 15:13:06.013 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-09 15:13:06.013 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'

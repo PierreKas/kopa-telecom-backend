@@ -1,0 +1,28 @@
+spring:
+  application:
+    name: kopa.middleware-sms
+  config:
+    import: optional:file:/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/kopa-config.yml
+
+server:
+  port: 8086
+  servlet:
+    context-path: /kopa-middleware-sms
+  error:
+    include-message: always
+
+# base-url/username/password come from the shared kopa-config.yml above (kopa.sms.*). The account
+# is live and auth works, but no sender ID is approved yet - default-sender stays blank until Kopa
+# confirms one with InTouch. See IntouchProperties javadoc.
+intouch:
+  base-url: ${kopa.sms.intouch-base-url}
+  username: ${kopa.sms.intouch-username}
+  password: ${kopa.sms.intouch-password}
+  default-sender: ${kopa.sms.default-sender}
+
+notifications:
+  base-url: ${kopa.notifications.base-url}
+  api-key: ${kopa.internal.notifications-api-key}
+
+internal:
+  api-key: ${kopa.internal.middleware-sms-api-key}

@@ -1,0 +1,18 @@
+# Activated via SPRING_PROFILES_ACTIVE=docker - see kopa.customer-self-care's application-docker.yaml
+# for why this file exists. No docker-compose.yml exists for this project yet.
+kopa:
+  db:
+    url: ${KOPA_DB_URL:jdbc:postgresql://postgres:5432/kopa_db}
+    username: ${KOPA_DB_USERNAME:postgres}
+    password: ${KOPA_DB_PASSWORD:postgres}
+    driver: ${KOPA_DB_DRIVER:org.postgresql.Driver}
+  logs:
+    repository: ${LOGS_REPOSITORY:/app/logs}
+  web:
+    allowed-origins: ${KOPA_WEB_ALLOWED_ORIGINS:http://localhost:3000}
+  middleware:
+    base-url: ${MIDDLEWARE_KTRN_BASE_URL:http://kopa-middleware-ktrn:8082/kopa-middleware-ktrn}
+  business:
+    so-id: ${KOPA_SO_ID:62}
+    org-id: ${KOPA_ORG_ID:NZ00000221}
+    login-id: ${KOPA_LOGIN_ID:armapoc}

@@ -1,0 +1,10 @@
+# Activated via SPRING_PROFILES_ACTIVE=docker - see kopa.customer-self-care's application-docker.yaml
+# for why this file exists. No docker-compose.yml exists for this project yet.
+kopa:
+  logs:
+    repository: ${LOGS_REPOSITORY:/app/logs}
+
+ktrn:
+  base-url: ${KTRN_BASE_URL:http://www.4glte.rw/api_access.jsp}
+  external-base-url: ${KTRN_EXTERNAL_BASE_URL:http://www.4glte.rw/voucher/api/external_access.jsp}
+  isp-cd: ${KTRN_ISP_CD:62}

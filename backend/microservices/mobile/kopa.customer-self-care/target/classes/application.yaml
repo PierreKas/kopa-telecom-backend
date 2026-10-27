@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: kopa.customer-self-care
+  config:
+    import: optional:file:/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/kopa-config.yml
+  jpa:
+    hibernate:
+      ddl-auto: none          # Flyway owns the schema, never Hibernate
+    open-in-view: false
+    properties:
+      hibernate:
+        default_schema: customer_self_care
+
+server:
+  port: 8081
+  servlet:
+    context-path: /kopa-customer-self-care
+  error:
+    include-message: always
+
+# Internal call to the kopa.middleware-ktrn service - never called directly by the Client app.
+# kopa.db.* / kopa.middleware.ktrn-base-url come from the shared kopa-config.yml above.
+kopa:
+  middleware:
+    base-url: ${kopa.middleware.ktrn-base-url}
+    api-key: ${kopa.internal.middleware-ktrn-api-key}
+    connect-timeout-ms: 3000
+    read-timeout-ms: 8000
+
+notifications:
+  base-url: ${kopa.notifications.base-url}
+  api-key: ${kopa.internal.notifications-api-key}

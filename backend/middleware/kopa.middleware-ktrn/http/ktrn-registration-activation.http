@@ -1,0 +1,72 @@
+### Internal KTRN onboarding bridge (activation, identity, registration, msisdn modules)
+### For direct testing of the Middleware layer in isolation - only kopa.customer-identity calls
+### these in the real flow.
+@host = http://localhost:8082/kopa-middleware-ktrn
+
+### 1. Search price plans (HPOP301)
+POST {{host}}/internal/v1/ktrn/activation/price-plans
+Content-Type: application/json
+
+{ "msisdn": "0771000050", "iccid": "8925012345678901234" }
+
+### 2. Simple activation (HPOP302)
+POST {{host}}/internal/v1/ktrn/activation/simple-activate
+Content-Type: application/json
+
+{
+  "soId": "62", "msisdn": "0771000050", "prodCd": "PD00000574",
+  "loginId": "armapoc", "orgId": "NZ00000221", "iccid": "8925012345678901234",
+  "custId": "C000111222"
+}
+
+### 3. NIDA verification (HPOP303) - external_access.jsp host
+POST {{host}}/internal/v1/ktrn/identity/verify-nida
+Content-Type: application/json
+
+{ "nationalId": "1194070023836062", "photoBase64": "/9j/4AAQSkZJRg==" }
+
+### 4. RRA verification (HPOP305) - external_access.jsp host
+POST {{host}}/internal/v1/ktrn/identity/verify-rra
+Content-Type: application/json
+
+{ "tin": "999999999", "registerId": "CCBS" }
+
+### 5. Passport/DGIE verification (HPOP306) - external_access.jsp host
+POST {{host}}/internal/v1/ktrn/identity/verify-passport
+Content-Type: application/json
+
+{ "docNumber": "565549442", "issuedBy": "USA", "registerId": "CCBS" }
+
+### 6. Subscribe customer (HPOP501) - CORP_REG_NO is AES-256 encrypted before hitting the wire
+POST {{host}}/internal/v1/ktrn/registration/subscribe-customer
+Content-Type: application/json
+
+{
+  "soId": "62", "loginId": "armapoc", "orgId": "NZ00000221", "custTp": "A",
+  "custNm": "DAVID", "corpRegNo": "431DFDAS1212123", "birthDay": "20100101",
+  "email": "ktrn@gmail.com", "phoneNum": "0708897789", "addrDtl": "Nyarutarama"
+}
+
+### 7. Search customer (HPOP502)
+POST {{host}}/internal/v1/ktrn/registration/search-customer
+Content-Type: application/json
+
+{ "soId": "02", "custTp": "A", "custNm": "DAVID", "corpRegNo": "01SD3152=2QWSDF" }
+
+### 8. Search MSISDN by ICCID (HPOP003)
+POST {{host}}/internal/v1/ktrn/registration/search-msisdn-by-iccid
+Content-Type: application/json
+
+{ "iccid": "9999999999999999", "ispCd": "62" }
+
+### 9. Check MSISDN status (HPOP601)
+POST {{host}}/internal/v1/ktrn/msisdn/status
+Content-Type: application/json
+
+{ "msisdn": "0771000050", "soId": "62" }
+
+### 10. Recommend 5 MSISDNs (HPOP602)
+POST {{host}}/internal/v1/ktrn/msisdn/suggestions
+Content-Type: application/json
+
+{ "soId": "03" }

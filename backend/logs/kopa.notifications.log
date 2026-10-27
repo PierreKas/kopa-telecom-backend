@@ -1,0 +1,54 @@
+2026-10-13 21:57:51.718 [main] INFO  com.kopa.notifications.Application - Starting Application using Java 17.0.20.1 with PID 350162 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.notifications/target/classes started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.notifications)
+2026-10-13 21:57:51.724 [main] INFO  com.kopa.notifications.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-13 21:57:52.539 [background-preinit] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-13 21:57:53.414 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-13 21:57:53.549 [main] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 118 ms. Found 3 JPA repository interfaces.
+2026-10-13 21:57:54.494 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-10-13 21:57:54.512 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+2026-10-13 21:57:54.515 [main] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-13 21:57:54.516 [main] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-13 21:57:54.626 [main] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2817 ms
+2026-10-13 21:57:55.541 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-10-13 21:57:55.690 [main] INFO  o.f.c.internal.database.base.Schema - Creating schema "notifications" ...
+2026-10-13 21:57:55.705 [main] INFO  o.f.c.i.s.JdbcTableSchemaHistory - Creating Schema History table "notifications"."flyway_schema_history_notifications" ...
+2026-10-13 21:57:55.863 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "notifications": null
+2026-10-13 21:57:55.884 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "notifications" to version "1.1 - init schema"
+2026-10-13 21:57:55.892 [main] WARN  o.f.c.i.s.DefaultSqlScriptExecutor - DB: schema "notifications" already exists, skipping (SQL State: 42P06 - Error Code: 0)
+2026-10-13 21:57:55.910 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "notifications" to version "1.2 - sms messages"
+2026-10-13 21:57:55.944 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "notifications" to version "1.3 - sms delivery events"
+2026-10-13 21:57:55.977 [main] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "notifications" to version "1.4 - otp rate limit"
+2026-10-13 21:57:56.006 [main] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 4 migrations to schema "notifications", now at version v1.4 (execution time 00:00.058s)
+2026-10-13 21:57:56.222 [main] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-13 21:57:56.352 [main] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-13 21:57:57.296 [main] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-13 21:57:57.569 [main] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-13 21:57:59.714 [main] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-13 21:57:59.728 [main] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-13 21:57:59.921 [main] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-13 21:58:01.538 [main] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8084"]
+2026-10-13 21:58:01.562 [main] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/kopa-notifications'
+2026-10-13 21:58:01.566 [main] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2026-10-13 21:58:01.759 [main] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#2c6b36d7:0/SimpleConnection@13190355 [delegate=amqp://guest@127.0.0.1:5672/, localPort=36078]
+2026-10-13 21:58:01.978 [main] INFO  com.kopa.notifications.Application - Started Application in 11.716 seconds (process running for 12.296)
+2026-10-13 21:58:01.983 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-13 21:58:01.983 [main] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-13 21:58:19.557 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2026-10-13 21:58:19.563 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2026-10-13 21:58:19.564 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2026-10-13 21:58:19.962 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2026-10-13 21:58:19.968 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2026-10-13 21:58:19.973 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2026-10-13 21:58:19.976 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-13 21:58:19.984 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-13 21:58:20.001 [SpringApplicationShutdownHook] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'

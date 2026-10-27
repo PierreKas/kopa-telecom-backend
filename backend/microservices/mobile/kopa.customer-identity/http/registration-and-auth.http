@@ -1,0 +1,77 @@
+### Full authentication flow (registration/activation + login/PIN/session)
+### Requires kopa.middleware-ktrn running on :8082 and Postgres reachable per application.yaml.
+### PIN reset (forgot PIN) is deferred - needs kopa.notifications (not built yet).
+@host = http://localhost:8083/kopa-customer-identity
+
+### 1. Check MSISDN availability
+GET {{host}}/api/v1/registration/msisdn-status/0798123456
+
+### 2. Get 5 suggested MSISDNs
+GET {{host}}/api/v1/registration/msisdn-suggestions
+
+### 3. Search price plans for a new line
+POST {{host}}/api/v1/registration/price-plans
+Content-Type: application/json
+
+{ "msisdn": "0798123456", "iccid": "8925012345678901234" }
+
+### 4. KYC - verify a Rwandan citizen via NIDA
+POST {{host}}/api/v1/registration/verify-nida/0798123456
+Content-Type: application/json
+
+{ "nationalId": "1194070023836062", "photoBase64": "/9j/4AAQSkZJRg==" }
+
+### 5. Activate - subscribe-customer + simple-activate, issues a session
+# @name activate
+POST {{host}}/api/v1/registration/activate
+Content-Type: application/json
+
+{
+  "msisdn": "0798123456",
+  "iccid": "8925012345678901234",
+  "productCode": "PD00000574",
+  "custType": "A",
+  "fullName": "Test Subscriber",
+  "birthDay": "19950101",
+  "addressDetail": "Nyarutarama, Kigali",
+  "email": "test.subscriber@example.com"
+}
+
+> {% client.global.set("session_token", response.body.token); %}
+
+### 6. First-time PIN set-up (authenticated - uses the session from activation)
+POST {{host}}/api/v1/auth/pin/set
+Authorization: Bearer {{session_token}}
+Content-Type: application/json
+
+{ "pin": "135790" }
+
+### 7. Log in with MSISDN + PIN
+# @name login
+POST {{host}}/api/v1/auth/login
+Content-Type: application/json
+
+{ "msisdn": "0798123456", "pin": "135790" }
+
+> {% client.global.set("session_token", response.body.data.token); %}
+
+### 8. Change PIN
+POST {{host}}/api/v1/auth/pin/change
+Authorization: Bearer {{session_token}}
+Content-Type: application/json
+
+{ "currentPin": "135790", "newPin": "246801" }
+
+### 9. Logout
+POST {{host}}/api/v1/auth/logout
+Authorization: Bearer {{session_token}}
+
+### 10. Invalid login -> expect 401
+POST {{host}}/api/v1/auth/login
+Content-Type: application/json
+
+{ "msisdn": "0798123456", "pin": "000000" }
+
+### 11. Swagger UI / OpenAPI
+GET {{host}}/swagger-ui.html
+GET {{host}}/v3/api-docs

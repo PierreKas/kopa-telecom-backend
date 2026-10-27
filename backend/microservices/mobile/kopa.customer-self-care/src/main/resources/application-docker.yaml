@@ -1,0 +1,16 @@
+# Activated via SPRING_PROFILES_ACTIVE=docker. The base application.yaml's kopa-config.yml import
+# is `optional:` and simply won't resolve inside a container, so this profile supplies the same
+# properties from environment variables instead. Local dev (./mvnw spring-boot:run with the real
+# kopa-config.yml present) is completely unaffected by this file. No docker-compose.yml exists for
+# this project yet - this file just establishes the pattern ahead of time, see
+# backend/architecture-reference.md s12.
+kopa:
+  db:
+    url: ${KOPA_DB_URL:jdbc:postgresql://postgres:5432/kopa_db}
+    username: ${KOPA_DB_USERNAME:postgres}
+    password: ${KOPA_DB_PASSWORD:postgres}
+    driver: ${KOPA_DB_DRIVER:org.postgresql.Driver}
+  logs:
+    repository: ${LOGS_REPOSITORY:/app/logs}
+  middleware:
+    base-url: ${MIDDLEWARE_KTRN_BASE_URL:http://kopa-middleware-ktrn:8082/kopa-middleware-ktrn}
