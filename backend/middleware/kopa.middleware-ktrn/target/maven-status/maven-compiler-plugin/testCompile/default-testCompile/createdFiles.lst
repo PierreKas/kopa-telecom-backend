@@ -1,4 +1,3 @@
-com/kopa/middlewarektrn/common/KtrnListFieldParserTest.class
 com/kopa/middlewarektrn/gateway/KtrnXmlResponseTest.class
-com/kopa/middlewarektrn/common/crypto/KtrnAes256UtilTest.class
+com/kopa/middlewarektrn/common/KtrnListFieldParserTest.class
 com/kopa/middlewarektrn/gateway/KtrnGenericXmlResponseTest.class

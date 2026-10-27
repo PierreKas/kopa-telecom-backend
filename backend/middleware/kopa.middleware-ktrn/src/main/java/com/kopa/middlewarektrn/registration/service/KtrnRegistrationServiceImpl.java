@@ -1,8 +1,8 @@
 package com.kopa.middlewarektrn.registration.service;
 
-import com.kopa.middlewarektrn.common.crypto.KtrnAes256Util;
 import com.kopa.middlewarektrn.config.KtrnProperties;
 import com.kopa.middlewarektrn.gateway.KtrnApiClient;
+import com.kopa.middlewarektrn.gateway.KtrnGatewayException;
 import com.kopa.middlewarektrn.gateway.dto.KtrnGenericXmlResponse;
 import com.kopa.middlewarektrn.registration.dto.SearchCustomerRequest;
 import com.kopa.middlewarektrn.registration.dto.SearchCustomerResponse;
@@ -20,6 +20,7 @@ public class KtrnRegistrationServiceImpl implements KtrnRegistrationService {
     private static final String OPCODE_SUBSCRIBE = "HPOP501";
     private static final String OPCODE_SEARCH_CUSTOMER = "HPOP502";
     private static final String OPCODE_SEARCH_MSISDN = "HPOP003";
+    private static final String OPCODE_ENCRYPT = "HPOP313";
 
     private final KtrnApiClient apiClient;
     private final KtrnProperties properties;
@@ -31,7 +32,7 @@ public class KtrnRegistrationServiceImpl implements KtrnRegistrationService {
 
     @Override
     public SubscribeCustomerResponse subscribeCustomer(SubscribeCustomerRequest request) {
-        String encryptedCorpRegNo = KtrnAes256Util.encrypt(request.corpRegNo());
+        String encryptedCorpRegNo = encryptCorpRegNo(request.corpRegNo());
 
         StringBuilder body = new StringBuilder();
         appendIfPresent(body, "SO_ID", request.soId());
@@ -61,7 +62,7 @@ public class KtrnRegistrationServiceImpl implements KtrnRegistrationService {
 
     @Override
     public SearchCustomerResponse searchCustomer(SearchCustomerRequest request) {
-        String encryptedCorpRegNo = KtrnAes256Util.encrypt(request.corpRegNo());
+        String encryptedCorpRegNo = encryptCorpRegNo(request.corpRegNo());
 
         StringBuilder body = new StringBuilder();
         body.append("<SO_ID>").append(request.soId()).append("</SO_ID>");
@@ -95,6 +96,36 @@ public class KtrnRegistrationServiceImpl implements KtrnRegistrationService {
                 response.bodyValue("SO_NM"),
                 response.bodyValue("MSISDN")
         );
+    }
+
+    /**
+     * CORP_REG_NO must be encrypted before being placed on the wire (RBSS-CCBS API_ACCESS
+     * s2.6.1/s2.6.2). KTRN provides its own server-side encryption utility for this - HP00005/
+     * HPOP313 (PASSWORD plaintext in, RESULT ciphertext out) - confirmed live 2026-10-27 via a
+     * full round trip: encrypt a value through HPOP313, use the RESULT as CORP_REG_NO in HPOP501
+     * (customer created), then retrieve that same customer via HPOP502 using the identical RESULT
+     * string unmodified. KTRN's RESULT already comes back in the form it expects CORP_REG_NO to
+     * be sent in, so it's passed straight through with no further encoding/decoding on our side.
+     * This supersedes the project's local KtrnAes256Util, whose scheme (key derivation, mode, IV
+     * handling) was never confirmed against the real gateway.
+     */
+    private String encryptCorpRegNo(String plainText) {
+        if (plainText == null || plainText.isBlank()) {
+            return null;
+        }
+
+        String apiRequest = wrap(SVCCODE_HP00005, OPCODE_ENCRYPT,
+                "<PASSWORD>" + plainText + "</PASSWORD><OPERATION_TYPE></OPERATION_TYPE>");
+        KtrnGenericXmlResponse response = apiClient.callGeneric(apiRequest);
+
+        String result = response.bodyValue("RESULT");
+        if (result == null || result.isBlank()) {
+            String msgcode = response.getHeader() != null ? response.getHeader().getMsgcode() : null;
+            String message = response.getHeader() != null ? response.getHeader().getMessage() : null;
+            throw new KtrnGatewayException("KTRN HPOP313 did not return an encrypted value "
+                    + "(msgcode=" + msgcode + ", message=" + message + ")");
+        }
+        return result;
     }
 
     private static String wrap(String svccode, String opcode, String bodyXml) {

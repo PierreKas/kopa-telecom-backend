@@ -18,8 +18,15 @@ public class ActivationServiceImpl implements ActivationService {
     private static final String OPCODE_PRICE_PLAN = "HPOP301";
     private static final String OPCODE_SIMPLE_ACTIVATE = "HPOP302";
 
-    /** Distinguished Request Type - Kopa's mobile app is always "02 : App Access" (s2.5.2). */
-    private static final String REQ_SYS_ID_APP_ACCESS = "02";
+    /**
+     * Distinguished Request Type. The doc's own table (s2.5.2) labels "02" as "App Access", which
+     * reads as the obvious choice for a mobile app - but live-tested 2026-10-27 against the real
+     * gateway, "02" fails HPOP302 with "-6002 Undefined value/incorrect value PROD_CD,SO_ID was
+     * entered." (a misleading message - PROD_CD/SO_ID were valid) while "01" succeeds (MSGCODE
+     * 1001) with the exact same PROD_CD/SO_ID. KTRN's own test traffic also uses "01". Confirmed,
+     * not the doc's labeled value.
+     */
+    private static final String REQ_SYS_ID_APP_ACCESS = "01";
 
     private final KtrnApiClient apiClient;
 

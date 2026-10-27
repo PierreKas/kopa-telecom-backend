@@ -55,7 +55,6 @@ com/kopa/middlewarektrn/bundle/dto/BundleItem.class
 com/kopa/middlewarektrn/bundle/service/BundleServiceImpl.class
 com/kopa/middlewarektrn/identity/dto/PassportVerificationResponse.class
 com/kopa/middlewarektrn/msisdn/dto/MsisdnStatusRequest.class
-com/kopa/middlewarektrn/common/crypto/KtrnAes256Util.class
 com/kopa/middlewarektrn/identity/controller/IdentityVerificationController.class
 com/kopa/middlewarektrn/config/InternalApiKeyFilter.class
 com/kopa/middlewarektrn/msisdn/dto/MsisdnSuggestionsResponse.class

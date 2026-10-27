@@ -146,8 +146,12 @@ public class RegistrationServiceImpl implements RegistrationService {
 
         String custId;
         try {
+            // LOGIN_ID must be omitted on HPOP501 (subscribe-customer) - live-tested 2026-10-27:
+            // sending it at all (any value, including the real TRUPOC credential) fails with a
+            // generic -4003 "Error occured when querying.", while omitting it entirely succeeds.
+            // This is the opposite of HPOP302 below, where LOGIN_ID is required.
             SubscribeCustomerResponse subscribeResponse = middlewareClient.subscribeCustomer(new SubscribeCustomerRequest(
-                    businessProperties.getSoId(), businessProperties.getLoginId(), businessProperties.getOrgId(),
+                    businessProperties.getSoId(), null, businessProperties.getOrgId(),
                     request.custType(), request.fullName(), request.corpRegNo(), request.bizRegNo(),
                     request.birthDay(), request.email(), request.msisdn(), request.addressDetail()));
 

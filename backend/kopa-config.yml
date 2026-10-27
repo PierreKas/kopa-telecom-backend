@@ -22,15 +22,15 @@ kopa:
     isp-cd: "1"
 
   # Kopa's own KTRN-assigned identifiers - every onboarding call needs them, not user input.
-  # so-id: "62" was a placeholder, same situation as ktrn.isp-cd above. "1" is confirmed live
-  # 2026-10-13 for msisdn-suggestions (HPOP602) and msisdn-status (HPOP601) - both returned real
-  # success (MSGCODE 1001). Not yet confirmed by Kopa directly, but it's the same value that
-  # unblocked ktrn.isp-cd, and the doc itself treats SO_ID/ISP_CD as the same retailer/org concept
-  # under two names in different schema tables (see BundleServiceImpl.purchase() comment).
+  # Confirmed live 2026-10-27 via a full HPOP313->HPOP501->HPOP302 round trip (encrypt CORP_REG_NO,
+  # create customer, activate MSISDN+ICCID against it) - these are the exact values that returned
+  # MSGCODE 1001 end to end, from the gateway KTRN whitelisted for this server's IP. so-id "1"
+  # (the old placeholder) returns -4003 "The IP address of the API request is not in the
+  # configuration" for every call - it belongs to a different, not-currently-whitelisted SO_ID.
   business:
-    so-id: "1"
-    org-id: NZ00000221
-    login-id: armapoc
+    so-id: "20"
+    org-id: "3472"
+    login-id: TRUPOC
 
   # Where each Microservice reaches its Middleware. Only kopa.customer-identity and
   # kopa.customer-self-care read this - kopa.middleware-ktrn itself doesn't.
