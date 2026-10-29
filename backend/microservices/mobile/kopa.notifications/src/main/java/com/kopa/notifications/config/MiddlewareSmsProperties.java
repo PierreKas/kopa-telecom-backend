@@ -14,6 +14,10 @@ public class MiddlewareSmsProperties {
 
     private String baseUrl;
     private String apiKey;
-    private int connectTimeoutMs = 3000;
-    private int readTimeoutMs = 8000;
+    private int connectTimeoutMs = 8000;
+    // 2026-10-28: must stay comfortably above kopa.middleware-sms's own IntouchProperties
+    // readTimeoutMs, bumped again same day to 35000ms after a real InTouch send took ~20s (the
+    // previous 20000ms margin wasn't enough) - this service blocks on middleware-sms's full round
+    // trip, so a shorter budget here guarantees a timeout before middleware-sms ever finishes.
+    private int readTimeoutMs = 40000;
 }

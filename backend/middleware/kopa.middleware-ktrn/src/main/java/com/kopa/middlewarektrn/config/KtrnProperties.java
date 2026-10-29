@@ -21,6 +21,9 @@ public class KtrnProperties {
     private String externalBaseUrl;
     private String ispCd;
     private String defaultChcode = "A";
-    private int connectTimeoutMs = 5000;
-    private int readTimeoutMs = 8000;
+    private int connectTimeoutMs = 8000;
+    // 2026-10-28: same undersized-default bug as kopa.middleware-sms's IntouchProperties - a real
+    // HPOP501 call through the dev SSH tunnel to the gateway timed out at almost exactly 8000ms.
+    // Live KTRN calls over that tunnel path can legitimately take longer than a direct connection.
+    private int readTimeoutMs = 20000;
 }

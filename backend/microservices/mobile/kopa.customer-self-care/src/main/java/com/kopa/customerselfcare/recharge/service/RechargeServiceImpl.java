@@ -22,6 +22,7 @@ import com.kopa.customerselfcare.transaction.model.Transaction;
 import com.kopa.customerselfcare.transaction.model.TransactionStatus;
 import com.kopa.customerselfcare.transaction.model.TransactionType;
 import com.kopa.customerselfcare.transaction.repository.TransactionRepository;
+import com.kopa.customerselfcare.transaction.service.TransactionFailureRecorder;
 import com.kopa.customerselfcare.transaction.service.TransactionOtpService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -39,15 +40,17 @@ public class RechargeServiceImpl implements RechargeService {
     private final TransactionLimitService limitService;
     private final TransactionOtpService otpService;
     private final EventPublisher eventPublisher;
+    private final TransactionFailureRecorder failureRecorder;
 
     public RechargeServiceImpl(MiddlewareRechargeClient middlewareClient, TransactionRepository transactions,
                                TransactionLimitService limitService, TransactionOtpService otpService,
-                               EventPublisher eventPublisher) {
+                               EventPublisher eventPublisher, TransactionFailureRecorder failureRecorder) {
         this.middlewareClient = middlewareClient;
         this.transactions = transactions;
         this.limitService = limitService;
         this.otpService = otpService;
         this.eventPublisher = eventPublisher;
+        this.failureRecorder = failureRecorder;
     }
 
     @Override
@@ -139,31 +142,29 @@ public class RechargeServiceImpl implements RechargeService {
         boolean success = KTRN_SUCCESS_MSGCODE.equals(response.msgcode());
         transaction.setKtrnMsgcode(response.msgcode());
         transaction.setKtrnMessage(response.message());
-        transaction.setStatus(success ? TransactionStatus.SUCCESS : TransactionStatus.FAILED);
+
         if (!success) {
-            transaction.setFailureLayer("KTRN_BUSINESS");
-            transaction.setFailureDetail(response.message());
+            // Routed through fail() so the FAILED state persists in its own transaction (see
+            // TransactionFailureRecorder) instead of being rolled back by the throw below.
+            throw fail(transaction, "KTRN_BUSINESS", response.message() != null ? response.message()
+                    : "KTRN declined this request (msgcode " + response.msgcode() + ").");
         }
+
+        transaction.setStatus(TransactionStatus.SUCCESS);
         transaction.setCompletedAt(Instant.now());
         transaction.setDurationMs(transaction.getCompletedAt().toEpochMilli() - transaction.getRequestedAt().toEpochMilli());
         transactions.save(transaction);
+        publishOutcome(transaction, true);
 
-        publishOutcome(transaction, success);
-
-        if (!success) {
-            throw new BadRequestException(response.message() != null ? response.message()
-                    : "KTRN declined this request (msgcode " + response.msgcode() + ").");
-        }
         return new RechargeResponseDto(transaction.getId(), transaction.getStatus().name(), response.message());
     }
 
+    // Persists the FAILED state via TransactionFailureRecorder (its own, independent database
+    // transaction) rather than inline - the normal way to reject a request here is to throw the
+    // BadRequestException this method returns, and Spring rolls back everything an @Transactional
+    // method did before it threw, including an inline save of this very failure.
     private BadRequestException fail(Transaction transaction, String failureLayer, String detail) {
-        transaction.setStatus(TransactionStatus.FAILED);
-        transaction.setFailureLayer(failureLayer);
-        transaction.setFailureDetail(detail);
-        transaction.setCompletedAt(Instant.now());
-        transaction.setDurationMs(transaction.getCompletedAt().toEpochMilli() - transaction.getRequestedAt().toEpochMilli());
-        transactions.save(transaction);
+        failureRecorder.recordFailure(transaction, failureLayer, detail);
         publishOutcome(transaction, false);
         return new BadRequestException(detail);
     }

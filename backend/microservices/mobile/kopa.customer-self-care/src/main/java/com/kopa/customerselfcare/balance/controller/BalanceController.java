@@ -1,5 +1,6 @@
 package com.kopa.customerselfcare.balance.controller;
 
+import com.kopa.customerselfcare.auth.dto.CallerContext;
 import com.kopa.customerselfcare.balance.dto.BalanceDto;
 import com.kopa.customerselfcare.balance.service.BalanceInquiryService;
 import com.kopa.customerselfcare.common.dto.ApiResponse;
@@ -19,8 +20,8 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/balance")
 @Validated
 @Tag(name = "Balance", description = "Feature 2.1.1 Searching Balance - svccode HP00001 / opcode "
-        + "HPOP001. Client (mobile app) facing only; no authentication yet (planned for a later "
-        + "phase - see kopa.customer-self-care README/architecture notes).")
+        + "HPOP001. Client (mobile app) facing only, authenticated - bearer token must belong to "
+        + "the {msisdn} being queried.")
 public class BalanceController {
 
     private final BalanceInquiryService balanceInquiryService;
@@ -32,6 +33,7 @@ public class BalanceController {
     @GetMapping("/{msisdn}")
     @Operation(summary = "Search a subscriber's balance by MSISDN")
     public ResponseEntity<ApiResponse<BalanceDto>> searchBalance(
+            CallerContext caller,
             @PathVariable
             @Pattern(regexp = "\\d{6,15}", message = "msisdn must be 6-15 digits")
             String msisdn,
@@ -40,6 +42,7 @@ public class BalanceController {
                     + "middleware's configured default when omitted.")
             @Pattern(regexp = "\\d{1,3}", message = "ispCd must be 1-3 digits")
             String ispCd) {
+        caller.requireOwnMsisdn(msisdn);
         return ResponseEntity.ok(ApiResponse.ok(balanceInquiryService.searchBalance(msisdn, ispCd)));
     }
 }

@@ -58,7 +58,8 @@ public class ProfileServiceImpl implements ProfileService {
                 customer.getAddressDetail(),
                 customer.getCustType(),
                 customer.getBirthDay() == null ? null : customer.getBirthDay().format(BIRTH_DAY_FORMAT),
-                customer.getStatus().name()
+                customer.getStatus().name(),
+                customer.getNationalId()
         );
     }
 }

@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: kopa.admin-portal
+  config:
+    import: optional:file:/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/kopa-config.yml
+  jpa:
+    hibernate:
+      ddl-auto: none          # Flyway owns the schema, never Hibernate
+    open-in-view: false
+    properties:
+      hibernate:
+        default_schema: admin_portal
+
+server:
+  port: 8085
+  servlet:
+    context-path: /kopa-admin-portal
+  error:
+    include-message: always
+
+internal:
+  api-key: ${kopa.internal.admin-portal-api-key}
+
+# Browser origins allowed to call this service's APIs (CORS) - the only service in this
+# architecture a browser calls directly; see architecture-reference.md s3/s6.
+web:
+  allowed-origins: ${kopa.web.allowed-origins}

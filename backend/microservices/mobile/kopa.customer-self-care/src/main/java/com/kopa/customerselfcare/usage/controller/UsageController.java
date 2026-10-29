@@ -1,5 +1,6 @@
 package com.kopa.customerselfcare.usage.controller;
 
+import com.kopa.customerselfcare.auth.dto.CallerContext;
 import com.kopa.customerselfcare.common.dto.ApiResponse;
 import com.kopa.customerselfcare.usage.dto.UsageResponseDto;
 import com.kopa.customerselfcare.usage.service.UsageInquiryService;
@@ -17,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/usage")
 @Validated
 @Tag(name = "Usage", description = "FR-06 - usage/remaining allowances for active bundles "
-        + "(HP00001/HPOP008). Client (mobile app) facing only.")
+        + "(HP00001/HPOP008). Client (mobile app) facing only, authenticated.")
 public class UsageController {
 
     private final UsageInquiryService usageInquiryService;
@@ -29,9 +30,11 @@ public class UsageController {
     @GetMapping("/{msisdn}")
     @Operation(summary = "Search usage/remaining allowances for a subscriber's active bundles")
     public ResponseEntity<ApiResponse<UsageResponseDto>> searchUsage(
+            CallerContext caller,
             @PathVariable
             @Pattern(regexp = "\\d{6,15}", message = "msisdn must be 6-15 digits")
             String msisdn) {
+        caller.requireOwnMsisdn(msisdn);
         return ResponseEntity.ok(ApiResponse.ok(usageInquiryService.searchUsage(msisdn)));
     }
 }

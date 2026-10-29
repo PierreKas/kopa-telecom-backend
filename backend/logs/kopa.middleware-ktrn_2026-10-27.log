@@ -1,0 +1,195 @@
+2026-10-27 21:33:00.999 [main] [none] INFO  com.kopa.middlewarektrn.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 286667 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn/target/kopa.middleware-ktrn-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn)
+2026-10-27 21:33:01.020 [main] [none] INFO  com.kopa.middlewarektrn.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-27 21:33:01.995 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-27 21:33:03.946 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-10-27 21:33:03.966 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2026-10-27 21:33:03.971 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-27 21:33:03.973 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-27 21:33:04.063 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2874 ms
+2026-10-27 21:33:05.184 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2026-10-27 21:33:05.238 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/kopa-middleware-ktrn'
+2026-10-27 21:33:05.266 [main] [none] INFO  com.kopa.middlewarektrn.Application - Started Application in 5.534 seconds (process running for 6.41)
+2026-10-27 21:33:05.275 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-27 21:33:05.279 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-27 21:52:38.178 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-27 21:52:40.453 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-27 21:53:05.416 [main] [none] INFO  com.kopa.middlewarektrn.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 295191 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn/target/kopa.middleware-ktrn-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn)
+2026-10-27 21:53:05.443 [main] [none] INFO  com.kopa.middlewarektrn.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-27 21:53:06.481 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-27 21:53:07.904 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-10-27 21:53:07.932 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2026-10-27 21:53:07.936 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-27 21:53:07.937 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-27 21:53:08.008 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2429 ms
+2026-10-27 21:53:09.221 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2026-10-27 21:53:09.276 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/kopa-middleware-ktrn'
+2026-10-27 21:53:09.309 [main] [none] INFO  com.kopa.middlewarektrn.Application - Started Application in 5.131 seconds (process running for 6.068)
+2026-10-27 21:53:09.328 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-27 21:53:09.329 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-27 21:55:32.040 [http-nio-8082-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-middleware-ktrn] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-27 21:55:32.056 [http-nio-8082-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-27 21:55:32.062 [http-nio-8082-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 4 ms
+2026-10-27 21:55:33.784 [http-nio-8082-exec-9] [31b69f97-08ef-447f-815a-7c81f4265bf4] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1087 ms
+2026-10-27 22:11:26.856 [http-nio-8082-exec-8] [523d96c9-6181-4ab1-853c-129db120b88d] ERROR c.k.m.common.GlobalExceptionHandler - KTRN gateway call failed
+com.kopa.middlewarektrn.gateway.KtrnGatewayException: Failed to reach KTRN gateway at http://localhost:7000/cloud/ktrn/bss
+	at com.kopa.middlewarektrn.gateway.KtrnApiClient.call(KtrnApiClient.java:70)
+	at com.kopa.middlewarektrn.gateway.KtrnApiClient.callGeneric(KtrnApiClient.java:48)
+	at com.kopa.middlewarektrn.registration.service.KtrnRegistrationServiceImpl.subscribeCustomer(KtrnRegistrationServiceImpl.java:51)
+	at com.kopa.middlewarektrn.registration.controller.KtrnRegistrationController.subscribeCustomer(KtrnRegistrationController.java:34)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.kopa.middlewarektrn.config.InternalApiKeyFilter.doFilter(InternalApiKeyFilter.java:54)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.kopa.middlewarektrn.config.CorrelationIdFilter.doFilter(CorrelationIdFilter.java:42)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.springframework.web.client.RestClientException: Error while extracting response for type [java.lang.String] and content type [application/octet-stream]
+	at org.springframework.web.client.DefaultRestClient.readWithMessageConverters(DefaultRestClient.java:274)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.readBody(DefaultRestClient.java:931)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.lambda$body$0(DefaultRestClient.java:833)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchangeInternal(DefaultRestClient.java:617)
+	at org.springframework.web.client.DefaultRestClient$DefaultRequestBodyUriSpec.exchange(DefaultRestClient.java:572)
+	at org.springframework.web.client.RestClient$RequestHeadersSpec.exchange(RestClient.java:747)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.executeAndExtract(DefaultRestClient.java:924)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.body(DefaultRestClient.java:833)
+	at com.kopa.middlewarektrn.gateway.KtrnApiClient.call(KtrnApiClient.java:68)
+	... 52 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:500)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:481)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:2134)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection$10.run(HttpURLConnection.java:2129)
+	at java.base/java.security.AccessController.doPrivileged(AccessController.java:569)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getChainedException(HttpURLConnection.java:2128)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1664)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1644)
+	at java.base/java.net.HttpURLConnection.getResponseCode(HttpURLConnection.java:529)
+	at org.springframework.http.client.SimpleClientHttpResponse.getStatusCode(SimpleClientHttpResponse.java:55)
+	at org.springframework.web.client.StatusHandler.lambda$createDefaultStatusHandler$0(StatusHandler.java:105)
+	at org.springframework.web.client.StatusHandler.test(StatusHandler.java:66)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.applyStatusHandlers(DefaultRestClient.java:942)
+	at org.springframework.web.client.DefaultRestClient$DefaultResponseSpec.lambda$readBody$0(DefaultRestClient.java:932)
+	at org.springframework.web.client.DefaultRestClient.readWithMessageConverters(DefaultRestClient.java:224)
+	... 60 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/java.io.BufferedInputStream.fill(BufferedInputStream.java:244)
+	at java.base/java.io.BufferedInputStream.read1(BufferedInputStream.java:284)
+	at java.base/java.io.BufferedInputStream.read(BufferedInputStream.java:343)
+	at java.base/sun.net.www.http.HttpClient.parseHTTPHeader(HttpClient.java:834)
+	at java.base/sun.net.www.http.HttpClient.parseHTTP(HttpClient.java:769)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream0(HttpURLConnection.java:1750)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getInputStream(HttpURLConnection.java:1644)
+	at java.base/sun.net.www.protocol.http.HttpURLConnection.getHeaderFieldKey(HttpURLConnection.java:3388)
+	at org.springframework.http.client.SimpleClientHttpResponse.getHeaders(SimpleClientHttpResponse.java:69)
+	at org.springframework.web.client.DefaultRestClient$DefaultConvertibleClientHttpResponse.getHeaders(DefaultRestClient.java:978)
+	at org.springframework.web.client.DefaultRestClient.getContentType(DefaultRestClient.java:279)
+	at org.springframework.web.client.DefaultRestClient.readWithMessageConverters(DefaultRestClient.java:221)
+	... 60 common frames omitted
+2026-10-27 22:21:02.654 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-27 22:21:02.667 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-27 22:21:48.375 [main] [none] INFO  com.kopa.middlewarektrn.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 305555 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn/target/kopa.middleware-ktrn-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn)
+2026-10-27 22:21:48.383 [main] [none] INFO  com.kopa.middlewarektrn.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-27 22:21:49.391 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-27 22:21:50.831 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-10-27 22:21:50.863 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2026-10-27 22:21:50.869 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-27 22:21:50.870 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-27 22:21:50.985 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2455 ms
+2026-10-27 22:21:52.169 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2026-10-27 22:21:52.207 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/kopa-middleware-ktrn'
+2026-10-27 22:21:52.228 [main] [none] INFO  com.kopa.middlewarektrn.Application - Started Application in 5.071 seconds (process running for 5.966)
+2026-10-27 22:21:52.236 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-27 22:21:52.239 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-27 22:24:00.796 [http-nio-8082-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-middleware-ktrn] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-27 22:24:00.798 [http-nio-8082-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-27 22:24:00.802 [http-nio-8082-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-10-27 22:45:39.994 [main] [none] INFO  com.kopa.middlewarektrn.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 313771 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn/target/kopa.middleware-ktrn-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn)
+2026-10-27 22:45:40.048 [main] [none] INFO  com.kopa.middlewarektrn.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-27 22:45:41.120 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-27 22:45:42.373 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-10-27 22:45:42.397 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2026-10-27 22:45:42.404 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-27 22:45:42.406 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-27 22:45:42.483 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2293 ms
+2026-10-27 22:45:43.706 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2026-10-27 22:45:43.753 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/kopa-middleware-ktrn'
+2026-10-27 22:45:43.775 [main] [none] INFO  com.kopa.middlewarektrn.Application - Started Application in 5.495 seconds (process running for 6.551)
+2026-10-27 22:45:43.782 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-27 22:45:43.782 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-27 22:47:11.408 [http-nio-8082-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-middleware-ktrn] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-27 22:47:11.409 [http-nio-8082-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-27 22:47:11.412 [http-nio-8082-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-10-27 22:47:11.792 [http-nio-8082-exec-1] [92f77a58-80d2-4bf6-9490-f955069646ea] INFO  c.k.m.gateway.KtrnApiClient - KTRN request -> http://localhost:7000/cloud/ktrn/bss: <?xml version='1.0' encoding='UTF-8' standalone='yes' ?><request><header><svcode>HP00005</svcode><opcode>HPOP313</opcode><CHCODE>A</CHCODE></header><body><PASSWORD>1198904041234572</PASSWORD><OPERATION_TYPE></OPERATION_TYPE></body></request>
+2026-10-27 22:47:15.240 [http-nio-8082-exec-1] [92f77a58-80d2-4bf6-9490-f955069646ea] INFO  c.k.m.gateway.KtrnApiClient - KTRN response <- http://localhost:7000/cloud/ktrn/bss: <?xml version="1.0" encoding="UTF-8" standalone="no"?><RESPONSE><HEADER><MESSAGE>It has been successfully processed.</MESSAGE><MSGCODE>1001</MSGCODE><CHCODE>A</CHCODE><OPCODE>HPOP313</OPCODE><SVCODE>HP00005</SVCODE></HEADER><BODY><RESULT>BJgkmgL%2BAs86rE69udMPojvxhnWPzxYzVE8nDiYtLEU%3D</RESULT></BODY></RESPONSE>
+2026-10-27 22:47:15.491 [http-nio-8082-exec-1] [92f77a58-80d2-4bf6-9490-f955069646ea] INFO  c.k.m.gateway.KtrnApiClient - KTRN request -> http://localhost:7000/cloud/ktrn/bss: <?xml version='1.0' encoding='UTF-8' standalone='yes' ?><request><header><svcode>HP00005</svcode><opcode>HPOP501</opcode><CHCODE>A</CHCODE></header><body><SO_ID>20</SO_ID><ORG_ID>3472</ORG_ID><CUST_TP>A</CUST_TP><CUST_NM>Pauline Kasoki</CUST_NM><CORP_REG_NO>BJgkmgL%2BAs86rE69udMPojvxhnWPzxYzVE8nDiYtLEU%3D</CORP_REG_NO><BIRTH_DAY>19890404</BIRTH_DAY><ADDR_DTL>KIGALI</ADDR_DTL></body></request>
+2026-10-27 22:47:15.972 [http-nio-8082-exec-1] [92f77a58-80d2-4bf6-9490-f955069646ea] INFO  c.k.m.gateway.KtrnApiClient - KTRN response <- http://localhost:7000/cloud/ktrn/bss: <?xml version="1.0" encoding="UTF-8" standalone="no"?><RESPONSE><HEADER><MESSAGE>The current customer already exists.</MESSAGE><MSGCODE>-4003</MSGCODE><CHCODE>A</CHCODE><OPCODE>HPOP501</OPCODE><SVCODE>HP00005</SVCODE></HEADER><BODY/></RESPONSE>
+2026-10-27 22:47:39.949 [http-nio-8082-exec-2] [eff27d78-a92d-4616-aca3-f64ae15f8244] INFO  c.k.m.gateway.KtrnApiClient - KTRN request -> http://localhost:7000/cloud/ktrn/bss: <?xml version='1.0' encoding='UTF-8' standalone='yes' ?><request><header><svcode>HP00005</svcode><opcode>HPOP313</opcode><CHCODE>A</CHCODE></header><body><PASSWORD>1198904041234572</PASSWORD><OPERATION_TYPE></OPERATION_TYPE></body></request>
+2026-10-27 22:47:40.092 [http-nio-8082-exec-2] [eff27d78-a92d-4616-aca3-f64ae15f8244] INFO  c.k.m.gateway.KtrnApiClient - KTRN response <- http://localhost:7000/cloud/ktrn/bss: <?xml version="1.0" encoding="UTF-8" standalone="no"?><RESPONSE><HEADER><MESSAGE>It has been successfully processed.</MESSAGE><MSGCODE>1001</MSGCODE><CHCODE>A</CHCODE><OPCODE>HPOP313</OPCODE><SVCODE>HP00005</SVCODE></HEADER><BODY><RESULT>BJgkmgL%2BAs86rE69udMPojvxhnWPzxYzVE8nDiYtLEU%3D</RESULT></BODY></RESPONSE>
+2026-10-27 22:47:40.093 [http-nio-8082-exec-2] [eff27d78-a92d-4616-aca3-f64ae15f8244] INFO  c.k.m.gateway.KtrnApiClient - KTRN request -> http://localhost:7000/cloud/ktrn/bss: <?xml version='1.0' encoding='UTF-8' standalone='yes' ?><request><header><svcode>HP00005</svcode><opcode>HPOP501</opcode><CHCODE>A</CHCODE></header><body><SO_ID>20</SO_ID><ORG_ID>3472</ORG_ID><CUST_TP>A</CUST_TP><CUST_NM>Pauline Kasoki</CUST_NM><CORP_REG_NO>BJgkmgL%2BAs86rE69udMPojvxhnWPzxYzVE8nDiYtLEU%3D</CORP_REG_NO><BIRTH_DAY>19890404</BIRTH_DAY><ADDR_DTL>KIGALI</ADDR_DTL></body></request>
+2026-10-27 22:47:40.407 [http-nio-8082-exec-2] [eff27d78-a92d-4616-aca3-f64ae15f8244] INFO  c.k.m.gateway.KtrnApiClient - KTRN response <- http://localhost:7000/cloud/ktrn/bss: <?xml version="1.0" encoding="UTF-8" standalone="no"?><RESPONSE><HEADER><MESSAGE>The current customer already exists.</MESSAGE><MSGCODE>-4003</MSGCODE><CHCODE>A</CHCODE><OPCODE>HPOP501</OPCODE><SVCODE>HP00005</SVCODE></HEADER><BODY/></RESPONSE>
+2026-10-27 22:50:27.262 [http-nio-8082-exec-4] [e4978336-e75d-487c-8b87-2ba21b320fe5] INFO  c.k.m.gateway.KtrnApiClient - KTRN request -> http://localhost:7000/cloud/ktrn/bss: <?xml version='1.0' encoding='UTF-8' standalone='yes' ?><request><header><svcode>HP00005</svcode><opcode>HPOP313</opcode><CHCODE>A</CHCODE></header><body><PASSWORD>1198904041234334</PASSWORD><OPERATION_TYPE></OPERATION_TYPE></body></request>
+2026-10-27 22:50:27.461 [http-nio-8082-exec-4] [e4978336-e75d-487c-8b87-2ba21b320fe5] INFO  c.k.m.gateway.KtrnApiClient - KTRN response <- http://localhost:7000/cloud/ktrn/bss: <?xml version="1.0" encoding="UTF-8" standalone="no"?><RESPONSE><HEADER><MESSAGE>It has been successfully processed.</MESSAGE><MSGCODE>1001</MSGCODE><CHCODE>A</CHCODE><OPCODE>HPOP313</OPCODE><SVCODE>HP00005</SVCODE></HEADER><BODY><RESULT>H2qRjvhF9HPkYJxIStTLORhB4C1%2Fph0Hb2QiujMeSnQ%3D</RESULT></BODY></RESPONSE>
+2026-10-27 22:50:27.467 [http-nio-8082-exec-4] [e4978336-e75d-487c-8b87-2ba21b320fe5] INFO  c.k.m.gateway.KtrnApiClient - KTRN request -> http://localhost:7000/cloud/ktrn/bss: <?xml version='1.0' encoding='UTF-8' standalone='yes' ?><request><header><svcode>HP00005</svcode><opcode>HPOP501</opcode><CHCODE>A</CHCODE></header><body><SO_ID>20</SO_ID><ORG_ID>3472</ORG_ID><CUST_TP>A</CUST_TP><CUST_NM>Jean Kulimushi</CUST_NM><CORP_REG_NO>H2qRjvhF9HPkYJxIStTLORhB4C1%2Fph0Hb2QiujMeSnQ%3D</CORP_REG_NO><BIRTH_DAY>20020504</BIRTH_DAY><ADDR_DTL>Huye</ADDR_DTL></body></request>
+2026-10-27 22:50:27.857 [http-nio-8082-exec-4] [e4978336-e75d-487c-8b87-2ba21b320fe5] INFO  c.k.m.gateway.KtrnApiClient - KTRN response <- http://localhost:7000/cloud/ktrn/bss: <?xml version="1.0" encoding="UTF-8" standalone="no"?><RESPONSE><HEADER><MESSAGE>The current customer already exists.</MESSAGE><MSGCODE>-4003</MSGCODE><CHCODE>A</CHCODE><OPCODE>HPOP501</OPCODE><SVCODE>HP00005</SVCODE></HEADER><BODY/></RESPONSE>
+2026-10-27 22:51:03.123 [http-nio-8082-exec-5] [24943a47-6025-4550-a306-2c0d8b0cc6a9] INFO  c.k.m.gateway.KtrnApiClient - KTRN request -> http://localhost:7000/cloud/ktrn/bss: <?xml version='1.0' encoding='UTF-8' standalone='yes' ?><request><header><svcode>HP00005</svcode><opcode>HPOP313</opcode><CHCODE>A</CHCODE></header><body><PASSWORD>1198904041234334</PASSWORD><OPERATION_TYPE></OPERATION_TYPE></body></request>
+2026-10-27 22:51:03.383 [http-nio-8082-exec-5] [24943a47-6025-4550-a306-2c0d8b0cc6a9] INFO  c.k.m.gateway.KtrnApiClient - KTRN response <- http://localhost:7000/cloud/ktrn/bss: <?xml version="1.0" encoding="UTF-8" standalone="no"?><RESPONSE><HEADER><MESSAGE>It has been successfully processed.</MESSAGE><MSGCODE>1001</MSGCODE><CHCODE>A</CHCODE><OPCODE>HPOP313</OPCODE><SVCODE>HP00005</SVCODE></HEADER><BODY><RESULT>H2qRjvhF9HPkYJxIStTLORhB4C1%2Fph0Hb2QiujMeSnQ%3D</RESULT></BODY></RESPONSE>
+2026-10-27 22:51:03.387 [http-nio-8082-exec-5] [24943a47-6025-4550-a306-2c0d8b0cc6a9] INFO  c.k.m.gateway.KtrnApiClient - KTRN request -> http://localhost:7000/cloud/ktrn/bss: <?xml version='1.0' encoding='UTF-8' standalone='yes' ?><request><header><svcode>HP00005</svcode><opcode>HPOP501</opcode><CHCODE>A</CHCODE></header><body><SO_ID>20</SO_ID><ORG_ID>3472</ORG_ID><CUST_TP>A</CUST_TP><CUST_NM>Jean Kulimushi</CUST_NM><CORP_REG_NO>H2qRjvhF9HPkYJxIStTLORhB4C1%2Fph0Hb2QiujMeSnQ%3D</CORP_REG_NO><BIRTH_DAY>20020504</BIRTH_DAY><ADDR_DTL>Huye</ADDR_DTL></body></request>
+2026-10-27 22:51:03.805 [http-nio-8082-exec-5] [24943a47-6025-4550-a306-2c0d8b0cc6a9] INFO  c.k.m.gateway.KtrnApiClient - KTRN response <- http://localhost:7000/cloud/ktrn/bss: <?xml version="1.0" encoding="UTF-8" standalone="no"?><RESPONSE><HEADER><MESSAGE>The current customer already exists.</MESSAGE><MSGCODE>-4003</MSGCODE><CHCODE>A</CHCODE><OPCODE>HPOP501</OPCODE><SVCODE>HP00005</SVCODE></HEADER><BODY/></RESPONSE>
+2026-10-27 23:03:03.959 [http-nio-8082-exec-7] [8b2f0994-e7b8-496f-a3df-72e4cd571c26] INFO  c.k.m.gateway.KtrnApiClient - KTRN request -> http://localhost:7000/cloud/ktrn/bss: <?xml version='1.0' encoding='UTF-8' standalone='yes' ?><request><header><svcode>HP00005</svcode><opcode>HPOP313</opcode><CHCODE>A</CHCODE></header><body><PASSWORD>1198904041234999</PASSWORD><OPERATION_TYPE></OPERATION_TYPE></body></request>
+2026-10-27 23:03:04.347 [http-nio-8082-exec-7] [8b2f0994-e7b8-496f-a3df-72e4cd571c26] INFO  c.k.m.gateway.KtrnApiClient - KTRN response <- http://localhost:7000/cloud/ktrn/bss: <?xml version="1.0" encoding="UTF-8" standalone="no"?><RESPONSE><HEADER><MESSAGE>It has been successfully processed.</MESSAGE><MSGCODE>1001</MSGCODE><CHCODE>A</CHCODE><OPCODE>HPOP313</OPCODE><SVCODE>HP00005</SVCODE></HEADER><BODY><RESULT>TXMiZn%2FCSFr4MaI8jqgbmFar20g4E5Rn12gO%2BBBzHIw%3D</RESULT></BODY></RESPONSE>
+2026-10-27 23:03:04.351 [http-nio-8082-exec-7] [8b2f0994-e7b8-496f-a3df-72e4cd571c26] INFO  c.k.m.gateway.KtrnApiClient - KTRN request -> http://localhost:7000/cloud/ktrn/bss: <?xml version='1.0' encoding='UTF-8' standalone='yes' ?><request><header><svcode>HP00005</svcode><opcode>HPOP501</opcode><CHCODE>A</CHCODE></header><body><SO_ID>20</SO_ID><ORG_ID>3472</ORG_ID><CUST_TP>A</CUST_TP><CUST_NM>Jean Kulimushi</CUST_NM><CORP_REG_NO>TXMiZn%2FCSFr4MaI8jqgbmFar20g4E5Rn12gO%2BBBzHIw%3D</CORP_REG_NO><BIRTH_DAY>20020504</BIRTH_DAY><ADDR_DTL>Huye</ADDR_DTL></body></request>
+2026-10-27 23:03:04.779 [http-nio-8082-exec-7] [8b2f0994-e7b8-496f-a3df-72e4cd571c26] INFO  c.k.m.gateway.KtrnApiClient - KTRN response <- http://localhost:7000/cloud/ktrn/bss: <?xml version="1.0" encoding="UTF-8" standalone="no"?><RESPONSE><HEADER><MESSAGE>The current customer already exists.</MESSAGE><MSGCODE>-4003</MSGCODE><CHCODE>A</CHCODE><OPCODE>HPOP501</OPCODE><SVCODE>HP00005</SVCODE></HEADER><BODY/></RESPONSE>
+2026-10-27 23:04:26.175 [http-nio-8082-exec-8] [4a97cc94-db5c-433d-8bd6-ef4cc332e07b] INFO  c.k.m.gateway.KtrnApiClient - KTRN request -> http://localhost:7000/cloud/ktrn/bss: <?xml version='1.0' encoding='UTF-8' standalone='yes' ?><request><header><svcode>HP00005</svcode><opcode>HPOP313</opcode><CHCODE>A</CHCODE></header><body><PASSWORD>1198904041234999</PASSWORD><OPERATION_TYPE></OPERATION_TYPE></body></request>
+2026-10-27 23:04:26.445 [http-nio-8082-exec-8] [4a97cc94-db5c-433d-8bd6-ef4cc332e07b] INFO  c.k.m.gateway.KtrnApiClient - KTRN response <- http://localhost:7000/cloud/ktrn/bss: <?xml version="1.0" encoding="UTF-8" standalone="no"?><RESPONSE><HEADER><MESSAGE>It has been successfully processed.</MESSAGE><MSGCODE>1001</MSGCODE><CHCODE>A</CHCODE><OPCODE>HPOP313</OPCODE><SVCODE>HP00005</SVCODE></HEADER><BODY><RESULT>TXMiZn%2FCSFr4MaI8jqgbmFar20g4E5Rn12gO%2BBBzHIw%3D</RESULT></BODY></RESPONSE>
+2026-10-27 23:04:26.446 [http-nio-8082-exec-8] [4a97cc94-db5c-433d-8bd6-ef4cc332e07b] INFO  c.k.m.gateway.KtrnApiClient - KTRN request -> http://localhost:7000/cloud/ktrn/bss: <?xml version='1.0' encoding='UTF-8' standalone='yes' ?><request><header><svcode>HP00005</svcode><opcode>HPOP501</opcode><CHCODE>A</CHCODE></header><body><SO_ID>20</SO_ID><ORG_ID>3472</ORG_ID><CUST_TP>A</CUST_TP><CUST_NM>Jean Kulimushi</CUST_NM><CORP_REG_NO>TXMiZn%2FCSFr4MaI8jqgbmFar20g4E5Rn12gO%2BBBzHIw%3D</CORP_REG_NO><BIRTH_DAY>20020504</BIRTH_DAY><ADDR_DTL>Huye</ADDR_DTL></body></request>
+2026-10-27 23:04:26.870 [http-nio-8082-exec-8] [4a97cc94-db5c-433d-8bd6-ef4cc332e07b] INFO  c.k.m.gateway.KtrnApiClient - KTRN response <- http://localhost:7000/cloud/ktrn/bss: <?xml version="1.0" encoding="UTF-8" standalone="no"?><RESPONSE><HEADER><MESSAGE>The current customer already exists.</MESSAGE><MSGCODE>-4003</MSGCODE><CHCODE>A</CHCODE><OPCODE>HPOP501</OPCODE><SVCODE>HP00005</SVCODE></HEADER><BODY/></RESPONSE>

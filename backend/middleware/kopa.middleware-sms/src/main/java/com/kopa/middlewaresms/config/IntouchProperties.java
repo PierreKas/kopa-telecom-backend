@@ -20,6 +20,9 @@ public class IntouchProperties {
     private String username;
     private String password;
     private String defaultSender;
-    private int connectTimeoutMs = 5000;
-    private int readTimeoutMs = 8000;
+    private int connectTimeoutMs = 10000;
+    // 2026-10-28: a send that took ~8.0s hit the old 8000ms limit; bumped to 20000ms, then a LATER
+    // send took ~20.0s and hit that too - InTouch's real-world latency is more variable than first
+    // assumed. Bumped again with more real margin.
+    private int readTimeoutMs = 35000;
 }

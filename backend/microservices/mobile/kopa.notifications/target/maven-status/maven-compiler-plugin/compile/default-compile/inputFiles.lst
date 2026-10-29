@@ -5,6 +5,7 @@
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.notifications/src/main/java/com/kopa/notifications/config/CorrelationIdFilter.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.notifications/src/main/java/com/kopa/notifications/config/CorrelationIdRequestInterceptor.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.notifications/src/main/java/com/kopa/notifications/config/DatabaseProperties.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.notifications/src/main/java/com/kopa/notifications/config/DevSmsProperties.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.notifications/src/main/java/com/kopa/notifications/config/InternalApiKeyFilter.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.notifications/src/main/java/com/kopa/notifications/config/InternalApiKeyProperties.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.notifications/src/main/java/com/kopa/notifications/config/MessagingProperties.java

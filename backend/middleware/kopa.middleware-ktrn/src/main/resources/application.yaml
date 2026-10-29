@@ -22,8 +22,13 @@ ktrn:
   external-base-url: ${kopa.ktrn.external-base-url}
   isp-cd: ${kopa.ktrn.isp-cd}
   default-chcode: A
-  connect-timeout-ms: 5000
-  read-timeout-ms: 8000
+  # 2026-10-28: these two explicit values were silently overriding KtrnProperties' Java defaults
+  # on every startup, no matter how high that class's defaults were bumped - this file is the
+  # actual source of truth read by Spring, not the class. Several real calls through the dev SSH
+  # tunnel were timing out at exactly the old 8000ms (e.g. a live HPOP501/HPOP313 call during
+  # registration testing) because of this, misleadingly suggesting the tunnel/gateway was slow.
+  connect-timeout-ms: 10000
+  read-timeout-ms: 25000
 
 internal:
   api-key: ${kopa.internal.middleware-ktrn-api-key}

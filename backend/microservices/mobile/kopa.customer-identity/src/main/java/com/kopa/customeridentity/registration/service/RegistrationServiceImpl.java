@@ -150,17 +150,25 @@ public class RegistrationServiceImpl implements RegistrationService {
             // sending it at all (any value, including the real TRUPOC credential) fails with a
             // generic -4003 "Error occured when querying.", while omitting it entirely succeeds.
             // This is the opposite of HPOP302 below, where LOGIN_ID is required.
+            //
+            // PHONE_NUM is also omitted (passed as null, not request.msisdn()) - it was never
+            // part of any of the live-confirmed working HPOP501 payloads (only SO_ID, ORG_ID,
+            // CUST_TP, CUST_NM, CORP_REG_NO, BIRTH_DAY, ADDR_DTL were proven live 2026-10-27).
+            // Sending it caused a "no CUST_ID returned" rejection - unconfirmed, leave it out
+            // until/unless KTRN confirms it's a valid HPOP501 field.
             SubscribeCustomerResponse subscribeResponse = middlewareClient.subscribeCustomer(new SubscribeCustomerRequest(
                     businessProperties.getSoId(), null, businessProperties.getOrgId(),
                     request.custType(), request.fullName(), request.corpRegNo(), request.bizRegNo(),
-                    request.birthDay(), request.email(), request.msisdn(), request.addressDetail()));
+                    request.birthDay(), request.email(), null, request.addressDetail()));
 
             custId = subscribeResponse.custId();
             if (custId == null || custId.isBlank()) {
                 // KTRN omits body fields entirely on a business error rather than sending them
-                // empty - a missing CUST_ID here means subscribe-customer didn't succeed.
-                throw new BadRequestException("KTRN did not accept the subscription (no CUST_ID returned) - "
-                        + "check custType/corpRegNo/bizRegNo requirements.");
+                // empty - a missing CUST_ID here means subscribe-customer didn't succeed. Surface
+                // KTRN's actual msgcode/message rather than a generic guess - see
+                // SubscribeCustomerResponse's passthrough fields.
+                throw new BadRequestException("KTRN did not accept the subscription (no CUST_ID returned): "
+                        + "msgcode=" + subscribeResponse.msgcode() + ", message=" + subscribeResponse.message());
             }
         } catch (BadRequestException | ServiceUnavailableException ex) {
             failActivation(activation, ex instanceof ServiceUnavailableException ? "MIDDLEWARE" : "KTRN_BUSINESS", ex.getMessage());

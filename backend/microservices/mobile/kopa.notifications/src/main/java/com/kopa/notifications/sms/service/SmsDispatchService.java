@@ -1,11 +1,14 @@
 package com.kopa.notifications.sms.service;
 
+import com.kopa.notifications.config.DevSmsProperties;
 import com.kopa.notifications.sms.client.MiddlewareSmsClient;
 import com.kopa.notifications.sms.client.MiddlewareSmsResult;
 import com.kopa.notifications.sms.model.SmsMessage;
 import com.kopa.notifications.sms.model.SmsMessageStatus;
 import com.kopa.notifications.sms.model.SmsPurpose;
 import com.kopa.notifications.sms.repository.SmsMessageRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -20,12 +23,17 @@ import java.util.UUID;
 @Service
 public class SmsDispatchService {
 
+    private static final Logger logger = LoggerFactory.getLogger(SmsDispatchService.class);
+
     private final MiddlewareSmsClient middlewareSmsClient;
     private final SmsMessageRepository smsMessageRepository;
+    private final DevSmsProperties devSmsProperties;
 
-    public SmsDispatchService(MiddlewareSmsClient middlewareSmsClient, SmsMessageRepository smsMessageRepository) {
+    public SmsDispatchService(MiddlewareSmsClient middlewareSmsClient, SmsMessageRepository smsMessageRepository,
+                               DevSmsProperties devSmsProperties) {
         this.middlewareSmsClient = middlewareSmsClient;
         this.smsMessageRepository = smsMessageRepository;
+        this.devSmsProperties = devSmsProperties;
     }
 
     public SmsMessage dispatch(String msisdn, SmsPurpose purpose, String templateCode, String renderedMessage,
@@ -44,7 +52,15 @@ public class SmsDispatchService {
         record.setCreatedAt(now);
         record.setUpdatedAt(now);
 
-        MiddlewareSmsResult result = middlewareSmsClient.send(msisdn, renderedMessage, null);
+        // TEMPORARY dev override (see DevSmsProperties) - sms_messages still records the TRUE
+        // intended recipient above; only the number actually dialled is redirected.
+        String dialledMsisdn = msisdn;
+        if (devSmsProperties.getDevRecipientOverride() != null && !devSmsProperties.getDevRecipientOverride().isBlank()) {
+            dialledMsisdn = devSmsProperties.getDevRecipientOverride();
+            logger.info("Dev SMS override active: redirecting SMS intended for {} to {}", msisdn, dialledMsisdn);
+        }
+
+        MiddlewareSmsResult result = middlewareSmsClient.send(dialledMsisdn, renderedMessage, null);
 
         if (result.success()) {
             record.setStatus(SmsMessageStatus.SENT);

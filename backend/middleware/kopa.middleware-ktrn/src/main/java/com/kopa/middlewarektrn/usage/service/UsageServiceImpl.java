@@ -48,7 +48,11 @@ public class UsageServiceImpl implements UsageService {
                         field(fields, 3), field(fields, 4), field(fields, 5)
                 ));
 
-        return new UsageSearchResponse(items);
+        return new UsageSearchResponse(
+                response.getHeader() != null ? response.getHeader().getMsgcode() : null,
+                response.getHeader() != null ? response.getHeader().getMessage() : null,
+                items
+        );
     }
 
     private static String field(String[] fields, int index) {

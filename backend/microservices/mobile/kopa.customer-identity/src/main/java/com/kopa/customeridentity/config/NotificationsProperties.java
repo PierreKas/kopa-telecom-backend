@@ -13,6 +13,9 @@ public class NotificationsProperties {
 
     private String baseUrl;
     private String apiKey;
-    private int connectTimeoutMs = 3000;
-    private int readTimeoutMs = 5000;
+    private int connectTimeoutMs = 8000;
+    // 2026-10-28: same fix as kopa.notifications' own MiddlewareSmsProperties, bumped again same
+    // day after InTouch's latency proved higher than first assumed - this service blocks on
+    // kopa.notifications' full round trip (now 40000ms), so this must stay above that.
+    private int readTimeoutMs = 45000;
 }

@@ -46,9 +46,13 @@ public class BundleServiceImpl implements BundleService {
         KtrnGenericXmlResponse response = apiClient.callGeneric(apiRequest);
 
         var items = KtrnListFieldParser.parseRecords(response.bodyValue("PROD_LIST"), fields ->
-                new BundleItem(field(fields, 0), field(fields, 1), field(fields, 2)));
+                new BundleItem(stripSoPrefix(field(fields, 0)), field(fields, 1), field(fields, 2)));
 
-        return new BundleListResponse(items);
+        return new BundleListResponse(
+                response.getHeader() != null ? response.getHeader().getMsgcode() : null,
+                response.getHeader() != null ? response.getHeader().getMessage() : null,
+                items
+        );
     }
 
     @Override
@@ -79,7 +83,11 @@ public class BundleServiceImpl implements BundleService {
                         + "<REQ_SYS_ID>01</REQ_SYS_ID>");
 
         KtrnGenericXmlResponse response = apiClient.callGeneric(apiRequest);
-        return new BundlePurchaseCheckResponse(response.bodyValue("RESULT"));
+        return new BundlePurchaseCheckResponse(
+                response.bodyValue("RESULT"),
+                response.getHeader() != null ? response.getHeader().getMsgcode() : null,
+                response.getHeader() != null ? response.getHeader().getMessage() : null
+        );
     }
 
     @Override
@@ -89,7 +97,11 @@ public class BundleServiceImpl implements BundleService {
                         + "<PROD_CD>" + request.productCode() + "</PROD_CD>");
 
         KtrnGenericXmlResponse response = apiClient.callGeneric(apiRequest);
-        return new EWalletCheckResponse("Y".equalsIgnoreCase(response.bodyValue("RESULT")));
+        return new EWalletCheckResponse(
+                "Y".equalsIgnoreCase(response.bodyValue("RESULT")),
+                response.getHeader() != null ? response.getHeader().getMsgcode() : null,
+                response.getHeader() != null ? response.getHeader().getMessage() : null
+        );
     }
 
     private static String wrap(String svccode, String opcode, String bodyXml) {
@@ -110,5 +122,24 @@ public class BundleServiceImpl implements BundleService {
 
     private static String blankToNull(String value) {
         return (value == null || value.isBlank()) ? null : value;
+    }
+
+    /**
+     * 2026-10-29 live-confirmed: this KTRN environment's HPOP102 PROD_LIST entries come back
+     * prefixed with a leading "<number>-" (e.g. "572-PD00067100") that neither the RBSS-CCBS doc's
+     * worked example for this same field ("PD00045904", bare) nor PROD_CD's documented STRING(10)
+     * format account for - the prefixed value is 14 chars. Passing it through unchanged to
+     * HPOP403 (purchase-check) got back MSGCODE -7002 "Data is not found.." even for a MSISDN/
+     * product pair that HPOP102 itself had just listed as available; HPOP402 (ewallet-check, which
+     * never takes a MSISDN) returned RESULT Y for the same prefixed code regardless, so it isn't a
+     * useful signal here. Stripping back to the bare PD-code is what the subscriber-specific
+     * purchase-check/purchase calls actually expect.
+     */
+    private static String stripSoPrefix(String productCode) {
+        if (productCode == null) {
+            return null;
+        }
+        int dash = productCode.indexOf('-');
+        return dash >= 0 ? productCode.substring(dash + 1) : productCode;
     }
 }

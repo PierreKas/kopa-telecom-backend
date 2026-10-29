@@ -8,6 +8,7 @@ public record ProfileResponse(
         String addressDetail,
         String custType,
         String birthDay,
-        String status
+        String status,
+        String nationalId
 ) {
 }

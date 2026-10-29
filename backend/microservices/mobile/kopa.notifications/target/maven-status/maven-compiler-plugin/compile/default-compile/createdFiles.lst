@@ -27,6 +27,7 @@ com/kopa/notifications/otp/dto/OtpPurpose.class
 com/kopa/notifications/sms/client/MiddlewareSmsClient.class
 com/kopa/notifications/config/AppConfig.class
 com/kopa/notifications/events/CustomerActivatedEvent.class
+com/kopa/notifications/config/DevSmsProperties.class
 com/kopa/notifications/config/CorrelationIdRequestInterceptor.class
 com/kopa/notifications/otp/service/OtpRateLimitService.class
 com/kopa/notifications/Application.class

@@ -7,6 +7,8 @@ import com.kopa.customerselfcare.transaction.client.OtpSendResponse;
 import com.kopa.customerselfcare.transaction.model.Transaction;
 import com.kopa.customerselfcare.transaction.model.TransactionStatus;
 import com.kopa.customerselfcare.transaction.repository.TransactionRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +21,8 @@ import java.time.temporal.ChronoUnit;
  *  transaction row itself (see V1_6__transaction_otp_fields.sql). */
 @Service
 public class TransactionOtpService {
+
+    private static final Logger logger = LoggerFactory.getLogger(TransactionOtpService.class);
 
     private static final int OTP_LENGTH = 6;
     private static final int OTP_TTL_MINUTES = 5;
@@ -43,6 +47,10 @@ public class TransactionOtpService {
         transaction.setOtpExpiresAt(now.plus(OTP_TTL_MINUTES, ChronoUnit.MINUTES));
         transaction.setOtpAttemptCount(0);
         transactions.save(transaction);
+
+        // Only the BCrypt hash is persisted above - the plaintext code itself must never be
+        // logged. The customer is the only one who should ever see it, via SMS.
+        logger.info("Transaction OTP requested for {} (txn {})", transaction.getMsisdn(), transaction.getId());
 
         OtpSendResponse response = notificationsClient.sendOtp(new OtpSendRequest(
                 transaction.getMsisdn(), code, "TRANSACTION_AUTH", transaction.getCorrelationId(), "customer-self-care"));

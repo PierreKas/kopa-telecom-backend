@@ -14,6 +14,9 @@ public class MiddlewareProperties {
 
     private String baseUrl;
     private String apiKey;
-    private int connectTimeoutMs = 3000;
-    private int readTimeoutMs = 8000;
+    private int connectTimeoutMs = 8000;
+    // 2026-10-28: same undersized-default bug already fixed in kopa.customer-identity's copy of
+    // this class - this service blocks on middleware-ktrn's full round trip (which budgets
+    // 20000ms for its own KTRN gateway call), so this must stay comfortably above that.
+    private int readTimeoutMs = 25000;
 }

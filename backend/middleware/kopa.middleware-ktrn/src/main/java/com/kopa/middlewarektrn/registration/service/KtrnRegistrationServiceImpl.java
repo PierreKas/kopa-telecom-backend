@@ -56,7 +56,9 @@ public class KtrnRegistrationServiceImpl implements KtrnRegistrationService {
                 response.bodyValue("BIRTH_DAY"),
                 response.bodyValue("ADDR_DTL"),
                 response.bodyValue("EMAIL"),
-                response.bodyValue("PHONE_NUM")
+                response.bodyValue("PHONE_NUM"),
+                response.getHeader() != null ? response.getHeader().getMsgcode() : null,
+                response.getHeader() != null ? response.getHeader().getMessage() : null
         );
     }
 

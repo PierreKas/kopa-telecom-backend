@@ -12,14 +12,16 @@ kopa:
   # wire format: form-urlencoded REQ_XML=<xml> parameter (the doc's original format - see
   # KtrnApiClient javadoc). external-base-url (NIDA/RRA/DGIE) is still the doc's own placeholder,
   # untested.
-  # isp-cd: doc's placeholder "62" came back "-4003 Non-unique ISP for the given parameter" live.
-  # "1" came back "-4003 The subscriber does not exist or is not active" instead - i.e. "1" was
-  # accepted as a valid/unique ISP_CD and the gateway moved on to looking up the (test) MSISDN.
-  # Strong signal "1" is the real value, but NOT yet confirmed by Kopa - ask them to confirm.
+  # isp-cd: doc's placeholder "62" came back "-4003 Non-unique ISP for the given parameter" live,
+  # same error "1" now returns against a real activated MSISDN under SO_ID=20 (2026-10-28) - "1"
+  # was only an accident of the OLD test subscribers belonging to a different, unconfirmed SO_ID.
+  # The doc treats SO_ID/ISP_CD as the same retailer/org concept under two names in different
+  # schema tables (see BundleServiceImpl.purchase() comment), and SO_ID=20 is now live-confirmed
+  # (full HPOP313->HPOP501->HPOP302 round trip, real activations) - using that value here too.
   ktrn:
     base-url: http://192.168.21.7:8086/cloud/ktrn/bss
     external-base-url: http://www.4glte.rw/voucher/api/external_access.jsp
-    isp-cd: "1"
+    isp-cd: "20"
 
   # Kopa's own KTRN-assigned identifiers - every onboarding call needs them, not user input.
   # Confirmed live 2026-10-27 via a full HPOP313->HPOP501->HPOP302 round trip (encrypt CORP_REG_NO,
@@ -51,6 +53,13 @@ kopa:
     intouch-username: kopa.telecom
     intouch-password: kopa.telecom
     default-sender: KOPATELECOM
+    # TEMPORARY dev-only override, added 2026-10-28: KTRN's test MSISDNs (e.g. 0771210702) are
+    # sandbox lines nobody holds a physical phone for, so OTP/transactional SMS sent to them can
+    # never actually be read by anyone testing the flow. Every outbound SMS's real recipient is
+    # redirected to this number instead - set it blank/remove it before production, at which point
+    # SMS goes back to the real customer MSISDN. The true intended recipient is still recorded in
+    # sms_messages (see SmsDispatchService) for audit; only the number actually dialled changes.
+    dev-recipient-override: "0790929575"
 
   # X-Internal-Api-Key secrets for /internal/v1/** - one per TARGET service, not one shared value
   # everywhere (2026-10-20 hardening pass: a single shared key meant any caller that learned it
@@ -64,6 +73,11 @@ kopa:
     middleware-ktrn-api-key: dd0946488939a268e0cebc1d318e69ef2dcb83bef07a2786
     middleware-sms-api-key: bf79380a1183f828f1674c9e258fd6312ba632dbae557a78
     notifications-api-key: bca003ebff13dc842dc9cb5410196c30a399414a90a23786
+    # Guards kopa.admin-portal's one-time bootstrap endpoint (POST /api/v1/admin/auth/bootstrap) -
+    # not called by another service like the three above, but by whoever provisions the first
+    # admin account. The endpoint also refuses to run a second time once any admin_users row
+    # exists, so this key alone isn't the only thing stopping a repeat call.
+    admin-portal-api-key: 4b38a3f34207efd1d5814b1fce2a32ffd37ddfaaa676dee4
 
   # Browser origins allowed to call the Mobile-side APIs (CORS).
   web:

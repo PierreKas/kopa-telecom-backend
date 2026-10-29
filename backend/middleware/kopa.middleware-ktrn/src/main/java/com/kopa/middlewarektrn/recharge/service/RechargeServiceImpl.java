@@ -9,6 +9,9 @@ import com.kopa.middlewarektrn.recharge.dto.RechargeResponse;
 import com.kopa.middlewarektrn.recharge.dto.RechargeVoucherRequest;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+
 @Service
 public class RechargeServiceImpl implements RechargeService {
 
@@ -44,7 +47,7 @@ public class RechargeServiceImpl implements RechargeService {
                         + "<RCHRG_TP>" + RCHRG_TP_DATA + "</RCHRG_TP>"
                         + "<RCHRG_STAT>" + RCHRG_STAT_RECHARGE + "</RCHRG_STAT>"
                         + "<RCHRG_APPR_NO>" + request.approvalNo() + "</RCHRG_APPR_NO>"
-                        + "<RCHRG_AMT>" + request.amount() + "</RCHRG_AMT>",
+                        + "<RCHRG_AMT>" + toWholeAmount(request.amount()) + "</RCHRG_AMT>",
                 OPCODE_RECHARGE);
 
         return toResponse(apiClient.callGeneric(apiRequest));
@@ -62,7 +65,7 @@ public class RechargeServiceImpl implements RechargeService {
                         + "<RCHRG_TP>" + RCHRG_TP_DATA + "</RCHRG_TP>"
                         + "<RCHRG_STAT>" + RCHRG_STAT_CANCEL + "</RCHRG_STAT>"
                         + "<RCHRG_APPR_NO>" + request.approvalNo() + "</RCHRG_APPR_NO>"
-                        + "<CNL_AMT>" + request.cancelAmount() + "</CNL_AMT>",
+                        + "<CNL_AMT>" + toWholeAmount(request.cancelAmount()) + "</CNL_AMT>",
                 OPCODE_CANCEL);
 
         return toResponse(apiClient.callGeneric(apiRequest));
@@ -101,6 +104,17 @@ public class RechargeServiceImpl implements RechargeService {
                 header != null ? header.getMsgcode() : null,
                 header != null ? header.getMessage() : null
         );
+    }
+
+    /**
+     * Live-confirmed 2026-10-28: KTRN's own HPOP001 handler fails to parse a decimal RCHRG_AMT -
+     * sending "500.00" got back {@code -4003 "For input string: \"500.00\""}, a raw Java
+     * NumberFormatException message leaking out of KTRN's own server, not a business rejection.
+     * RWF has no subdivision in practice, so amounts are normalized to a plain whole number
+     * (half-up rounding, though real inputs should already be whole) before going on the wire.
+     */
+    private static String toWholeAmount(String amount) {
+        return new BigDecimal(amount).setScale(0, RoundingMode.HALF_UP).toPlainString();
     }
 
     private String resolveIspCd(String requestIspCd) {

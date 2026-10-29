@@ -1,5 +1,6 @@
 package com.kopa.customerselfcare.transaction.controller;
 
+import com.kopa.customerselfcare.auth.dto.CallerContext;
 import com.kopa.customerselfcare.common.dto.ApiResponse;
 import com.kopa.customerselfcare.transaction.dto.TransactionOtpVerifyRequest;
 import com.kopa.customerselfcare.transaction.dto.TransactionOtpVerifyResponse;
@@ -20,7 +21,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/api/v1/transactions")
 @Validated
 @Tag(name = "Transaction OTP", description = "FR-04 - completes an OTP-gated recharge/bundle "
-        + "purchase. Client (mobile app) facing only.")
+        + "purchase. Client (mobile app) facing only, authenticated.")
 public class TransactionOtpController {
 
     private final TransactionOtpVerifyService verifyService;
@@ -32,11 +33,13 @@ public class TransactionOtpController {
     @PostMapping("/{msisdn}/{transactionId}/otp/verify")
     @Operation(summary = "Verify the OTP and complete the transaction")
     public ResponseEntity<ApiResponse<TransactionOtpVerifyResponse>> verify(
+            CallerContext caller,
             @PathVariable
             @Pattern(regexp = "\\d{6,15}", message = "msisdn must be 6-15 digits")
             String msisdn,
             @PathVariable String transactionId,
             @Valid @RequestBody TransactionOtpVerifyRequest request) {
+        caller.requireOwnMsisdn(msisdn);
         return ResponseEntity.ok(ApiResponse.ok(
                 verifyService.verifyAndComplete(msisdn, transactionId, request.code())));
     }

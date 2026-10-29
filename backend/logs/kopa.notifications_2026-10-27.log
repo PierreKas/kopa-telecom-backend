@@ -1,0 +1,42 @@
+2026-10-27 23:46:56.895 [main] [none] INFO  com.kopa.notifications.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 334949 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.notifications/target/kopa.notifications-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.notifications)
+2026-10-27 23:46:56.908 [main] [none] INFO  com.kopa.notifications.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-27 23:46:57.730 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-27 23:46:58.568 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-27 23:46:58.668 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 77 ms. Found 3 JPA repository interfaces.
+2026-10-27 23:46:59.557 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8084 (http)
+2026-10-27 23:46:59.576 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8084"]
+2026-10-27 23:46:59.581 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-27 23:46:59.582 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-27 23:46:59.635 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2609 ms
+2026-10-27 23:47:00.661 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-10-27 23:47:00.800 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 5 migrations (execution time 00:00.050s)
+2026-10-27 23:47:00.896 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "notifications": 1.4
+2026-10-27 23:47:00.901 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Schema "notifications" is up to date. No migration necessary.
+2026-10-27 23:47:01.068 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-27 23:47:01.225 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-27 23:47:02.086 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-27 23:47:02.290 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-27 23:47:04.003 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-27 23:47:04.016 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-27 23:47:04.209 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-27 23:47:06.030 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8084"]
+2026-10-27 23:47:06.071 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8084 (http) with context path '/kopa-notifications'
+2026-10-27 23:47:06.088 [main] [none] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2026-10-27 23:47:06.429 [main] [none] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#943d0c2:0/SimpleConnection@1cc9b564 [delegate=amqp://guest@127.0.0.1:5672/, localPort=33436]
+2026-10-27 23:47:06.672 [main] [none] INFO  com.kopa.notifications.Application - Started Application in 10.757 seconds (process running for 11.733)
+2026-10-27 23:47:06.679 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-27 23:47:06.680 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-27 23:51:27.338 [http-nio-8084-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-notifications] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-27 23:51:27.351 [http-nio-8084-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-27 23:51:27.354 [http-nio-8084-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms

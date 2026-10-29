@@ -1,0 +1,841 @@
+2026-10-28 01:03:21.551 [main] [none] INFO  c.kopa.customerselfcare.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 366692 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/kopa.customer-self-care-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care)
+2026-10-28 01:03:21.564 [main] [none] INFO  c.kopa.customerselfcare.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-28 01:03:22.819 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-28 01:03:24.406 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-28 01:03:24.605 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 156 ms. Found 5 JPA repository interfaces.
+2026-10-28 01:03:25.980 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-28 01:03:26.012 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-28 01:03:26.017 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-28 01:03:26.018 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-28 01:03:26.104 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 4263 ms
+2026-10-28 01:03:27.431 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-10-28 01:03:27.616 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 8 migrations (execution time 00:00.086s)
+2026-10-28 01:03:27.749 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_self_care": 1.7
+2026-10-28 01:03:27.757 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Schema "customer_self_care" is up to date. No migration necessary.
+2026-10-28 01:03:28.003 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-28 01:03:28.158 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-28 01:03:29.369 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-28 01:03:29.707 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-28 01:03:31.978 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-28 01:03:31.997 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 01:03:32.258 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-28 01:03:36.444 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-28 01:03:36.486 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/kopa-customer-self-care'
+2026-10-28 01:03:36.515 [main] [none] INFO  c.kopa.customerselfcare.Application - Started Application in 16.479 seconds (process running for 17.806)
+2026-10-28 01:03:36.523 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-28 01:03:36.524 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-28 01:05:39.068 [http-nio-8081-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-customer-self-care] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-28 01:05:39.071 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-28 01:05:39.076 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 5 ms
+2026-10-28 01:17:56.037 [http-nio-8081-exec-1] [27ba13ca-d281-4569-b658-26b5382fc283] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2026-10-28 01:17:56.256 [http-nio-8081-exec-1] [27ba13ca-d281-4569-b658-26b5382fc283] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#31fd8e6f:0/SimpleConnection@41156ce0 [delegate=amqp://guest@127.0.0.1:5672/, localPort=44340]
+2026-10-28 01:30:23.811 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-28 01:30:23.828 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-28 01:30:23.946 [SpringApplicationShutdownHook] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 01:31:14.595 [main] [none] INFO  c.kopa.customerselfcare.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 386348 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/kopa.customer-self-care-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care)
+2026-10-28 01:31:14.605 [main] [none] INFO  c.kopa.customerselfcare.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-28 01:31:15.620 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-28 01:31:17.216 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-28 01:31:17.392 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 145 ms. Found 5 JPA repository interfaces.
+2026-10-28 01:31:19.031 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-28 01:31:19.067 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-28 01:31:19.071 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-28 01:31:19.073 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-28 01:31:19.227 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 4464 ms
+2026-10-28 01:31:20.882 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-10-28 01:31:21.077 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 8 migrations (execution time 00:00.073s)
+2026-10-28 01:31:21.219 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_self_care": 1.7
+2026-10-28 01:31:21.230 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Schema "customer_self_care" is up to date. No migration necessary.
+2026-10-28 01:31:21.464 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-28 01:31:21.600 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-28 01:31:22.685 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-28 01:31:22.893 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-28 01:31:24.299 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-28 01:31:24.318 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 01:31:24.558 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-28 01:31:27.726 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-28 01:31:27.769 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/kopa-customer-self-care'
+2026-10-28 01:31:27.791 [main] [none] INFO  c.kopa.customerselfcare.Application - Started Application in 14.531 seconds (process running for 15.626)
+2026-10-28 01:31:27.799 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-28 01:31:27.801 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-28 01:32:15.064 [http-nio-8081-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-customer-self-care] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-28 01:32:15.064 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-28 01:32:15.067 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-10-28 01:38:40.379 [http-nio-8081-exec-7] [253d894d-23fd-49e7-b72c-4f04461e7a39] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2026-10-28 01:38:40.499 [http-nio-8081-exec-7] [253d894d-23fd-49e7-b72c-4f04461e7a39] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#7f210da5:0/SimpleConnection@cdcaa3b [delegate=amqp://guest@127.0.0.1:5672/, localPort=60862]
+2026-10-28 01:40:21.793 [http-nio-8081-exec-8] [ffca7e55-db5b-4e29-bbe7-9b52afc9ff2b] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP for 0771210702 (txn b467aac6-3de2-4428-adca-cb3229849a13): 922608
+2026-10-28 01:58:01.780 [main] [none] INFO  c.kopa.customerselfcare.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 397414 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/kopa.customer-self-care-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care)
+2026-10-28 01:58:01.812 [main] [none] INFO  c.kopa.customerselfcare.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-28 01:58:03.220 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-28 01:58:04.794 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-28 01:58:04.953 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 133 ms. Found 5 JPA repository interfaces.
+2026-10-28 01:58:06.588 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-28 01:58:06.636 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-28 01:58:06.644 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-28 01:58:06.648 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-28 01:58:06.806 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 4774 ms
+2026-10-28 01:58:08.267 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-10-28 01:58:08.498 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 8 migrations (execution time 00:00.097s)
+2026-10-28 01:58:08.648 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_self_care": 1.7
+2026-10-28 01:58:08.655 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Schema "customer_self_care" is up to date. No migration necessary.
+2026-10-28 01:58:08.901 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-28 01:58:09.044 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-28 01:58:10.034 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-28 01:58:10.290 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-28 01:58:12.275 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-28 01:58:12.286 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 01:58:12.438 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-28 01:58:14.766 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-28 01:58:14.801 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/kopa-customer-self-care'
+2026-10-28 01:58:14.817 [main] [none] INFO  c.kopa.customerselfcare.Application - Started Application in 17.468 seconds (process running for 20.611)
+2026-10-28 01:58:14.821 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-28 01:58:14.822 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-28 01:59:27.990 [http-nio-8081-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-customer-self-care] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-28 01:59:27.991 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-28 01:59:27.993 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-10-28 02:00:52.139 [http-nio-8081-exec-4] [17ebf9fc-fd2e-4ac6-887d-309928446932] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2026-10-28 02:00:52.222 [http-nio-8081-exec-4] [17ebf9fc-fd2e-4ac6-887d-309928446932] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#46a94faf:0/SimpleConnection@581e189d [delegate=amqp://guest@127.0.0.1:5672/, localPort=47266]
+2026-10-28 02:01:28.228 [http-nio-8081-exec-5] [a30141b7-af6a-42fe-bf13-323ec9c370d2] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP for 0771210702 (txn a6a05168-430b-4bcf-8df5-a71001e6b95a): 221166
+2026-10-28 02:36:14.208 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-28 02:36:14.271 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-28 02:36:14.511 [SpringApplicationShutdownHook] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 02:37:24.952 [main] [none] INFO  c.kopa.customerselfcare.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 412792 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/kopa.customer-self-care-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care)
+2026-10-28 02:37:24.985 [main] [none] INFO  c.kopa.customerselfcare.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-28 02:37:27.889 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-28 02:37:30.963 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-28 02:37:31.393 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 368 ms. Found 5 JPA repository interfaces.
+2026-10-28 02:37:35.462 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-28 02:37:35.532 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-28 02:37:35.558 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-28 02:37:35.561 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-28 02:37:35.813 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 10452 ms
+2026-10-28 02:37:38.892 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-10-28 02:37:39.089 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 8 migrations (execution time 00:00.087s)
+2026-10-28 02:37:39.214 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_self_care": 1.7
+2026-10-28 02:37:39.219 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Schema "customer_self_care" is up to date. No migration necessary.
+2026-10-28 02:37:39.416 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-28 02:37:39.529 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-28 02:37:40.507 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-28 02:37:40.805 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-28 02:37:42.827 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-28 02:37:42.843 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 02:37:43.114 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-28 02:37:46.714 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-28 02:37:46.737 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/kopa-customer-self-care'
+2026-10-28 02:37:46.750 [main] [none] INFO  c.kopa.customerselfcare.Application - Started Application in 26.775 seconds (process running for 31.579)
+2026-10-28 02:37:46.755 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-28 02:37:46.755 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-28 02:45:48.362 [http-nio-8081-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-customer-self-care] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-28 02:45:48.363 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-28 02:45:48.366 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-10-28 02:45:48.415 [http-nio-8081-exec-1] [bc2734a4-e8f3-461b-b1bc-28c8950a7414] ERROR c.k.c.c.e.GlobalExceptionHandler - Unexpected error
+org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/v1/transactions/0771210702/a6a05168- for request '/kopa-customer-self-care/api/v1/transactions/0771210702/a6a05168-'.
+	at org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:527)
+	at org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:50)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.kopa.customerselfcare.config.CorrelationIdFilter.doFilter(CorrelationIdFilter.java:37)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+2026-10-28 03:19:14.972 [http-nio-8081-exec-3] [5d1ec210-4e1f-40b0-b2fe-4d74707af97b] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP for 0771210702 (txn b1387942-3992-46dc-a27f-57374338446f): 008412
+2026-10-28 03:22:11.631 [http-nio-8081-exec-5] [8ed13693-ae07-4d16-b76b-a2c51f0c50b9] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2026-10-28 03:22:11.709 [http-nio-8081-exec-5] [8ed13693-ae07-4d16-b76b-a2c51f0c50b9] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#7af22a6:0/SimpleConnection@4a0f47a6 [delegate=amqp://guest@127.0.0.1:5672/, localPort=59248]
+2026-10-28 03:35:01.165 [http-nio-8081-exec-6] [15efc9f0-7840-41a2-b65c-6575fb1c1b2d] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP for 0771210702 (txn 48503ade-c22e-462f-8640-511bfb12b88f): 061016
+2026-10-28 03:45:23.536 [SpringApplicationShutdownHook] [none] WARN  o.s.c.s.DefaultLifecycleProcessor - Failed to stop bean 'webServerGracefulShutdown'
+java.lang.NoClassDefFoundError: org/springframework/boot/web/server/GracefulShutdownCallback
+	at org.springframework.boot.web.server.context.WebServerGracefulShutdownLifecycle.stop(WebServerGracefulShutdownLifecycle.java:65)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:480)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:645)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:448)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:337)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1199)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1153)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.web.server.GracefulShutdownCallback
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107)
+	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 13 common frames omitted
+2026-10-28 03:45:23.547 [SpringApplicationShutdownHook] [none] WARN  o.s.c.s.DefaultLifecycleProcessor - Failed to stop bean 'webServerStartStop'
+java.lang.NoClassDefFoundError: org/apache/catalina/Lifecycle$SingleUse
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:247)
+	at org.apache.catalina.core.StandardService.removeConnector(StandardService.java:297)
+	at org.springframework.boot.tomcat.TomcatWebServer.lambda$removeServiceConnectors$0(TomcatWebServer.java:176)
+	at org.springframework.boot.tomcat.TomcatWebServer.doWithConnectors(TomcatWebServer.java:195)
+	at org.springframework.boot.tomcat.TomcatWebServer.removeServiceConnectors(TomcatWebServer.java:173)
+	at org.springframework.boot.tomcat.TomcatWebServer.stop(TomcatWebServer.java:355)
+	at org.springframework.boot.web.server.servlet.context.WebServerStartStopLifecycle.stop(WebServerStartStopLifecycle.java:53)
+	at org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:143)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:480)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:645)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:448)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:337)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1199)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1153)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: org.apache.catalina.Lifecycle$SingleUse
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107)
+	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 20 common frames omitted
+2026-10-28 03:45:23.553 [SpringApplicationShutdownHook] [none] WARN  o.s.c.s.DefaultLifecycleProcessor - Failed to stop bean 'rabbitTemplate'
+java.lang.NoClassDefFoundError: org/springframework/amqp/listener/FatalExceptionStrategy
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.isRunning(RabbitTemplate.java:1037)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:468)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:645)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:448)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:337)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1199)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1153)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: org.springframework.amqp.listener.FatalExceptionStrategy
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107)
+	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 13 common frames omitted
+2026-10-28 03:45:23.557 [AMQP Connection 127.0.0.1:5672] [none] ERROR c.r.c.impl.ForgivingExceptionHandler - An unexpected connection driver error occurred
+java.lang.NoClassDefFoundError: com/rabbitmq/utility/Utility
+	at com.rabbitmq.client.impl.ChannelN.broadcastShutdownSignal(ChannelN.java:287)
+	at com.rabbitmq.client.impl.ChannelN.finishProcessShutdownSignal(ChannelN.java:305)
+	at com.rabbitmq.client.impl.ChannelN.access$000(ChannelN.java:48)
+	at com.rabbitmq.client.impl.ChannelN$2.transformReply(ChannelN.java:618)
+	at com.rabbitmq.client.impl.ChannelN$2.transformReply(ChannelN.java:614)
+	at com.rabbitmq.client.impl.AMQChannel$BlockingRpcContinuation.handleCommand(AMQChannel.java:536)
+	at com.rabbitmq.client.impl.RpcContinuationRpcWrapper.complete(RpcContinuationRpcWrapper.java:38)
+	at com.rabbitmq.client.impl.AMQChannel.handleCompleteInboundCommand(AMQChannel.java:214)
+	at com.rabbitmq.client.impl.AMQChannel.handleFrame(AMQChannel.java:125)
+	at com.rabbitmq.client.impl.AMQConnection.readFrame(AMQConnection.java:768)
+	at com.rabbitmq.client.impl.AMQConnection.access$400(AMQConnection.java:49)
+	at com.rabbitmq.client.impl.AMQConnection$MainLoop.run(AMQConnection.java:695)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: com.rabbitmq.utility.Utility
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107)
+	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 13 common frames omitted
+2026-10-28 03:54:43.868 [main] [none] INFO  c.kopa.customerselfcare.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 439994 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/kopa.customer-self-care-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care)
+2026-10-28 03:54:43.877 [main] [none] INFO  c.kopa.customerselfcare.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-28 03:54:44.925 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-28 03:54:45.996 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-28 03:54:46.115 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 97 ms. Found 5 JPA repository interfaces.
+2026-10-28 03:54:47.225 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-28 03:54:47.255 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-28 03:54:47.261 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-28 03:54:47.263 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-28 03:54:47.341 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3347 ms
+2026-10-28 03:54:48.576 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-10-28 03:54:48.751 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 8 migrations (execution time 00:00.067s)
+2026-10-28 03:54:48.871 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_self_care": 1.7
+2026-10-28 03:54:48.884 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Schema "customer_self_care" is up to date. No migration necessary.
+2026-10-28 03:54:49.095 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-28 03:54:49.287 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-28 03:54:50.822 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-28 03:54:51.075 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-28 03:54:52.516 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-28 03:54:52.527 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 03:54:52.692 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-28 03:54:54.975 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-28 03:54:54.998 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/kopa-customer-self-care'
+2026-10-28 03:54:55.019 [main] [none] INFO  c.kopa.customerselfcare.Application - Started Application in 12.421 seconds (process running for 13.492)
+2026-10-28 03:54:55.025 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-28 03:54:55.026 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-28 03:55:32.348 [http-nio-8081-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-customer-self-care] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-28 03:55:32.349 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-28 03:55:32.351 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-10-28 03:55:32.909 [http-nio-8081-exec-1] [e0a1e6a1-c375-47c7-993d-c875481812ef] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP for 0771210702 (txn 50052ad5-316f-4cd8-98a0-2004b56c873b): 440198
+2026-10-28 03:56:46.113 [http-nio-8081-exec-2] [8d4011e6-072c-4246-9944-a17f47d51cc5] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2026-10-28 03:56:46.210 [http-nio-8081-exec-2] [8d4011e6-072c-4246-9944-a17f47d51cc5] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#290db92f:0/SimpleConnection@50a1d25b [delegate=amqp://guest@127.0.0.1:5672/, localPort=44214]
+2026-10-28 04:03:34.662 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-28 04:03:34.669 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-28 04:03:34.706 [SpringApplicationShutdownHook] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 11:31:29.246 [main] [none] INFO  c.kopa.customerselfcare.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 519837 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/kopa.customer-self-care-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care)
+2026-10-28 11:31:29.331 [main] [none] INFO  c.kopa.customerselfcare.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-28 11:31:34.380 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-28 11:31:39.017 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-28 11:31:39.330 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 267 ms. Found 5 JPA repository interfaces.
+2026-10-28 11:31:42.446 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-28 11:31:42.568 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-28 11:31:42.587 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-28 11:31:42.598 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-28 11:31:42.869 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 12929 ms
+2026-10-28 11:31:46.181 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-10-28 11:31:46.545 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 8 migrations (execution time 00:00.166s)
+2026-10-28 11:31:46.722 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_self_care": 1.7
+2026-10-28 11:31:46.737 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Schema "customer_self_care" is up to date. No migration necessary.
+2026-10-28 11:31:47.613 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-28 11:31:48.366 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-28 11:31:53.205 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-28 11:31:54.358 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-28 11:31:58.782 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-28 11:31:58.804 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 11:31:59.061 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-28 11:32:01.756 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-28 11:32:01.793 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/kopa-customer-self-care'
+2026-10-28 11:32:01.823 [main] [none] INFO  c.kopa.customerselfcare.Application - Started Application in 40.022 seconds (process running for 47.891)
+2026-10-28 11:32:01.829 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-28 11:32:01.830 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-28 11:34:10.040 [http-nio-8081-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-customer-self-care] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-28 11:34:10.040 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-28 11:34:10.043 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-10-28 11:35:56.228 [http-nio-8081-exec-5] [0c54a431-5773-438c-bf23-f62aa9ef620e] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP for 0771026233 (txn 16cf6d0b-fa05-44b4-8ead-ba3469bac274): 454751
+2026-10-28 11:38:16.205 [http-nio-8081-exec-6] [51bf2a9e-7bd1-456a-8547-7b7138f6a25f] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2026-10-28 11:38:16.312 [http-nio-8081-exec-6] [51bf2a9e-7bd1-456a-8547-7b7138f6a25f] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#7af22a6:0/SimpleConnection@1d9f8bf4 [delegate=amqp://guest@127.0.0.1:5672/, localPort=46506]
+2026-10-28 11:43:17.897 [http-nio-8081-exec-7] [3425018e-90aa-4572-a3f1-48b32519d5f0] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP for 0771040613 (txn f26e14f8-1d7e-4c26-a7fa-9912fe9222d8): 509883
+2026-10-28 11:57:48.681 [http-nio-8081-exec-10] [e3c150d6-49b2-4b86-a220-90ae2c630d7d] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP for 0771040613 (txn be27f2e9-beeb-42e0-ad37-161e09a17992): 976704
+2026-10-28 11:59:29.104 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-28 11:59:29.116 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-28 11:59:29.154 [SpringApplicationShutdownHook] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 14:19:18.488 [main] [none] INFO  c.kopa.customerselfcare.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 579961 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/kopa.customer-self-care-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care)
+2026-10-28 14:19:18.616 [main] [none] INFO  c.kopa.customerselfcare.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-28 14:19:24.176 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-28 14:19:28.834 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-28 14:19:29.120 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 225 ms. Found 5 JPA repository interfaces.
+2026-10-28 14:19:32.576 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-28 14:19:32.637 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-28 14:19:32.648 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-28 14:19:32.651 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-28 14:19:32.875 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 13555 ms
+2026-10-28 14:19:35.853 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-10-28 14:19:36.277 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 8 migrations (execution time 00:00.190s)
+2026-10-28 14:19:36.525 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_self_care": 1.7
+2026-10-28 14:19:36.548 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Schema "customer_self_care" is up to date. No migration necessary.
+2026-10-28 14:19:37.452 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-28 14:19:38.204 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-28 14:19:42.136 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-28 14:19:42.807 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-28 14:19:48.154 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-28 14:19:48.182 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 14:19:48.605 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-28 14:19:51.518 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-28 14:19:51.550 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/kopa-customer-self-care'
+2026-10-28 14:19:51.567 [main] [none] INFO  c.kopa.customerselfcare.Application - Started Application in 39.168 seconds (process running for 46.34)
+2026-10-28 14:19:51.572 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-28 14:19:51.573 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-28 14:20:29.621 [http-nio-8081-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-customer-self-care] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-28 14:20:29.621 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-28 14:20:29.623 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-10-28 14:20:56.038 [http-nio-8081-exec-1] [46a4559e-da9c-41ab-907d-1fae734017b7] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-28 14:54:19.881 [http-nio-8081-exec-3] [3097ec2a-7b92-4785-8656-8fd96230b87f] WARN  org.hibernate.orm.jdbc.error - HHH000247: ErrorCode: 0, SQLState: 22001
+2026-10-28 14:54:19.881 [http-nio-8081-exec-3] [3097ec2a-7b92-4785-8656-8fd96230b87f] WARN  org.hibernate.orm.jdbc.error - ERROR: value too long for type character varying(20)
+2026-10-28 14:54:19.902 [http-nio-8081-exec-3] [3097ec2a-7b92-4785-8656-8fd96230b87f] ERROR c.k.c.c.e.GlobalExceptionHandler - Unexpected error
+org.springframework.dao.DataIntegrityViolationException: could not execute statement [ERROR: value too long for type character varying(20)] [insert into customer_self_care.transactions (amount,completed_at,correlation_id,currency,duration_ms,failure_detail,failure_layer,ktrn_appr_no,ktrn_message,ktrn_msgcode,msisdn,national_id,otp_attempt_count,otp_code_hash,otp_expires_at,product_code,req_approval_no,requested_at,status,transaction_type,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]; SQL [insert into customer_self_care.transactions (amount,completed_at,correlation_id,currency,duration_ms,failure_detail,failure_layer,ktrn_appr_no,ktrn_message,ktrn_msgcode,msisdn,national_id,otp_attempt_count,otp_code_hash,otp_expires_at,product_code,req_approval_no,requested_at,status,transaction_type,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:172)
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.convertHibernateAccessException(HibernateExceptionTranslator.java:131)
+	at org.springframework.orm.jpa.hibernate.HibernateExceptionTranslator.translateExceptionIfPossible(HibernateExceptionTranslator.java:105)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.translateExceptionIfPossible(HibernateJpaDialect.java:223)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:556)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:794)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:757)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:687)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:408)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at com.kopa.customerselfcare.transaction.service.TransactionFailureRecorder$$SpringCGLIB$$0.recordFailure(<generated>)
+	at com.kopa.customerselfcare.bundle.service.BundleServiceImpl.fail(BundleServiceImpl.java:183)
+	at com.kopa.customerselfcare.bundle.service.BundleServiceImpl.purchase(BundleServiceImpl.java:129)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.transaction.interceptor.TransactionInterceptor$1.proceedWithInvocation(TransactionInterceptor.java:133)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:371)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at com.kopa.customerselfcare.bundle.service.BundleServiceImpl$$SpringCGLIB$$0.purchase(<generated>)
+	at com.kopa.customerselfcare.bundle.controller.BundleController.purchase(BundleController.java:52)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:359)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.invokeJoinpoint(ReflectiveMethodInvocation.java:190)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:158)
+	at org.springframework.validation.beanvalidation.MethodValidationInterceptor.invoke(MethodValidationInterceptor.java:172)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at com.kopa.customerselfcare.bundle.controller.BundleController$$SpringCGLIB$$0.purchase(<generated>)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:252)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:184)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:117)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:934)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:853)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:86)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:963)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:866)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1000)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:903)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:649)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:874)
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:710)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:128)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.kopa.customerselfcare.config.CorrelationIdFilter.doFilter(CorrelationIdFilter.java:37)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.hibernate.exception.DataException: could not execute statement [ERROR: value too long for type character varying(20)] [insert into customer_self_care.transactions (amount,completed_at,correlation_id,currency,duration_ms,failure_detail,failure_layer,ktrn_appr_no,ktrn_message,ktrn_msgcode,msisdn,national_id,otp_attempt_count,otp_code_hash,otp_expires_at,product_code,req_approval_no,requested_at,status,transaction_type,id) values (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:84)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:34)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:115)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:189)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.performNonBatchedMutation(AbstractMutationExecutor.java:145)
+	at org.hibernate.engine.jdbc.mutation.internal.MutationExecutorSingleNonBatched.performNonBatchedOperations(MutationExecutorSingleNonBatched.java:53)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:65)
+	at org.hibernate.engine.jdbc.mutation.internal.AbstractMutationExecutor.execute(AbstractMutationExecutor.java:54)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.doStaticInserts(InsertCoordinatorStandard.java:183)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.coordinateInsert(InsertCoordinatorStandard.java:123)
+	at org.hibernate.persister.entity.mutation.InsertCoordinatorStandard.insert(InsertCoordinatorStandard.java:96)
+	at org.hibernate.action.internal.EntityInsertAction.execute(EntityInsertAction.java:108)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:634)
+	at org.hibernate.engine.spi.ActionQueue.executeActions(ActionQueue.java:505)
+	at org.hibernate.event.internal.AbstractFlushingEventListener.performExecutions(AbstractFlushingEventListener.java:381)
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40)
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:138)
+	at org.hibernate.internal.SessionImpl.fireFlush(SessionImpl.java:1458)
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:484)
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2086)
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:2007)
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:426)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:167)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commitNoRollbackOnly(JdbcResourceLocalTransactionCoordinatorImpl.java:252)
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:242)
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:89)
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:552)
+	... 82 common frames omitted
+Caused by: org.postgresql.util.PSQLException: ERROR: value too long for type character varying(20)
+	at org.postgresql.core.v3.QueryExecutorImpl.receiveErrorResponse(QueryExecutorImpl.java:2904)
+	at org.postgresql.core.v3.QueryExecutorImpl.processResults(QueryExecutorImpl.java:2589)
+	at org.postgresql.core.v3.QueryExecutorImpl.execute(QueryExecutorImpl.java:431)
+	at org.postgresql.jdbc.PgStatement.executeInternal(PgStatement.java:534)
+	at org.postgresql.jdbc.PgStatement.execute(PgStatement.java:437)
+	at org.postgresql.jdbc.PgPreparedStatement.executeWithFlags(PgPreparedStatement.java:196)
+	at org.postgresql.jdbc.PgPreparedStatement.executeUpdate(PgPreparedStatement.java:157)
+	at org.hibernate.engine.jdbc.internal.ResultSetReturnImpl.executeUpdate(ResultSetReturnImpl.java:185)
+	... 105 common frames omitted
+2026-10-28 15:27:48.593 [SpringApplicationShutdownHook] [none] WARN  o.s.c.s.DefaultLifecycleProcessor - Failed to stop bean 'webServerGracefulShutdown'
+java.lang.NoClassDefFoundError: org/springframework/boot/web/server/GracefulShutdownCallback
+	at org.springframework.boot.web.server.context.WebServerGracefulShutdownLifecycle.stop(WebServerGracefulShutdownLifecycle.java:65)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:480)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:645)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:448)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:337)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1199)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1153)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: org.springframework.boot.web.server.GracefulShutdownCallback
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107)
+	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 13 common frames omitted
+2026-10-28 15:27:48.608 [SpringApplicationShutdownHook] [none] WARN  o.s.c.s.DefaultLifecycleProcessor - Failed to stop bean 'webServerStartStop'
+java.lang.NoClassDefFoundError: org/apache/catalina/Lifecycle$SingleUse
+	at org.apache.catalina.util.LifecycleBase.stop(LifecycleBase.java:247)
+	at org.apache.catalina.core.StandardService.removeConnector(StandardService.java:297)
+	at org.springframework.boot.tomcat.TomcatWebServer.lambda$removeServiceConnectors$0(TomcatWebServer.java:176)
+	at org.springframework.boot.tomcat.TomcatWebServer.doWithConnectors(TomcatWebServer.java:195)
+	at org.springframework.boot.tomcat.TomcatWebServer.removeServiceConnectors(TomcatWebServer.java:173)
+	at org.springframework.boot.tomcat.TomcatWebServer.stop(TomcatWebServer.java:355)
+	at org.springframework.boot.web.server.servlet.context.WebServerStartStopLifecycle.stop(WebServerStartStopLifecycle.java:53)
+	at org.springframework.context.SmartLifecycle.stop(SmartLifecycle.java:143)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:480)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:645)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:448)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:337)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1199)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1153)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: org.apache.catalina.Lifecycle$SingleUse
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107)
+	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 20 common frames omitted
+2026-10-28 15:27:48.613 [SpringApplicationShutdownHook] [none] WARN  o.s.c.s.DefaultLifecycleProcessor - Failed to stop bean 'rabbitTemplate'
+java.lang.NoClassDefFoundError: org/springframework/amqp/listener/FatalExceptionStrategy
+	at org.springframework.amqp.rabbit.core.RabbitTemplate.isRunning(RabbitTemplate.java:1037)
+	at org.springframework.context.support.DefaultLifecycleProcessor.doStop(DefaultLifecycleProcessor.java:468)
+	at org.springframework.context.support.DefaultLifecycleProcessor$LifecycleGroup.stop(DefaultLifecycleProcessor.java:645)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.context.support.DefaultLifecycleProcessor.stopBeans(DefaultLifecycleProcessor.java:448)
+	at org.springframework.context.support.DefaultLifecycleProcessor.onClose(DefaultLifecycleProcessor.java:337)
+	at org.springframework.context.support.AbstractApplicationContext.doClose(AbstractApplicationContext.java:1199)
+	at org.springframework.boot.web.server.servlet.context.ServletWebServerApplicationContext.doClose(ServletWebServerApplicationContext.java:176)
+	at org.springframework.context.support.AbstractApplicationContext.close(AbstractApplicationContext.java:1153)
+	at org.springframework.boot.SpringApplicationShutdownHook.closeAndWait(SpringApplicationShutdownHook.java:147)
+	at java.base/java.lang.Iterable.forEach(Iterable.java:75)
+	at org.springframework.boot.SpringApplicationShutdownHook.run(SpringApplicationShutdownHook.java:116)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: java.lang.ClassNotFoundException: org.springframework.amqp.listener.FatalExceptionStrategy
+	at java.base/java.net.URLClassLoader.findClass(URLClassLoader.java:445)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:592)
+	at org.springframework.boot.loader.net.protocol.jar.JarUrlClassLoader.loadClass(JarUrlClassLoader.java:107)
+	at org.springframework.boot.loader.launch.LaunchedClassLoader.loadClass(LaunchedClassLoader.java:91)
+	at java.base/java.lang.ClassLoader.loadClass(ClassLoader.java:525)
+	... 13 common frames omitted
+2026-10-28 15:27:48.620 [SpringApplicationShutdownHook] [none] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'rabbitTemplate': java.lang.NoClassDefFoundError: org/springframework/amqp/listener/FatalExceptionStrategy
+2026-10-28 15:27:48.622 [SpringApplicationShutdownHook] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 15:27:48.626 [SpringApplicationShutdownHook] [none] WARN  o.s.b.f.s.DisposableBeanAdapter - Invocation of destroy method failed on bean with name 'entityManagerFactory': java.lang.NoClassDefFoundError: org/springframework/util/ConcurrentReferenceHashMap$Values
+2026-10-28 15:28:11.512 [main] [none] INFO  c.kopa.customerselfcare.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 603542 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/kopa.customer-self-care-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care)
+2026-10-28 15:28:11.519 [main] [none] INFO  c.kopa.customerselfcare.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-28 15:28:12.509 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-28 15:28:13.588 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-28 15:28:13.707 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 99 ms. Found 5 JPA repository interfaces.
+2026-10-28 15:28:14.782 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-28 15:28:14.809 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-28 15:28:14.812 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-28 15:28:14.813 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-28 15:28:14.906 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3257 ms
+2026-10-28 15:28:15.992 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-10-28 15:28:16.180 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.086s)
+2026-10-28 15:28:16.365 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_self_care": 1.7
+2026-10-28 15:28:16.443 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "customer_self_care" to version "1.8 - widen transactions product code"
+2026-10-28 15:28:16.553 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "customer_self_care", now at version v1.8 (execution time 00:00.045s)
+2026-10-28 15:28:16.891 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-28 15:28:17.168 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-28 15:28:18.222 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-28 15:28:18.549 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-28 15:28:20.317 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-28 15:28:20.327 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 15:28:20.552 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-28 15:28:23.603 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-28 15:28:23.648 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/kopa-customer-self-care'
+2026-10-28 15:28:23.674 [main] [none] INFO  c.kopa.customerselfcare.Application - Started Application in 13.375 seconds (process running for 14.516)
+2026-10-28 15:28:23.681 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-28 15:28:23.685 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-28 15:29:50.021 [http-nio-8081-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-customer-self-care] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-28 15:29:50.022 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-28 15:29:50.024 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-10-28 15:29:51.221 [http-nio-8081-exec-1] [03ba4b06-495e-42e3-a646-457696ab2da7] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2026-10-28 15:29:51.346 [http-nio-8081-exec-1] [03ba4b06-495e-42e3-a646-457696ab2da7] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#351aa7f:0/SimpleConnection@64da7470 [delegate=amqp://guest@127.0.0.1:5672/, localPort=57242]
+2026-10-28 16:59:39.515 [main] [none] INFO  c.kopa.customerselfcare.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 634508 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/kopa.customer-self-care-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care)
+2026-10-28 16:59:39.840 [main] [none] INFO  c.kopa.customerselfcare.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-28 16:59:41.080 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-28 16:59:42.110 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-28 16:59:42.246 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 112 ms. Found 7 JPA repository interfaces.
+2026-10-28 16:59:43.285 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-28 16:59:43.324 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-28 16:59:43.329 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-28 16:59:43.329 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-28 16:59:43.430 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 3397 ms
+2026-10-28 16:59:45.022 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-10-28 16:59:45.210 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.079s)
+2026-10-28 16:59:45.334 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_self_care": 1.8
+2026-10-28 16:59:45.340 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Schema "customer_self_care" is up to date. No migration necessary.
+2026-10-28 16:59:45.587 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-28 16:59:45.712 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-28 16:59:46.741 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-28 16:59:46.989 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-28 16:59:48.723 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-28 16:59:48.741 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 16:59:48.900 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-28 16:59:49.144 [main] [none] ERROR o.s.b.t.s.DeferredServletContainerInitializers - Error starting Tomcat context. Exception: org.springframework.beans.factory.UnsatisfiedDependencyException. Message: Error creating bean with name 'tokenValidationFilter' defined in URL [jar:nested:/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/kopa.customer-self-care-0.0.1-SNAPSHOT.jar/!BOOT-INF/classes/!/com/kopa/customerselfcare/config/TokenValidationFilter.class]: Unsatisfied dependency expressed through constructor parameter 1: No qualifying bean of type 'com.fasterxml.jackson.databind.ObjectMapper' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
+2026-10-28 16:59:49.200 [main] [none] INFO  o.a.catalina.core.StandardService - Stopping service [Tomcat]
+2026-10-28 16:59:49.221 [main] [none] WARN  o.s.b.w.s.s.c.AnnotationConfigServletWebServerApplicationContext - Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server
+2026-10-28 16:59:49.222 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 16:59:49.246 [main] [none] INFO  o.s.b.a.l.ConditionEvaluationReportLogger - 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2026-10-28 16:59:49.291 [main] [none] ERROR o.s.b.d.LoggingFailureAnalysisReporter - 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Parameter 1 of constructor in com.kopa.customerselfcare.config.TokenValidationFilter required a bean of type 'com.fasterxml.jackson.databind.ObjectMapper' that could not be found.
+
+
+Action:
+
+Consider defining a bean of type 'com.fasterxml.jackson.databind.ObjectMapper' in your configuration.
+
+2026-10-28 17:04:19.108 [main] [none] INFO  c.kopa.customerselfcare.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 636324 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/kopa.customer-self-care-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care)
+2026-10-28 17:04:19.125 [main] [none] INFO  c.kopa.customerselfcare.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-28 17:04:20.562 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-28 17:04:21.842 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-28 17:04:22.075 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 210 ms. Found 7 JPA repository interfaces.
+2026-10-28 17:04:23.524 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-28 17:04:23.552 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-28 17:04:23.567 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-28 17:04:23.572 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-28 17:04:23.691 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 4408 ms
+2026-10-28 17:04:24.807 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-10-28 17:04:25.028 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.097s)
+2026-10-28 17:04:25.147 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_self_care": 1.8
+2026-10-28 17:04:25.153 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Schema "customer_self_care" is up to date. No migration necessary.
+2026-10-28 17:04:25.395 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-28 17:04:25.569 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-28 17:04:27.726 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-28 17:04:28.080 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-28 17:04:30.282 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-28 17:04:30.302 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 17:04:30.441 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-28 17:04:33.455 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-28 17:04:33.492 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/kopa-customer-self-care'
+2026-10-28 17:04:33.512 [main] [none] INFO  c.kopa.customerselfcare.Application - Started Application in 15.907 seconds (process running for 17.151)
+2026-10-28 17:04:33.522 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-28 17:04:33.523 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-28 17:05:34.263 [http-nio-8081-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-customer-self-care] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-28 17:05:34.264 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-28 17:05:34.266 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-10-28 17:20:00.995 [main] [none] INFO  c.kopa.customerselfcare.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 642004 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/kopa.customer-self-care-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care)
+2026-10-28 17:20:01.011 [main] [none] INFO  c.kopa.customerselfcare.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-28 17:20:02.081 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-28 17:20:03.372 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-28 17:20:03.519 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 127 ms. Found 7 JPA repository interfaces.
+2026-10-28 17:20:05.450 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-28 17:20:05.485 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-28 17:20:05.489 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-28 17:20:05.490 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-28 17:20:05.577 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 4397 ms
+2026-10-28 17:20:06.523 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-10-28 17:20:06.722 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.066s)
+2026-10-28 17:20:06.850 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_self_care": 1.8
+2026-10-28 17:20:06.856 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Schema "customer_self_care" is up to date. No migration necessary.
+2026-10-28 17:20:07.098 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-28 17:20:07.258 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-28 17:20:08.353 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-28 17:20:08.619 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-10-28 17:20:10.220 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-28 17:20:10.232 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-28 17:20:10.329 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-28 17:20:13.009 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-28 17:20:13.085 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/kopa-customer-self-care'
+2026-10-28 17:20:13.118 [main] [none] INFO  c.kopa.customerselfcare.Application - Started Application in 13.361 seconds (process running for 14.371)
+2026-10-28 17:20:13.124 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-28 17:20:13.125 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-28 17:33:17.228 [http-nio-8081-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-customer-self-care] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-28 17:33:17.236 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-28 17:33:17.239 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 3 ms
+2026-10-28 18:27:41.733 [http-nio-8081-exec-6] [a02d4317-8e3b-4409-929c-ec8a6810ed2e] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-28 18:31:42.192 [http-nio-8081-exec-4] [d85ee091-b579-4c03-ba15-6ecf2a53a15e] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-28 22:45:32.931 [http-nio-8081-exec-4] [47a96243-23b6-43ce-929d-324055a19a87] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-28 22:45:52.801 [http-nio-8081-exec-8] [491f3e87-f6a9-4b01-93d6-99af0a73c0df] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-28 22:45:54.846 [http-nio-8081-exec-1] [2db6b5de-3af4-4784-b5e5-78e1af4f2a8f] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-28 22:46:43.444 [http-nio-8081-exec-5] [8836215f-781b-48d0-93d3-67e114ef42e8] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-28 22:46:53.876 [http-nio-8081-exec-6] [df224045-6f54-4ce0-a2fe-998f49c9b216] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-28 22:47:06.045 [http-nio-8081-exec-3] [ec744f83-3c59-4b8b-94cf-33552821438a] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-28 22:47:09.311 [http-nio-8081-exec-2] [98efc12d-527c-4785-9fa4-71616bdab6f8] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.

@@ -24,5 +24,8 @@ middleware-sms:
   base-url: ${kopa.middleware.sms-base-url}
   api-key: ${kopa.internal.middleware-sms-api-key}
 
+sms:
+  dev-recipient-override: ${kopa.sms.dev-recipient-override:}
+
 internal:
   api-key: ${kopa.internal.notifications-api-key}

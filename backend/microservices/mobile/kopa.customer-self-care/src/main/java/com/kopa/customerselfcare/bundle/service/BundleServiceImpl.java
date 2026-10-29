@@ -14,7 +14,9 @@ import com.kopa.customerselfcare.bundle.dto.BundleListResponseDto;
 import com.kopa.customerselfcare.bundle.dto.PurchaseBundleRequest;
 import com.kopa.customerselfcare.bundle.dto.PurchaseBundleResponse;
 import com.kopa.customerselfcare.common.CorrelationIdHolder;
+import com.kopa.customerselfcare.common.KtrnMessageCodes;
 import com.kopa.customerselfcare.common.exception.BadRequestException;
+import com.kopa.customerselfcare.common.exception.NotFoundException;
 import com.kopa.customerselfcare.common.exception.ServiceUnavailableException;
 import com.kopa.customerselfcare.config.KopaBusinessProperties;
 import com.kopa.customerselfcare.config.RabbitConfig;
@@ -29,6 +31,7 @@ import com.kopa.customerselfcare.transaction.model.Transaction;
 import com.kopa.customerselfcare.transaction.model.TransactionStatus;
 import com.kopa.customerselfcare.transaction.model.TransactionType;
 import com.kopa.customerselfcare.transaction.repository.TransactionRepository;
+import com.kopa.customerselfcare.transaction.service.TransactionFailureRecorder;
 import com.kopa.customerselfcare.transaction.service.TransactionOtpService;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -47,11 +50,12 @@ public class BundleServiceImpl implements BundleService {
     private final ServiceInquiryLogRepository inquiryLogs;
     private final TransactionOtpService otpService;
     private final EventPublisher eventPublisher;
+    private final TransactionFailureRecorder failureRecorder;
 
     public BundleServiceImpl(MiddlewareBundleClient middlewareClient, KopaBusinessProperties businessProperties,
                              TransactionRepository transactions, TransactionLimitService limitService,
                              ServiceInquiryLogRepository inquiryLogs, TransactionOtpService otpService,
-                             EventPublisher eventPublisher) {
+                             EventPublisher eventPublisher, TransactionFailureRecorder failureRecorder) {
         this.middlewareClient = middlewareClient;
         this.businessProperties = businessProperties;
         this.transactions = transactions;
@@ -59,6 +63,7 @@ public class BundleServiceImpl implements BundleService {
         this.inquiryLogs = inquiryLogs;
         this.otpService = otpService;
         this.eventPublisher = eventPublisher;
+        this.failureRecorder = failureRecorder;
     }
 
     @Override
@@ -71,12 +76,29 @@ public class BundleServiceImpl implements BundleService {
             logInquiry(msisdn, startedAt, false, "MIDDLEWARE");
             throw ex;
         }
-        logInquiry(msisdn, startedAt, true, null);
+
+        boolean success = KtrnMessageCodes.SUCCESS.equals(response.msgcode());
+        logInquiry(msisdn, startedAt, success, success ? null : "KTRN_BUSINESS");
+
+        if (!success) {
+            throw mapKtrnError(response.msgcode(), response.message());
+        }
 
         List<BundleDto> bundles = response.items().stream()
                 .map(i -> new BundleDto(i.productCode(), i.productName(), i.price()))
                 .toList();
         return new BundleListResponseDto(msisdn, bundles);
+    }
+
+    private RuntimeException mapKtrnError(String code, String message) {
+        String detail = message != null ? message : "KTRN bundle list failed (msgcode " + code + ").";
+        if (KtrnMessageCodes.MISSING_PARAMETER.equals(code) || KtrnMessageCodes.INVALID_VALUE.equals(code)) {
+            return new BadRequestException(detail);
+        }
+        if (KtrnMessageCodes.DATA_NOT_FOUND.equals(code)) {
+            return new NotFoundException(detail);
+        }
+        return new ServiceUnavailableException(detail);
     }
 
     @Override
@@ -100,13 +122,18 @@ public class BundleServiceImpl implements BundleService {
         try {
             EWalletCheckResponse eWallet = middlewareClient.checkEWallet(new EWalletCheckRequest(soId, request.productCode()));
             if (!eWallet.canPurchase()) {
-                throw fail(transaction, "KTRN_BUSINESS", "Insufficient e-wallet balance for this bundle.");
+                // Surface KTRN's real reason (e.g. "Can't get available offer by offerCode" for an
+                // unrecognized PROD_CD) instead of always assuming it's a balance problem - the two
+                // read very differently to a customer.
+                String detail = eWallet.message() != null ? eWallet.message() : "This bundle can't be purchased right now.";
+                throw fail(transaction, "KTRN_BUSINESS", detail);
             }
 
             BundlePurchaseCheckResponse check = middlewareClient.checkPurchase(
                     new BundlePurchaseCheckRequest(soId, request.productCode(), msisdn));
             if (!"Y".equalsIgnoreCase(check.result())) {
-                throw fail(transaction, "KTRN_BUSINESS", "KTRN declined this bundle purchase.");
+                String detail = check.message() != null ? check.message() : "KTRN declined this bundle purchase.";
+                throw fail(transaction, "KTRN_BUSINESS", detail);
             }
         } catch (ServiceUnavailableException ex) {
             throw fail(transaction, "MIDDLEWARE", ex.getMessage());
@@ -146,14 +173,14 @@ public class BundleServiceImpl implements BundleService {
     }
 
     /** Marks the transaction FAILED and returns (doesn't throw) a BadRequestException for the
-     *  caller to throw - keeps the "this always ends the request" intent explicit at call sites. */
+     *  caller to throw - keeps the "this always ends the request" intent explicit at call sites.
+     *  Persists via TransactionFailureRecorder (its own, independent database transaction) rather
+     *  than inline - purchase()/completePurchase() are @Transactional, and the normal way they
+     *  reject a request is to throw the exception this method returns, which makes Spring roll
+     *  back everything done inside that method call, including an inline save of this very
+     *  failure (confirmed live 2026-10-28 for the identical pattern in RechargeServiceImpl). */
     private BadRequestException fail(Transaction transaction, String failureLayer, String detail) {
-        transaction.setStatus(TransactionStatus.FAILED);
-        transaction.setFailureLayer(failureLayer);
-        transaction.setFailureDetail(detail);
-        transaction.setCompletedAt(Instant.now());
-        transaction.setDurationMs(transaction.getCompletedAt().toEpochMilli() - transaction.getRequestedAt().toEpochMilli());
-        transactions.save(transaction);
+        failureRecorder.recordFailure(transaction, failureLayer, detail);
         publishOutcome(transaction, false);
         return new BadRequestException(detail);
     }

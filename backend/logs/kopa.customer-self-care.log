@@ -1,23 +1,34 @@
-2026-10-20 07:39:27.490 [main] [\-] INFO  c.kopa.customerselfcare.Application - Starting Application using Java 17.0.20.1 with PID 1482116 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/classes started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care)
-2026-10-20 07:39:27.551 [main] [\-] INFO  c.kopa.customerselfcare.Application - No active profile set, falling back to 1 default profile: "default"
-2026-10-20 07:39:29.821 [background-preinit] [\-] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
-2026-10-20 07:39:31.305 [main] [\-] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-10-20 07:39:31.724 [main] [\-] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 400 ms. Found 5 JPA repository interfaces.
-2026-10-20 07:39:34.597 [main] [\-] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2026-10-20 07:39:34.621 [main] [\-] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
-2026-10-20 07:39:34.625 [main] [\-] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-10-20 07:39:34.625 [main] [\-] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-10-20 07:39:34.755 [main] [\-] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 7029 ms
-2026-10-20 07:39:38.807 [main] [\-] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
-2026-10-20 07:39:41.989 [main] [\-] INFO  o.f.core.internal.command.DbValidate - Successfully validated 8 migrations (execution time 00:01.874s)
-2026-10-20 07:39:42.102 [main] [\-] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_self_care": 1.5
-2026-10-20 07:39:42.206 [main] [\-] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "customer_self_care" to version "1.6 - transaction otp fields"
-2026-10-20 07:39:42.310 [main] [\-] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "customer_self_care" to version "1.7 - balance inquiry log correlation id"
-2026-10-20 07:39:42.349 [main] [\-] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 2 migrations to schema "customer_self_care", now at version v1.7 (execution time 00:00.051s)
-2026-10-20 07:39:43.927 [main] [\-] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-10-20 07:39:44.164 [main] [\-] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
-2026-10-20 07:39:45.705 [main] [\-] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-10-20 07:39:45.986 [main] [\-] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+2026-10-29 06:49:31.556 [http-nio-8081-exec-6] [5cce6388-86b4-4819-a71c-c68a16c6f49d] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-29 07:33:46.888 [http-nio-8081-exec-3] [ae6fc855-4729-4383-af90-8705664e8946] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-29 08:03:03.693 [http-nio-8081-exec-10] [54f65aa1-d3ba-4bf7-b325-125bff739aca] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-29 08:05:26.772 [http-nio-8081-exec-1] [e005f52b-0733-46c6-94b0-162bb4a3124f] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-29 08:05:55.410 [http-nio-8081-exec-7] [37cc2b65-1275-43e7-b6f5-8de690d82ab0] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-29 08:36:51.611 [http-nio-8081-exec-10] [131695b5-bd0d-44cb-8de6-651b88aebab9] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP for 0771040613 (txn cbf2c222-4b17-4b3f-b02d-8bfc89a7a942): 539107
+2026-10-29 08:38:56.519 [http-nio-8081-exec-8] [5f387a0e-6ecf-4528-a4e9-cc145bdd006b] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2026-10-29 08:38:56.757 [http-nio-8081-exec-8] [5f387a0e-6ecf-4528-a4e9-cc145bdd006b] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#63fa7643:0/SimpleConnection@1f1ac6ec [delegate=amqp://guest@127.0.0.1:5672/, localPort=52164]
+2026-10-29 08:44:33.045 [http-nio-8081-exec-3] [6cc24a8b-a8ec-446c-b5aa-0ad7c125d34a] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP for 0771040613 (txn 5b627c67-579c-4914-9ea6-2ff15e84ec88): 843462
+2026-10-29 08:47:14.784 [http-nio-8081-exec-1] [8467feec-892a-49ba-ab23-c74a1408a780] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP for 0771040613 (txn 89548fd4-a762-40d9-976c-eb6b984c69b3): 201173
+2026-10-29 09:01:35.075 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-10-29 09:01:35.107 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-29 09:01:35.204 [SpringApplicationShutdownHook] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-29 09:02:06.960 [main] [none] INFO  c.kopa.customerselfcare.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 782415 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/kopa.customer-self-care-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care)
+2026-10-29 09:02:06.971 [main] [none] INFO  c.kopa.customerselfcare.Application - No active profile set, falling back to 1 default profile: "default"
+2026-10-29 09:02:08.049 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-10-29 09:02:09.631 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-10-29 09:02:09.825 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 157 ms. Found 7 JPA repository interfaces.
+2026-10-29 09:02:10.957 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
+2026-10-29 09:02:11.019 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
+2026-10-29 09:02:11.028 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-10-29 09:02:11.029 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-10-29 09:02:11.110 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 4016 ms
+2026-10-29 09:02:12.313 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-10-29 09:02:12.534 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 9 migrations (execution time 00:00.095s)
+2026-10-29 09:02:12.658 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_self_care": 1.8
+2026-10-29 09:02:12.665 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Schema "customer_self_care" is up to date. No migration necessary.
+2026-10-29 09:02:12.891 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-10-29 09:02:13.097 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-10-29 09:02:14.328 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-10-29 09:02:14.554 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
 	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
 	Database driver: PostgreSQL JDBC Driver
 	Database dialect: PostgreSQLDialect
@@ -29,57 +40,112 @@
 	Pool: DataSourceConnectionProvider
 	Minimum pool size: undefined/unknown
 	Maximum pool size: undefined/unknown
-2026-10-20 07:39:49.329 [main] [\-] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-10-20 07:39:49.376 [main] [\-] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-10-20 07:39:49.730 [main] [\-] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-10-20 07:39:53.519 [main] [\-] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
-2026-10-20 07:39:53.620 [main] [\-] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/kopa-customer-self-care'
-2026-10-20 07:39:53.631 [main] [\-] INFO  c.kopa.customerselfcare.Application - Started Application in 27.43 seconds (process running for 29.07)
-2026-10-20 07:39:53.636 [main] [\-] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-10-20 07:39:53.637 [main] [\-] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-10-20 07:40:34.907 [SpringApplicationShutdownHook] [\-] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-10-20 07:40:35.029 [tomcat-shutdown] [\-] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-10-20 07:40:35.842 [SpringApplicationShutdownHook] [\-] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
-2026-10-20 07:41:32.232 [main] [none] INFO  c.kopa.customerselfcare.Application - Starting Application using Java 17.0.20.1 with PID 1482909 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/target/classes started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care)
-2026-10-20 07:41:32.260 [main] [none] INFO  c.kopa.customerselfcare.Application - No active profile set, falling back to 1 default profile: "default"
-2026-10-20 07:41:33.575 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
-2026-10-20 07:41:36.052 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2026-10-20 07:41:36.755 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 680 ms. Found 5 JPA repository interfaces.
-2026-10-20 07:41:37.752 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8081 (http)
-2026-10-20 07:41:37.772 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8081"]
-2026-10-20 07:41:37.776 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
-2026-10-20 07:41:37.776 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
-2026-10-20 07:41:37.893 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 5532 ms
-2026-10-20 07:41:39.158 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
-2026-10-20 07:41:39.427 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 8 migrations (execution time 00:00.136s)
-2026-10-20 07:41:39.502 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_self_care": 1.7
-2026-10-20 07:41:39.507 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Schema "customer_self_care" is up to date. No migration necessary.
-2026-10-20 07:41:40.071 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
-2026-10-20 07:41:40.952 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
-2026-10-20 07:41:42.074 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
-2026-10-20 07:41:42.347 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
-	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
-	Database driver: PostgreSQL JDBC Driver
-	Database dialect: PostgreSQLDialect
-	Database version: 14.24
-	Default catalog/schema: kopa_db/public
-	Autocommit mode: undefined/unknown
-	Isolation level: READ_COMMITTED [default READ_COMMITTED]
-	JDBC fetch size: none
-	Pool: DataSourceConnectionProvider
-	Minimum pool size: undefined/unknown
-	Maximum pool size: undefined/unknown
-2026-10-20 07:41:44.411 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
-2026-10-20 07:41:44.425 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
-2026-10-20 07:41:45.066 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
-2026-10-20 07:41:49.723 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
-2026-10-20 07:41:49.790 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/kopa-customer-self-care'
-2026-10-20 07:41:49.803 [main] [none] INFO  c.kopa.customerselfcare.Application - Started Application in 19.063 seconds (process running for 20.101)
-2026-10-20 07:41:49.807 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
-2026-10-20 07:41:49.808 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
-2026-10-20 07:43:06.410 [http-nio-8081-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-customer-self-care] - Initializing Spring DispatcherServlet 'dispatcherServlet'
-2026-10-20 07:43:06.454 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
-2026-10-20 07:43:06.459 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
-2026-10-20 07:43:34.745 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-10-20 07:43:34.816 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
-2026-10-20 07:43:35.313 [SpringApplicationShutdownHook] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-10-29 09:02:16.588 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-10-29 09:02:16.607 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-10-29 09:02:16.748 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-10-29 09:02:20.530 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8081"]
+2026-10-29 09:02:20.570 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8081 (http) with context path '/kopa-customer-self-care'
+2026-10-29 09:02:20.594 [main] [none] INFO  c.kopa.customerselfcare.Application - Started Application in 15.018 seconds (process running for 16.054)
+2026-10-29 09:02:20.600 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-10-29 09:02:20.601 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-10-29 09:04:11.148 [http-nio-8081-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-customer-self-care] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-10-29 09:04:11.170 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-10-29 09:04:11.173 [http-nio-8081-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-10-29 09:04:12.100 [http-nio-8081-exec-1] [74a5f8e5-1b6f-4f9a-bcc8-74cae3bad638] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP requested for 0771040613 (txn 020bc17a-229c-4d3f-ac5f-e7e4779afc1c)
+2026-10-29 09:05:17.007 [http-nio-8081-exec-3] [abf3c110-96f9-4cc4-84fa-7c4163a058a1] INFO  o.s.a.r.c.CachingConnectionFactory - Attempting to connect to: [localhost:5672]
+2026-10-29 09:05:17.156 [http-nio-8081-exec-3] [abf3c110-96f9-4cc4-84fa-7c4163a058a1] INFO  o.s.a.r.c.CachingConnectionFactory - Created new connection: rabbitConnectionFactory#651a3e01:0/SimpleConnection@6d9a0206 [delegate=amqp://guest@127.0.0.1:5672/, localPort=48868]
+2026-10-29 09:06:12.003 [http-nio-8081-exec-5] [40b4a117-536b-428d-86ae-4baae621d951] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP requested for 0771040613 (txn 67ccab44-8b35-4cb9-a656-4d7e12d93cf3)
+2026-10-29 09:12:39.951 [http-nio-8081-exec-1] [eb22dd40-bee7-49a5-a5af-c3d81ee68cba] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP requested for 0771040613 (txn 0fed3184-19c0-44e2-a0cd-d858b529d09d)
+2026-10-29 09:25:26.362 [http-nio-8081-exec-3] [6f851be2-1898-4ee4-a155-794b2e523179] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-29 09:26:52.913 [http-nio-8081-exec-8] [80ec9860-b1cb-49ff-b513-18fdf63a8cca] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP requested for 0771040613 (txn c13067b8-93cb-40ee-b6ba-efea80cc0d8a)
+2026-10-29 09:35:27.804 [http-nio-8081-exec-5] [4ad552f4-b505-4638-b5a2-7bceb91930d9] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.
+2026-10-29 09:39:49.179 [http-nio-8081-exec-1] [20618c7e-1cfa-425b-a25f-a92ca79ee120] INFO  c.k.c.t.s.TransactionOtpService - Transaction OTP requested for 0771040613 (txn 504afddf-133e-465a-a6da-a6ebd9d6cb88)
+2026-10-29 10:21:02.829 [http-nio-8081-exec-3] [18384cef-feb5-418b-bd1d-2494aaca5062] WARN  org.hibernate.orm.jdbc.error - HHH000247: ErrorCode: 0, SQLState: 08006
+2026-10-29 10:21:02.931 [http-nio-8081-exec-3] [18384cef-feb5-418b-bd1d-2494aaca5062] WARN  org.hibernate.orm.jdbc.error - SSL error: Read timed out
+2026-10-29 10:21:03.022 [http-nio-8081-exec-3] [none] ERROR o.a.c.c.C.[.[.[.[dispatcherServlet] - Servlet.service() for servlet [dispatcherServlet] in context with path [/kopa-customer-self-care] threw exception
+org.springframework.transaction.CannotCreateTransactionException: Could not open JPA EntityManager for transaction
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:457)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.startTransaction(AbstractPlatformTransactionManager.java:532)
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.getTransaction(AbstractPlatformTransactionManager.java:405)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.createTransactionIfNecessary(TransactionAspectSupport.java:628)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:365)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:130)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:179)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:719)
+	at com.kopa.customerselfcare.auth.service.AuthenticationServiceImpl$$SpringCGLIB$$0.resolveCaller(<generated>)
+	at com.kopa.customerselfcare.config.TokenValidationFilter.doFilter(TokenValidationFilter.java:71)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at com.kopa.customerselfcare.config.CorrelationIdFilter.doFilter(CorrelationIdFilter.java:37)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:199)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:107)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:165)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:77)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:492)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:113)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:83)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:72)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:341)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:397)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:1272)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1801)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:946)
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:480)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:57)
+	at java.base/java.lang.Thread.run(Thread.java:840)
+Caused by: org.hibernate.exception.JDBCConnectionException: Unable to acquire JDBC Connection [SSL error: Read timed out] [n/a]
+	at org.hibernate.exception.internal.SQLStateConversionDelegate.convert(SQLStateConversionDelegate.java:80)
+	at org.hibernate.exception.internal.StandardSQLExceptionConverter.convert(StandardSQLExceptionConverter.java:34)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:115)
+	at org.hibernate.engine.jdbc.spi.SqlExceptionHelper.convert(SqlExceptionHelper.java:101)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquire(LogicalConnectionManagedImpl.java:190)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquireConnectionIfNeeded(LogicalConnectionManagedImpl.java:87)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.getPhysicalConnection(LogicalConnectionManagedImpl.java:126)
+	at org.springframework.orm.jpa.vendor.HibernateJpaDialect.beginTransaction(HibernateJpaDialect.java:135)
+	at org.springframework.orm.jpa.JpaTransactionManager.doBegin(JpaTransactionManager.java:411)
+	... 37 common frames omitted
+Caused by: org.postgresql.util.PSQLException: SSL error: Read timed out
+	at org.postgresql.ssl.MakeSSL.convert(MakeSSL.java:53)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.enableSSL(ConnectionFactoryImpl.java:711)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:280)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:365)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:52)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:290)
+	at org.postgresql.Driver.makeConnection(Driver.java:448)
+	at org.postgresql.Driver.connect(Driver.java:298)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:681)
+	at java.sql/java.sql.DriverManager.getConnection(DriverManager.java:190)
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriverManager(DriverManagerDataSource.java:155)
+	at org.springframework.jdbc.datasource.DriverManagerDataSource.getConnectionFromDriver(DriverManagerDataSource.java:146)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnectionFromDriver(AbstractDriverBasedDataSource.java:193)
+	at org.springframework.jdbc.datasource.AbstractDriverBasedDataSource.getConnection(AbstractDriverBasedDataSource.java:157)
+	at org.hibernate.engine.jdbc.connections.internal.DataSourceConnectionProvider.getConnection(DataSourceConnectionProvider.java:149)
+	at org.hibernate.internal.NonContextualJdbcConnectionAccess.obtainConnection(NonContextualJdbcConnectionAccess.java:62)
+	at org.hibernate.resource.jdbc.internal.LogicalConnectionManagedImpl.acquire(LogicalConnectionManagedImpl.java:187)
+	... 41 common frames omitted
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/sun.nio.ch.NioSocketImpl.timedRead(NioSocketImpl.java:288)
+	at java.base/sun.nio.ch.NioSocketImpl.implRead(NioSocketImpl.java:314)
+	at java.base/sun.nio.ch.NioSocketImpl.read(NioSocketImpl.java:355)
+	at java.base/sun.nio.ch.NioSocketImpl$1.read(NioSocketImpl.java:808)
+	at java.base/java.net.Socket$SocketInputStream.read(Socket.java:966)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.read(SSLSocketInputRecord.java:484)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.readHeader(SSLSocketInputRecord.java:478)
+	at java.base/sun.security.ssl.SSLSocketInputRecord.decode(SSLSocketInputRecord.java:160)
+	at java.base/sun.security.ssl.SSLTransport.decode(SSLTransport.java:111)
+	at java.base/sun.security.ssl.SSLSocketImpl.decode(SSLSocketImpl.java:1509)
+	at java.base/sun.security.ssl.SSLSocketImpl.readHandshakeRecord(SSLSocketImpl.java:1424)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:455)
+	at java.base/sun.security.ssl.SSLSocketImpl.startHandshake(SSLSocketImpl.java:426)
+	at org.postgresql.ssl.MakeSSL.convert(MakeSSL.java:51)
+	... 57 common frames omitted
+2026-10-29 10:27:14.458 [http-nio-8081-exec-9] [66cee43a-1e2e-452e-b5c5-e959a48e5696] WARN  c.k.c.s.service.StatementServiceImpl - Could not enrich statement for 0771040613 with KTRN BUNDLE_HIST, returning local entries only: Balance summary service is temporarily unavailable.

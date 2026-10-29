@@ -16,7 +16,7 @@ import javax.sql.DataSource;
 // pattern as customer-identity/customer-self-care's AppConfig, not Spring Boot's standard
 // spring.datasource.* autoconfiguration.
 @Configuration
-@EnableConfigurationProperties({MiddlewareSmsProperties.class, InternalApiKeyProperties.class})
+@EnableConfigurationProperties({MiddlewareSmsProperties.class, InternalApiKeyProperties.class, DevSmsProperties.class})
 public class AppConfig {
 
     @Autowired

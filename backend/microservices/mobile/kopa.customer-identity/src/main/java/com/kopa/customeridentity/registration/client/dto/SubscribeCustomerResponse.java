@@ -6,6 +6,8 @@ public record SubscribeCustomerResponse(
         String birthDay,
         String addrDtl,
         String email,
-        String phoneNum
+        String phoneNum,
+        String msgcode,
+        String message
 ) {
 }

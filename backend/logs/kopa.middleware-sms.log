@@ -1,2 +1,14 @@
-2026-10-20 07:46:09.387 [SpringApplicationShutdownHook] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
-2026-10-20 07:46:09.584 [tomcat-shutdown] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-10-29 08:36:59.894 [http-nio-8086-exec-3] [131695b5-bd0d-44cb-8de6-651b88aebab9] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-10-29 08:38:56.957 [http-nio-8086-exec-5] [131695b5-bd0d-44cb-8de6-651b88aebab9] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-10-29 08:44:33.435 [http-nio-8086-exec-7] [6cc24a8b-a8ec-446c-b5aa-0ad7c125d34a] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-10-29 08:45:54.423 [http-nio-8086-exec-9] [6cc24a8b-a8ec-446c-b5aa-0ad7c125d34a] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-10-29 08:47:15.006 [http-nio-8086-exec-1] [8467feec-892a-49ba-ab23-c74a1408a780] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-10-29 08:48:11.249 [http-nio-8086-exec-2] [8467feec-892a-49ba-ab23-c74a1408a780] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-10-29 09:04:12.425 [http-nio-8086-exec-4] [74a5f8e5-1b6f-4f9a-bcc8-74cae3bad638] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-10-29 09:05:17.223 [http-nio-8086-exec-5] [74a5f8e5-1b6f-4f9a-bcc8-74cae3bad638] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-10-29 09:06:12.073 [http-nio-8086-exec-6] [40b4a117-536b-428d-86ae-4baae621d951] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-10-29 09:07:35.370 [http-nio-8086-exec-8] [40b4a117-536b-428d-86ae-4baae621d951] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-10-29 09:39:49.361 [http-nio-8086-exec-10] [20618c7e-1cfa-425b-a25f-a92ca79ee120] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-10-29 09:40:16.288 [http-nio-8086-exec-1] [20618c7e-1cfa-425b-a25f-a92ca79ee120] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-10-29 10:07:56.962 [http-nio-8086-exec-3] [718e0105-bfa3-4feb-877c-8daebf51f828] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-10-29 10:08:33.432 [http-nio-8086-exec-4] [d8f1b9e7-d914-4ac4-8a89-a5d6c74c171e] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]

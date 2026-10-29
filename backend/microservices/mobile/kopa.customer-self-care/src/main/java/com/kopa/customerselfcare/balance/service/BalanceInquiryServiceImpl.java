@@ -7,6 +7,7 @@ import com.kopa.customerselfcare.balance.dto.BalanceDto;
 import com.kopa.customerselfcare.balance.model.BalanceInquiryLog;
 import com.kopa.customerselfcare.balance.repository.BalanceInquiryLogRepository;
 import com.kopa.customerselfcare.common.CorrelationIdHolder;
+import com.kopa.customerselfcare.common.KtrnMessageCodes;
 import com.kopa.customerselfcare.common.exception.BadRequestException;
 import com.kopa.customerselfcare.common.exception.NotFoundException;
 import com.kopa.customerselfcare.common.exception.ServiceUnavailableException;
