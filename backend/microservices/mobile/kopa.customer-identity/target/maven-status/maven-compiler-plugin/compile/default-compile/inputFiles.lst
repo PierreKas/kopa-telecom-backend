@@ -1,4 +1,10 @@
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/Application.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/admin/controller/AdminCustomerController.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/admin/dto/AdminActivateSimRequest.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/admin/dto/AdminActivateSimResponse.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/admin/dto/AdminCreateCustomerRequest.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/admin/dto/AdminCreateCustomerResponse.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/admin/service/AdminCustomerService.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/auth/client/NotificationsClient.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/auth/client/OtpSendRequest.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/auth/client/OtpSendResponse.java
@@ -40,6 +46,8 @@
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/config/CorrelationIdFilter.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/config/CorrelationIdRequestInterceptor.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/config/DatabaseProperties.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/config/InternalApiKeyFilter.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/config/InternalApiKeyProperties.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/config/KopaBusinessProperties.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/config/MessagingProperties.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/config/MiddlewareProperties.java
@@ -59,6 +67,9 @@
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/profile/service/ProfileService.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/profile/service/ProfileServiceImpl.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/registration/client/MiddlewareKtrnClient.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/registration/client/dto/AdminActivateResponse.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/registration/client/dto/AdminActivateSimRequest.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/registration/client/dto/AdminCreateCustomerRequest.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/registration/client/dto/MsisdnStatusRequest.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/registration/client/dto/MsisdnStatusResponse.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/src/main/java/com/kopa/customeridentity/registration/client/dto/MsisdnSuggestionsRequest.java

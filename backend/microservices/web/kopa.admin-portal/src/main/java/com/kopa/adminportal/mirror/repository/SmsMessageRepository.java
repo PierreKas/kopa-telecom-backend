@@ -9,7 +9,10 @@ import java.util.List;
 
 public interface SmsMessageRepository extends JpaRepository<SmsMessage, String> {
 
-    List<SmsMessage> findByMsisdn(String msisdn);
+    // Newest-first - see TransactionRepository's identical reasoning.
+    List<SmsMessage> findAllByOrderByCreatedAtDesc();
+
+    List<SmsMessage> findByMsisdnOrderByCreatedAtDesc(String msisdn);
 
     long countByCreatedAtAfter(Instant since);
 

@@ -11,6 +11,7 @@ import com.kopa.customerselfcare.inquiry.repository.ServiceInquiryLogRepository;
 import com.kopa.customerselfcare.usage.client.MiddlewareUsageClient;
 import com.kopa.customerselfcare.usage.client.dto.UsageSearchRequest;
 import com.kopa.customerselfcare.usage.client.dto.UsageSearchResponse;
+import com.kopa.customerselfcare.usage.dto.UsageBalanceDto;
 import com.kopa.customerselfcare.usage.dto.UsageItemDto;
 import com.kopa.customerselfcare.usage.dto.UsageResponseDto;
 import org.springframework.stereotype.Service;
@@ -49,7 +50,10 @@ public class UsageInquiryServiceImpl implements UsageInquiryService {
         }
 
         List<UsageItemDto> items = response.items().stream()
-                .map(i -> new UsageItemDto(i.productCode(), i.productName(), i.flag(), i.allowance(), i.usage(), i.remaining()))
+                .map(i -> new UsageItemDto(i.productCode(), i.productName(),
+                        i.balances().stream()
+                                .map(b -> new UsageBalanceDto(b.category(), b.allowance(), b.usage(), b.remaining()))
+                                .toList()))
                 .toList();
         return new UsageResponseDto(msisdn, items);
     }

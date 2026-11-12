@@ -7,6 +7,7 @@ public record TransactionCompletedEvent(
         String transactionType,
         String amount,
         String productCode,
-        String correlationId
+        String correlationId,
+        String customerFullName
 ) {
 }

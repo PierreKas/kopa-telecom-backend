@@ -8,6 +8,7 @@ public record CustomerDto(
         String msisdn,
         String nationalId,
         String iccid,
+        String custId,
         String fullName,
         LocalDate birthDay,
         String email,

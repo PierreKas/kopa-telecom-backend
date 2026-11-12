@@ -6,5 +6,6 @@ public enum TransactionStatus {
     OTP_PENDING,
     SUBMITTED,
     SUCCESS,
-    FAILED
+    FAILED,
+    EXPIRED
 }

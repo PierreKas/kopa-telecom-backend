@@ -106,10 +106,12 @@
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/src/main/java/com/kopa/customerselfcare/transaction/service/TransactionOtpService.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/src/main/java/com/kopa/customerselfcare/transaction/service/TransactionOtpVerifyService.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/src/main/java/com/kopa/customerselfcare/usage/client/MiddlewareUsageClient.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/src/main/java/com/kopa/customerselfcare/usage/client/dto/UsageBalance.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/src/main/java/com/kopa/customerselfcare/usage/client/dto/UsageItem.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/src/main/java/com/kopa/customerselfcare/usage/client/dto/UsageSearchRequest.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/src/main/java/com/kopa/customerselfcare/usage/client/dto/UsageSearchResponse.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/src/main/java/com/kopa/customerselfcare/usage/controller/UsageController.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/src/main/java/com/kopa/customerselfcare/usage/dto/UsageBalanceDto.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/src/main/java/com/kopa/customerselfcare/usage/dto/UsageItemDto.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/src/main/java/com/kopa/customerselfcare/usage/dto/UsageResponseDto.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-self-care/src/main/java/com/kopa/customerselfcare/usage/service/UsageInquiryService.java

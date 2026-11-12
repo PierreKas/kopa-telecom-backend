@@ -20,8 +20,8 @@ public class SmsMessageLookupService {
     @Transactional(readOnly = true)
     public List<SmsMessageDto> search(String msisdn) {
         List<SmsMessage> results = (msisdn == null || msisdn.isBlank())
-                ? smsMessages.findAll()
-                : smsMessages.findByMsisdn(msisdn);
+                ? smsMessages.findAllByOrderByCreatedAtDesc()
+                : smsMessages.findByMsisdnOrderByCreatedAtDesc(msisdn);
         return results.stream().map(this::toDto).toList();
     }
 

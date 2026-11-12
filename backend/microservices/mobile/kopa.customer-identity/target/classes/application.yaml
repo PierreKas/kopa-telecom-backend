@@ -30,10 +30,13 @@ kopa:
     # 2026-10-28: was silently overriding MiddlewareProperties' Java default on every startup, the
     # same hidden-override bug found in kopa.middleware-ktrn's own application.yaml - this is the
     # real source of truth, not the class default. Must stay above middleware-ktrn's own KTRN
-    # gateway timeout (now 25000ms, see its application.yaml).
+    # gateway timeout (now 60000ms, see its application.yaml).
     connect-timeout-ms: 10000
-    read-timeout-ms: 30000
+    read-timeout-ms: 70000
 
 notifications:
   base-url: ${kopa.notifications.base-url}
   api-key: ${kopa.internal.notifications-api-key}
+
+internal:
+  api-key: ${kopa.internal.customer-identity-api-key}

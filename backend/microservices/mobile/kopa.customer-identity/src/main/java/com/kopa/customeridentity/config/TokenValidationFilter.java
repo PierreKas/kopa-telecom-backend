@@ -32,6 +32,7 @@ public class TokenValidationFilter implements Filter {
             "/api/v1/auth/login",
             "/api/v1/auth/pin/reset",
             "/api/v1/registration",
+            "/internal/v1/",
             "/v3/api-docs",
             "/swagger-ui",
             "/swagger-resources",

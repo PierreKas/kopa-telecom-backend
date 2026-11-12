@@ -29,6 +29,9 @@ public class Customer {
     @Column(nullable = false, unique = true, length = 15)
     private String msisdn;
 
+    @Column(name = "full_name", nullable = false)
+    private String fullName;
+
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
     private CustomerStatus status;

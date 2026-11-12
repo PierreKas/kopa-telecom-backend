@@ -19,7 +19,7 @@ import javax.sql.DataSource;
 // Spring Boot's standard spring.datasource.* autoconfiguration.
 @Configuration
 @EnableConfigurationProperties({MiddlewareProperties.class, KopaBusinessProperties.class,
-        NotificationsProperties.class})
+        NotificationsProperties.class, InternalApiKeyProperties.class})
 public class AppConfig {
 
     @Autowired

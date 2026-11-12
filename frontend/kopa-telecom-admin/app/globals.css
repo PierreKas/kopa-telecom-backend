@@ -1,0 +1,202 @@
+@import "tailwindcss";
+
+:root {
+  /* Kopa Telecom brand tokens - lifted from the mobile app's own authoritative source,
+     src/constants/theme.ts (Colors.*), so web and mobile always match. */
+  --kopa-ink: #481a38;
+  --kopa-navy: #481a38;
+  --kopa-secondary: #d1f931;
+  --kopa-blue: #c5499a;
+  --kopa-blue-light: #d873b5;
+  --kopa-sky: #2f80ed;
+  --kopa-sky-pale: #e3eefd;
+  --kopa-blue-pale: #fce4f3;
+  --kopa-white: #ffffff;
+  --kopa-gray-50: #f8f9fa;
+  --kopa-gray-100: #ededed;
+  --kopa-gray-200: #bdbdbd;
+  --kopa-gray-400: #828282;
+  --kopa-gray-600: #636e72;
+  --kopa-gray-800: #2d3436;
+  --kopa-green: #27ae60;
+  --kopa-green-pale: #e3f8ee;
+  --kopa-red: #eb5757;
+  --kopa-red-pale: #fde8e8;
+  --kopa-amber: #e2b93b;
+  --kopa-amber-pale: #fbf1da;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family:
+    var(--font-inter),
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+  background: var(--kopa-gray-50);
+  color: var(--kopa-gray-800);
+  margin: 0;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--kopa-gray-200);
+  border-radius: 10px;
+}
+
+.transition-all {
+  transition: all 0.2s ease;
+}
+
+/* Slide-in for the Drawer component (side panel opening from either edge). */
+@keyframes drawer-in-left {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes drawer-in-right {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+/* Toast (top-right stack): slide + fade in, and a shrinking countdown bar. */
+@keyframes toast-in {
+  from {
+    opacity: 0;
+    transform: translateX(24px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+@keyframes toast-shrink {
+  from {
+    transform: scaleX(1);
+  }
+  to {
+    transform: scaleX(0);
+  }
+}
+
+/* Spinner (also reused, at a different duration, by KopaLoader's own spinning arc below). */
+@keyframes kopa-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* KopaLoader (Spinner / FullPageLoader components) - ported from the mobile app's login loader. */
+@keyframes kopa-loader-ring {
+  0% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(3);
+  }
+}
+@keyframes kopa-loader-breathe {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.07);
+  }
+}
+
+/* ---- Responsive utilities (mobile-first, one breakpoint) ---- */
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 14px;
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+/* Dashboard widget rows - asymmetric like the reference layout (one wider card + two
+   narrower ones), not an even split. */
+.dashboard-row {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr;
+  gap: 16px;
+}
+/* Card grid for read-only list pages (customers/transactions/sms-messages) - replaces a
+   table when a dataset has few enough fields to read comfortably as a card. */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+@media (max-width: 760px) {
+  .grid-2,
+  .grid-3,
+  .dashboard-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.table-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* Action menu (kebab) items - see ActionMenu in ui.tsx. Kept for parity with the reference
+   project even though no page here currently uses it (every data page is read-only). */
+.action-menu-item {
+  transition: background 0.12s ease;
+}
+.action-menu-item:hover:not(:disabled) {
+  background: var(--kopa-gray-50);
+}
+.action-menu-item.danger:hover:not(:disabled) {
+  background: var(--kopa-red-pale);
+}
+
+/* Drawer's close button - see Drawer in ui.tsx. */
+.drawer-close-btn {
+  transition: background 0.12s ease, color 0.12s ease;
+}
+.drawer-close-btn:hover {
+  background: var(--kopa-gray-100);
+  color: var(--kopa-gray-800);
+}
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

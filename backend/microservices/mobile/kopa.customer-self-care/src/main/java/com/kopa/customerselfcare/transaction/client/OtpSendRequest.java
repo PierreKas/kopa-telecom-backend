@@ -5,6 +5,7 @@ public record OtpSendRequest(
         String code,
         String purpose,
         String correlationId,
-        String requestedByService
+        String requestedByService,
+        String customerFullName
 ) {
 }

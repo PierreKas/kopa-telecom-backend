@@ -2,6 +2,9 @@ package com.kopa.customeridentity.registration.client;
 
 import com.kopa.customeridentity.common.exception.ServiceUnavailableException;
 import com.kopa.customeridentity.config.MiddlewareProperties;
+import com.kopa.customeridentity.registration.client.dto.AdminActivateResponse;
+import com.kopa.customeridentity.registration.client.dto.AdminActivateSimRequest;
+import com.kopa.customeridentity.registration.client.dto.AdminCreateCustomerRequest;
 import com.kopa.customeridentity.registration.client.dto.MsisdnStatusRequest;
 import com.kopa.customeridentity.registration.client.dto.MsisdnStatusResponse;
 import com.kopa.customeridentity.registration.client.dto.MsisdnSuggestionsRequest;
@@ -68,6 +71,17 @@ public class MiddlewareKtrnClient {
 
     public MsisdnSuggestionsResponse suggestMsisdns(MsisdnSuggestionsRequest request) {
         return post("/internal/v1/ktrn/msisdn/suggestions", request, MsisdnSuggestionsResponse.class);
+    }
+
+    /** Admin-portal-driven create+activate, split into two independent calls (2026-11-03) - see
+     *  AdminRegistrationService on middleware-ktrn for the full HPOP313/601/501/502/302
+     *  sequence these wrap. */
+    public AdminActivateResponse createCustomer(AdminCreateCustomerRequest request) {
+        return post("/internal/v1/ktrn/admin/create-customer", request, AdminActivateResponse.class);
+    }
+
+    public AdminActivateResponse activateSim(AdminActivateSimRequest request) {
+        return post("/internal/v1/ktrn/admin/activate-sim", request, AdminActivateResponse.class);
     }
 
     private <T> T post(String uri, Object body, Class<T> responseType) {

@@ -36,8 +36,8 @@ public class TransactionCompletedListener {
 
         boolean isBundlePurchase = event.productCode() != null && !event.productCode().isBlank();
         String rendered = isBundlePurchase
-                ? SmsTemplates.purchaseConfirmation(event.productCode(), event.amount())
-                : SmsTemplates.rechargeConfirmation(event.amount());
+                ? SmsTemplates.purchaseConfirmation(event.customerFullName(), event.productCode(), event.amount())
+                : SmsTemplates.rechargeConfirmation(event.customerFullName(), event.amount());
         String templateCode = isBundlePurchase ? SmsTemplates.PURCHASE_CONFIRMATION : SmsTemplates.RECHARGE_CONFIRMATION;
         SmsPurpose purpose = isBundlePurchase ? SmsPurpose.PURCHASE_CONFIRMATION : SmsPurpose.RECHARGE_CONFIRMATION;
 

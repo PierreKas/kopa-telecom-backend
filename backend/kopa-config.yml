@@ -44,6 +44,11 @@ kopa:
   notifications:
     base-url: http://localhost:8084/kopa-notifications
 
+  # Where kopa.admin-portal reaches kopa.customer-identity for admin-driven customer creation
+  # (2026-11-02) - the only caller of customer-identity's /internal/v1/** surface.
+  customer-identity:
+    base-url: http://localhost:8083/kopa-customer-identity
+
   # InTouch bulk SMS gateway (http_intouch_api_1.2.pdf). Sender "KOPATELECOM" confirmed live and
   # working 2026-10-19 (real SMS sent, messageid returned, cost deducted from account balance).
   # Also confirmed that day: the gateway needs multipart/form-data, not JSON, despite the doc's
@@ -78,6 +83,9 @@ kopa:
     # admin account. The endpoint also refuses to run a second time once any admin_users row
     # exists, so this key alone isn't the only thing stopping a repeat call.
     admin-portal-api-key: 4b38a3f34207efd1d5814b1fce2a32ffd37ddfaaa676dee4
+    # Guards kopa.customer-identity's new /internal/v1/admin/customers (admin-portal-driven
+    # customer creation/activation - 2026-11-02). Only admin-portal calls this.
+    customer-identity-api-key: 7a914ec05b8623fd19e4a7c25b7a3e7ed6e128f0c6b5a9d31
 
   # Browser origins allowed to call the Mobile-side APIs (CORS).
   web:

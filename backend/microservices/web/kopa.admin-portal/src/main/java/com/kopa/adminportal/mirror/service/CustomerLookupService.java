@@ -33,7 +33,8 @@ public class CustomerLookupService {
     }
 
     private CustomerDto toDto(Customer c) {
-        return new CustomerDto(c.getId(), c.getMsisdn(), c.getNationalId(), c.getIccid(), c.getFullName(),
-                c.getBirthDay(), c.getEmail(), c.getSoId(), c.getStatus().name(), c.getCreatedAt(), c.getUpdatedAt());
+        return new CustomerDto(c.getId(), c.getMsisdn(), c.getNationalId(), c.getIccid(), c.getCustId(),
+                c.getFullName(), c.getBirthDay(), c.getEmail(), c.getSoId(), c.getStatus().name(),
+                c.getCreatedAt(), c.getUpdatedAt());
     }
 }

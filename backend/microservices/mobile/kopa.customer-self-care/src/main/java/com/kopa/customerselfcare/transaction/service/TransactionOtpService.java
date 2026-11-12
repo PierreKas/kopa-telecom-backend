@@ -1,5 +1,7 @@
 package com.kopa.customerselfcare.transaction.service;
 
+import com.kopa.customerselfcare.auth.model.Customer;
+import com.kopa.customerselfcare.auth.repository.CustomerRepository;
 import com.kopa.customerselfcare.common.exception.BadRequestException;
 import com.kopa.customerselfcare.transaction.client.NotificationsClient;
 import com.kopa.customerselfcare.transaction.client.OtpSendRequest;
@@ -30,12 +32,17 @@ public class TransactionOtpService {
 
     private final NotificationsClient notificationsClient;
     private final TransactionRepository transactions;
+    private final CustomerRepository customers;
+    private final TransactionFailureRecorder failureRecorder;
     private final BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
     private final SecureRandom secureRandom = new SecureRandom();
 
-    public TransactionOtpService(NotificationsClient notificationsClient, TransactionRepository transactions) {
+    public TransactionOtpService(NotificationsClient notificationsClient, TransactionRepository transactions,
+                                  CustomerRepository customers, TransactionFailureRecorder failureRecorder) {
         this.notificationsClient = notificationsClient;
         this.transactions = transactions;
+        this.customers = customers;
+        this.failureRecorder = failureRecorder;
     }
 
     /** Generates, hashes, stores, and dispatches an OTP for a transaction already in OTP_PENDING. */
@@ -52,8 +59,13 @@ public class TransactionOtpService {
         // logged. The customer is the only one who should ever see it, via SMS.
         logger.info("Transaction OTP requested for {} (txn {})", transaction.getMsisdn(), transaction.getId());
 
+        String fullName = customers.findByMsisdn(transaction.getMsisdn())
+                .map(Customer::getFullName)
+                .orElse(null);
+
         OtpSendResponse response = notificationsClient.sendOtp(new OtpSendRequest(
-                transaction.getMsisdn(), code, "TRANSACTION_AUTH", transaction.getCorrelationId(), "customer-self-care"));
+                transaction.getMsisdn(), code, "TRANSACTION_AUTH", transaction.getCorrelationId(),
+                "customer-self-care", fullName));
         if (!response.success()) {
             throw new BadRequestException("Could not send the verification code: " + response.errorMessage());
         }
@@ -62,13 +74,16 @@ public class TransactionOtpService {
     /** Verifies the code against a transaction's pending OTP challenge. Throws on any failure -
      *  wrong code, expired, already consumed, or too many attempts - and increments the attempt
      *  counter on a wrong code. Does not itself change the transaction's status away from
-     *  OTP_PENDING - the caller (RechargeServiceImpl/BundleServiceImpl) does that once it
-     *  actually proceeds with the deferred KTRN call. */
+     *  OTP_PENDING on a successful verify - the caller (RechargeServiceImpl/BundleServiceImpl)
+     *  does that once it actually proceeds with the deferred KTRN call. An expired OTP is the one
+     *  exception: that transaction can never be completed, so it's moved straight to EXPIRED
+     *  here rather than left stuck at OTP_PENDING forever. */
     public void verify(Transaction transaction, String code) {
         if (transaction.getStatus() != TransactionStatus.OTP_PENDING) {
             throw new BadRequestException("This transaction is not waiting on a verification code.");
         }
         if (transaction.isOtpExpired(Instant.now())) {
+            failureRecorder.recordExpiry(transaction);
             throw new BadRequestException("This verification code has expired.");
         }
         if (transaction.getOtpAttemptCount() >= OTP_MAX_ATTEMPTS) {

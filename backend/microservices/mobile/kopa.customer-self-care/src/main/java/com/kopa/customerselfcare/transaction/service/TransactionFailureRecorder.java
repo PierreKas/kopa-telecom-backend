@@ -39,4 +39,18 @@ public class TransactionFailureRecorder {
         transaction.setDurationMs(transaction.getCompletedAt().toEpochMilli() - transaction.getRequestedAt().toEpochMilli());
         transactions.save(transaction);
     }
+
+    /** Same REQUIRES_NEW reasoning as recordFailure() - TransactionOtpService.verify() is called
+     *  from within TransactionOtpVerifyService.verifyAndComplete()'s @Transactional method, and
+     *  always throws right after this on an expired OTP, which would otherwise roll this save
+     *  back along with everything else. Not routed through recordFailure() itself: an expired OTP
+     *  is the customer simply never completing the challenge in time, not a failure at any layer,
+     *  so failureLayer/failureDetail are left unset. */
+    @Transactional(propagation = Propagation.REQUIRES_NEW)
+    public void recordExpiry(Transaction transaction) {
+        transaction.setStatus(TransactionStatus.EXPIRED);
+        transaction.setCompletedAt(Instant.now());
+        transaction.setDurationMs(transaction.getCompletedAt().toEpochMilli() - transaction.getRequestedAt().toEpochMilli());
+        transactions.save(transaction);
+    }
 }

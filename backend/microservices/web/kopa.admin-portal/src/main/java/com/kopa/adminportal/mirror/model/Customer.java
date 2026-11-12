@@ -35,6 +35,11 @@ public class Customer {
     @Column(length = 19)
     private String iccid;
 
+    /** The KTRN-side customer ID (HPOP502's CUST_ID) - set by the admin-portal-driven creation
+     *  flow (2026-11-02). */
+    @Column(name = "cust_id", length = 10)
+    private String custId;
+
     @Column(name = "full_name", nullable = false)
     private String fullName;
 

@@ -6,6 +6,7 @@ public record TransactionFailedEvent(
         String msisdn,
         String transactionType,
         String failureDetail,
-        String correlationId
+        String correlationId,
+        String customerFullName
 ) {
 }

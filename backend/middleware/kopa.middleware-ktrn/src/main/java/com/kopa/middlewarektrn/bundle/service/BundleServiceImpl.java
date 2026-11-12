@@ -46,7 +46,7 @@ public class BundleServiceImpl implements BundleService {
         KtrnGenericXmlResponse response = apiClient.callGeneric(apiRequest);
 
         var items = KtrnListFieldParser.parseRecords(response.bodyValue("PROD_LIST"), fields ->
-                new BundleItem(stripSoPrefix(field(fields, 0)), field(fields, 1), field(fields, 2)));
+                new BundleItem(field(fields, 0), field(fields, 1), field(fields, 2)));
 
         return new BundleListResponse(
                 response.getHeader() != null ? response.getHeader().getMsgcode() : null,
@@ -59,18 +59,26 @@ public class BundleServiceImpl implements BundleService {
     public BundlePurchaseResponse purchase(BundlePurchaseRequest request) {
         String ispCd = blankToNull(request.ispCd()) != null ? request.ispCd() : properties.getIspCd();
 
-        // The doc's own s2.3.1 schema table names this field ISP_CD, but its worked example uses
-        // <SO_ID> with the exact same kind of value - same "trust the worked example" call as the
-        // svcode/svccode spelling for feature 2.1.1. Using SO_ID here, matching the example.
+        // 2026-10-29 live-confirmed: the doc's s2.3.1 schema table names this field ISP_CD, and its
+        // worked example uses <SO_ID> instead with the same kind of value - sending only SO_ID (no
+        // ISP_CD) got back "-6001 ISP_CD is missing." on the live gateway. Sending both (same value)
+        // is what actually works - confirmed end to end: REMAIN_AMT dropped by exactly the bundle's
+        // price and the bundle showed up for real in both HPOP101's BUNDLE_HIST and HPOP008's
+        // PURCHASED_LIST right after.
         String apiRequest = wrap(SVCCODE_HP00002, OPCODE_PURCHASE,
                 "<MSISDN>" + request.msisdn() + "</MSISDN>"
                         + "<SO_ID>" + ispCd + "</SO_ID>"
+                        + "<ISP_CD>" + ispCd + "</ISP_CD>"
                         + "<RCHRG_TP>500</RCHRG_TP>"
                         + "<RCHRG_STAT>10</RCHRG_STAT>"
                         + "<PROD_CD>" + request.productCode() + "</PROD_CD>");
 
         KtrnGenericXmlResponse response = apiClient.callGeneric(apiRequest);
-        return new BundlePurchaseResponse(response.bodyValue("RESULT"));
+        return new BundlePurchaseResponse(
+                response.bodyValue("RESULT"),
+                response.getHeader() != null ? response.getHeader().getMsgcode() : null,
+                response.getHeader() != null ? response.getHeader().getMessage() : null
+        );
     }
 
     @Override
@@ -122,24 +130,5 @@ public class BundleServiceImpl implements BundleService {
 
     private static String blankToNull(String value) {
         return (value == null || value.isBlank()) ? null : value;
-    }
-
-    /**
-     * 2026-10-29 live-confirmed: this KTRN environment's HPOP102 PROD_LIST entries come back
-     * prefixed with a leading "<number>-" (e.g. "572-PD00067100") that neither the RBSS-CCBS doc's
-     * worked example for this same field ("PD00045904", bare) nor PROD_CD's documented STRING(10)
-     * format account for - the prefixed value is 14 chars. Passing it through unchanged to
-     * HPOP403 (purchase-check) got back MSGCODE -7002 "Data is not found.." even for a MSISDN/
-     * product pair that HPOP102 itself had just listed as available; HPOP402 (ewallet-check, which
-     * never takes a MSISDN) returned RESULT Y for the same prefixed code regardless, so it isn't a
-     * useful signal here. Stripping back to the bare PD-code is what the subscriber-specific
-     * purchase-check/purchase calls actually expect.
-     */
-    private static String stripSoPrefix(String productCode) {
-        if (productCode == null) {
-            return null;
-        }
-        int dash = productCode.indexOf('-');
-        return dash >= 0 ? productCode.substring(dash + 1) : productCode;
     }
 }

@@ -72,6 +72,10 @@ public class AuthService {
             throw new UnauthorizedException("Too many failed attempts. Try again later.");
         }
 
+        if (credential.isTemporaryPinExpired(now)) {
+            throw new UnauthorizedException("Your temporary PIN has expired. Use \"Forgot PIN\" to set a new one.");
+        }
+
         if (!passwordEncoder.matches(rawPin, credential.getPinHash())) {
             registerFailedAttempt(credential, now);
             throw new UnauthorizedException(Consts.BAD_CREDENTIALS_MESSAGE);
@@ -85,7 +89,7 @@ public class AuthService {
         credential.setLockedUntil(null);
         credentials.save(credential);
 
-        return issueSession(customer);
+        return issueSession(customer, credential.getPinExpiresAt() != null);
     }
 
     @Transactional
@@ -125,13 +129,14 @@ public class AuthService {
         credential.setPinHash(passwordEncoder.encode(newPin));
         credential.setFailedAttempts(0);
         credential.setLockedUntil(null);
+        credential.setPinExpiresAt(null);
         credentials.save(credential);
     }
 
     /** Issues a fresh session for a customer with no PIN yet, right after activation succeeds. */
     @Transactional
     public LoginResponse issueSessionForNewCustomer(Customer customer) {
-        return issueSession(customer);
+        return issueSession(customer, false);
     }
 
     /** "Forgot PIN" step 1 - generates and dispatches an OTP. Deliberately does not reveal whether
@@ -158,7 +163,7 @@ public class AuthService {
         otpChallenges.save(challenge);
 
         OtpSendResponse response = notificationsClient.sendOtp(new OtpSendRequest(
-                msisdn, code, "PIN_RESET", correlationId, "customer-identity"));
+                msisdn, code, "PIN_RESET", correlationId, "customer-identity", customer.getFullName()));
         if (!response.success()) {
             throw new BadRequestException("Could not send the verification code: " + response.errorMessage());
         }
@@ -201,6 +206,7 @@ public class AuthService {
         credential.setPinHash(passwordEncoder.encode(newPin));
         credential.setFailedAttempts(0);
         credential.setLockedUntil(null);
+        credential.setPinExpiresAt(null);
         credentials.save(credential);
     }
 
@@ -219,8 +225,8 @@ public class AuthService {
         credentials.save(credential);
     }
 
-    private LoginResponse issueSession(Customer customer) {
+    private LoginResponse issueSession(Customer customer, boolean temporaryPin) {
         AuthToken token = authentication.issueToken(customer.getId());
-        return new LoginResponse(customer.getId(), customer.getMsisdn(), token.getToken(), token.getExpiresAt());
+        return new LoginResponse(customer.getId(), customer.getMsisdn(), token.getToken(), token.getExpiresAt(), temporaryPin);
     }
 }

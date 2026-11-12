@@ -1,5 +1,7 @@
 package com.kopa.customerselfcare.recharge.service;
 
+import com.kopa.customerselfcare.auth.model.Customer;
+import com.kopa.customerselfcare.auth.repository.CustomerRepository;
 import com.kopa.customerselfcare.common.CorrelationIdHolder;
 import com.kopa.customerselfcare.common.exception.BadRequestException;
 import com.kopa.customerselfcare.common.exception.NotFoundException;
@@ -41,16 +43,19 @@ public class RechargeServiceImpl implements RechargeService {
     private final TransactionOtpService otpService;
     private final EventPublisher eventPublisher;
     private final TransactionFailureRecorder failureRecorder;
+    private final CustomerRepository customers;
 
     public RechargeServiceImpl(MiddlewareRechargeClient middlewareClient, TransactionRepository transactions,
                                TransactionLimitService limitService, TransactionOtpService otpService,
-                               EventPublisher eventPublisher, TransactionFailureRecorder failureRecorder) {
+                               EventPublisher eventPublisher, TransactionFailureRecorder failureRecorder,
+                               CustomerRepository customers) {
         this.middlewareClient = middlewareClient;
         this.transactions = transactions;
         this.limitService = limitService;
         this.otpService = otpService;
         this.eventPublisher = eventPublisher;
         this.failureRecorder = failureRecorder;
+        this.customers = customers;
     }
 
     @Override
@@ -171,14 +176,15 @@ public class RechargeServiceImpl implements RechargeService {
 
     private void publishOutcome(Transaction transaction, boolean success) {
         String amount = transaction.getAmount() == null ? null : transaction.getAmount().toPlainString();
+        String fullName = customers.findByMsisdn(transaction.getMsisdn()).map(Customer::getFullName).orElse(null);
         if (success) {
             eventPublisher.publish(RabbitConfig.ROUTING_KEY_TRANSACTION_COMPLETED, new TransactionCompletedEvent(
                     transaction.getId(), transaction.getMsisdn(), transaction.getTransactionType().name(),
-                    amount, transaction.getProductCode(), transaction.getCorrelationId()));
+                    amount, transaction.getProductCode(), transaction.getCorrelationId(), fullName));
         } else {
             eventPublisher.publish(RabbitConfig.ROUTING_KEY_TRANSACTION_FAILED, new TransactionFailedEvent(
                     transaction.getId(), transaction.getMsisdn(), transaction.getTransactionType().name(),
-                    transaction.getFailureDetail(), transaction.getCorrelationId()));
+                    transaction.getFailureDetail(), transaction.getCorrelationId(), fullName));
         }
     }
 }

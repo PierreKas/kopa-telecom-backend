@@ -1,0 +1,102 @@
+2026-11-03 13:13:32.941 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-03 13:13:33.036 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-11-03 13:13:33.353 [SpringApplicationShutdownHook] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-03 13:14:54.401 [main] [none] INFO  c.kopa.customeridentity.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 1061540 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/target/kopa.customer-identity-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity)
+2026-11-03 13:14:54.426 [main] [none] INFO  c.kopa.customeridentity.Application - No active profile set, falling back to 1 default profile: "default"
+2026-11-03 13:14:56.606 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-11-03 13:15:00.586 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-03 13:15:00.906 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 270 ms. Found 6 JPA repository interfaces.
+2026-11-03 13:15:03.367 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8083 (http)
+2026-11-03 13:15:03.405 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2026-11-03 13:15:03.410 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-03 13:15:03.411 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-11-03 13:15:03.514 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 8859 ms
+2026-11-03 13:15:05.755 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-11-03 13:15:06.166 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 6 migrations (execution time 00:00.169s)
+2026-11-03 13:15:06.397 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_identity": 1.5
+2026-11-03 13:15:06.410 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Schema "customer_identity" is up to date. No migration necessary.
+2026-11-03 13:15:07.063 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-03 13:15:07.449 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-11-03 13:15:10.085 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-03 13:15:10.687 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-03 13:15:14.881 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-03 13:15:14.923 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-03 13:15:15.241 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-03 13:15:19.437 [main] [none] WARN  o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: 0db24a36-2818-4725-8d06-972c77687b33
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-03 13:15:19.468 [main] [none] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-03 13:15:21.396 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2026-11-03 13:15:21.485 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8083 (http) with context path '/kopa-customer-identity'
+2026-11-03 13:15:21.589 [main] [none] INFO  c.kopa.customeridentity.Application - Started Application in 30.287 seconds (process running for 36.505)
+2026-11-03 13:15:21.601 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-03 13:15:21.615 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-11-03 13:32:43.736 [http-nio-8083-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-customer-identity] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-03 13:32:43.753 [http-nio-8083-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-03 13:32:43.764 [http-nio-8083-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 9 ms
+2026-11-03 13:32:45.912 [http-nio-8083-exec-7] [572db367-679f-4e69-a2ea-2eb91fd3e7f0] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 1135 ms
+2026-11-03 14:49:28.853 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-03 14:49:28.902 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-11-03 14:49:29.011 [SpringApplicationShutdownHook] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'
+2026-11-03 14:50:41.306 [main] [none] INFO  c.kopa.customeridentity.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 1095397 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity/target/kopa.customer-identity-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/mobile/kopa.customer-identity)
+2026-11-03 14:50:41.328 [main] [none] INFO  c.kopa.customeridentity.Application - No active profile set, falling back to 1 default profile: "default"
+2026-11-03 14:50:45.034 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-11-03 14:50:48.555 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2026-11-03 14:50:48.747 [main] [none] INFO  o.s.d.r.c.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 167 ms. Found 6 JPA repository interfaces.
+2026-11-03 14:50:51.005 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8083 (http)
+2026-11-03 14:50:51.030 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8083"]
+2026-11-03 14:50:51.035 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-03 14:50:51.036 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-11-03 14:50:51.107 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 9365 ms
+2026-11-03 14:50:52.376 [main] [none] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:postgresql://localhost:5432/kopa_db (PostgreSQL 14.24)
+2026-11-03 14:50:52.552 [main] [none] INFO  o.f.core.internal.command.DbValidate - Successfully validated 7 migrations (execution time 00:00.073s)
+2026-11-03 14:50:52.669 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Current version of schema "customer_identity": 1.5
+2026-11-03 14:50:52.708 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Migrating schema "customer_identity" to version "1.6 - credentials pin expires at"
+2026-11-03 14:50:52.770 [main] [none] INFO  o.f.core.internal.command.DbMigrate - Successfully applied 1 migration to schema "customer_identity", now at version v1.6 (execution time 00:00.028s)
+2026-11-03 14:50:52.966 [main] [none] INFO  org.hibernate.orm.jpa - HHH008540: Processing PersistenceUnitInfo [name: default]
+2026-11-03 14:50:53.131 [main] [none] INFO  org.hibernate.orm.core - HHH000001: Hibernate ORM core version 7.4.1.Final
+2026-11-03 14:50:54.714 [main] [none] INFO  o.s.o.j.p.SpringPersistenceUnitInfo - No LoadTimeWeaver setup: ignoring JPA class transformer
+2026-11-03 14:50:54.935 [main] [none] INFO  o.hibernate.orm.connections.pooling - HHH10001005: Database info:
+	Database JDBC URL [jdbc:postgresql://localhost:5432/kopa_db]
+	Database driver: PostgreSQL JDBC Driver
+	Database dialect: PostgreSQLDialect
+	Database version: 14.24
+	Default catalog/schema: kopa_db/public
+	Autocommit mode: undefined/unknown
+	Isolation level: READ_COMMITTED [default READ_COMMITTED]
+	JDBC fetch size: none
+	Pool: DataSourceConnectionProvider
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2026-11-03 14:50:56.577 [main] [none] INFO  org.hibernate.orm.core - HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2026-11-03 14:50:56.592 [main] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Initialized JPA EntityManagerFactory for persistence unit 'default'
+2026-11-03 14:50:56.706 [main] [none] INFO  o.s.d.j.r.q.QueryEnhancerFactories - Hibernate is in classpath; If applicable, HQL parser will be used.
+2026-11-03 14:50:58.974 [main] [none] WARN  o.s.b.s.a.UserDetailsServiceAutoConfiguration - 
+
+Using generated security password: a8403da2-33d1-4bea-bd02-28ed31d662d9
+
+This generated password is for development use only. Your security configuration must be updated before running your application in production.
+
+2026-11-03 14:50:58.999 [main] [none] INFO  o.s.s.c.a.a.c.InitializeUserDetailsBeanManagerConfigurer$InitializeUserDetailsManagerConfigurer - Global AuthenticationManager configured with UserDetailsService bean with name inMemoryUserDetailsManager
+2026-11-03 14:51:00.376 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8083"]
+2026-11-03 14:51:00.413 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8083 (http) with context path '/kopa-customer-identity'
+2026-11-03 14:51:00.435 [main] [none] INFO  c.kopa.customeridentity.Application - Started Application in 24.39 seconds (process running for 31.327)
+2026-11-03 14:51:00.442 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-03 14:51:00.442 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-11-03 14:57:01.832 [http-nio-8083-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-customer-identity] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-03 14:57:01.836 [http-nio-8083-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-03 14:57:01.848 [http-nio-8083-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms

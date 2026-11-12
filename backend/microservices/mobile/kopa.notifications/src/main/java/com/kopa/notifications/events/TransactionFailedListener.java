@@ -38,7 +38,8 @@ public class TransactionFailedListener {
         try {
             CorrelationIdHolder.set(event.correlationId());
             smsDispatchService.dispatch(event.msisdn(), SmsPurpose.TRANSACTION_FAILED,
-                    SmsTemplates.TRANSACTION_FAILED, SmsTemplates.transactionFailed(event.transactionType()),
+                    SmsTemplates.TRANSACTION_FAILED,
+                    SmsTemplates.transactionFailed(event.customerFullName(), event.transactionType(), event.failureDetail()),
                     event.correlationId(), "customer-self-care");
         } finally {
             CorrelationIdHolder.clear();

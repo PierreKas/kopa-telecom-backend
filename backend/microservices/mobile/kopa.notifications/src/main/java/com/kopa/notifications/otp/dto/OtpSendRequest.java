@@ -16,6 +16,7 @@ public record OtpSendRequest(
         @NotBlank String code,
         @NotNull OtpPurpose purpose,
         String correlationId,
-        @NotBlank String requestedByService
+        @NotBlank String requestedByService,
+        String customerFullName
 ) {
 }

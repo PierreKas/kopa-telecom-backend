@@ -40,7 +40,7 @@ public class CustomerActivatedListener {
         try {
             CorrelationIdHolder.set(event.correlationId());
             smsDispatchService.dispatch(event.msisdn(), SmsPurpose.ACTIVATION_CONFIRMATION,
-                    SmsTemplates.ACTIVATION_CONFIRMATION, SmsTemplates.activationConfirmation(event.msisdn()),
+                    SmsTemplates.ACTIVATION_CONFIRMATION, SmsTemplates.activationConfirmation(event.fullName(), event.msisdn()),
                     event.correlationId(), "customer-identity");
         } finally {
             CorrelationIdHolder.clear();

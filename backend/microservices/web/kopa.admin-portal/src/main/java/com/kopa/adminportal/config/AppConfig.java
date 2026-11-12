@@ -6,9 +6,11 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
+import org.springframework.http.client.SimpleClientHttpRequestFactory;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.web.client.RestClient;
 
 import javax.sql.DataSource;
 
@@ -16,7 +18,7 @@ import javax.sql.DataSource;
 // pattern as every other service in this backend, not Spring Boot's standard
 // spring.datasource.* autoconfiguration.
 @Configuration
-@EnableConfigurationProperties({InternalApiKeyProperties.class, CorsProperties.class})
+@EnableConfigurationProperties({InternalApiKeyProperties.class, CorsProperties.class, CustomerIdentityProperties.class})
 public class AppConfig {
 
     @Autowired
@@ -56,5 +58,16 @@ public class AppConfig {
     @Bean
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
+    }
+
+    @Bean
+    public RestClient customerIdentityRestClient(CustomerIdentityProperties properties) {
+        SimpleClientHttpRequestFactory requestFactory = new SimpleClientHttpRequestFactory();
+        requestFactory.setConnectTimeout(properties.getConnectTimeoutMs());
+        requestFactory.setReadTimeout(properties.getReadTimeoutMs());
+        return RestClient.builder()
+                .baseUrl(properties.getBaseUrl())
+                .requestFactory(requestFactory)
+                .build();
     }
 }

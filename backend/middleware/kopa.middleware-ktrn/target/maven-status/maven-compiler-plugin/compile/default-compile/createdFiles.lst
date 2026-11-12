@@ -1,6 +1,7 @@
 com/kopa/middlewarektrn/registration/dto/SearchMsisdnByIccidRequest.class
 com/kopa/middlewarektrn/balance/service/KtrnBalanceService.class
 com/kopa/middlewarektrn/gateway/dto/KtrnXmlResponse$Header.class
+com/kopa/middlewarektrn/admin/dto/AdminActivateResponse.class
 com/kopa/middlewarektrn/balance/dto/BalanceLookupResponse.class
 com/kopa/middlewarektrn/activation/controller/ActivationController.class
 com/kopa/middlewarektrn/recharge/controller/RechargeController.class
@@ -25,8 +26,10 @@ com/kopa/middlewarektrn/balance/dto/BundleHistoryEntry.class
 com/kopa/middlewarektrn/common/KtrnListFieldParser.class
 com/kopa/middlewarektrn/gateway/KtrnApiClient.class
 com/kopa/middlewarektrn/identity/dto/PassportVerificationRequest.class
+com/kopa/middlewarektrn/admin/dto/AdminCreateCustomerRequest.class
 com/kopa/middlewarektrn/bundle/dto/BundlePurchaseResponse.class
 com/kopa/middlewarektrn/usage/dto/UsageSearchRequest.class
+com/kopa/middlewarektrn/admin/controller/AdminRegistrationController.class
 com/kopa/middlewarektrn/common/CorrelationIdHolder.class
 com/kopa/middlewarektrn/gateway/dto/KtrnGenericXmlResponse.class
 com/kopa/middlewarektrn/recharge/service/RechargeServiceImpl.class
@@ -42,8 +45,11 @@ com/kopa/middlewarektrn/recharge/service/RechargeService.class
 com/kopa/middlewarektrn/gateway/dto/KtrnGenericXmlResponse$Header.class
 com/kopa/middlewarektrn/bundle/dto/EWalletCheckResponse.class
 com/kopa/middlewarektrn/identity/dto/RraVerificationRequest.class
+com/kopa/middlewarektrn/usage/dto/UsageBalance.class
 com/kopa/middlewarektrn/activation/service/ActivationService.class
+com/kopa/middlewarektrn/admin/service/AdminRegistrationService.class
 com/kopa/middlewarektrn/msisdn/service/MsisdnService.class
+com/kopa/middlewarektrn/admin/dto/AdminActivateSimRequest.class
 com/kopa/middlewarektrn/bundle/dto/BundlePurchaseCheckRequest.class
 com/kopa/middlewarektrn/bundle/controller/BundleController.class
 com/kopa/middlewarektrn/bundle/dto/BundleListRequest.class

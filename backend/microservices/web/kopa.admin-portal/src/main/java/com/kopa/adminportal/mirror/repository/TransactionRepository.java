@@ -10,11 +10,16 @@ import java.util.List;
 
 public interface TransactionRepository extends JpaRepository<Transaction, String> {
 
-    List<Transaction> findByMsisdn(String msisdn);
+    // Newest-first - matches kopa.customer-self-care's own findByMsisdnOrderByRequestedAtDesc,
+    // the source of truth this table mirrors, rather than leaving list order to Postgres's
+    // unspecified (effectively insertion/oldest-first) default.
+    List<Transaction> findAllByOrderByRequestedAtDesc();
 
-    List<Transaction> findByStatus(TransactionStatus status);
+    List<Transaction> findByMsisdnOrderByRequestedAtDesc(String msisdn);
 
-    List<Transaction> findByMsisdnAndStatus(String msisdn, TransactionStatus status);
+    List<Transaction> findByStatusOrderByRequestedAtDesc(TransactionStatus status);
+
+    List<Transaction> findByMsisdnAndStatusOrderByRequestedAtDesc(String msisdn, TransactionStatus status);
 
     long countByRequestedAtAfter(Instant since);
 

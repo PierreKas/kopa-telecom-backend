@@ -32,8 +32,17 @@ public class Credential {
     @Column(name = "locked_until")
     private Instant lockedUntil;
 
+    /** Set only for a system-generated initial PIN sent by SMS after admin activation (2026-11-03)
+     *  - null means pinHash is a permanent, customer-set PIN. See AuthService.login(). */
+    @Column(name = "pin_expires_at")
+    private Instant pinExpiresAt;
+
     @Column(name = "updated_at", nullable = false)
     private Instant updatedAt;
+
+    public boolean isTemporaryPinExpired(Instant now) {
+        return pinExpiresAt != null && now.isAfter(pinExpiresAt);
+    }
 
     @PrePersist
     @PreUpdate

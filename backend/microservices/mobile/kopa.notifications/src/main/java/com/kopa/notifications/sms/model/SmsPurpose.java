@@ -9,5 +9,7 @@ public enum SmsPurpose {
     /** Not in the original db-diagram.md purpose list - added here since "transaction.failed" ->
      *  "Failure SMS" (architecture-reference.md s8.1) needs its own tag, distinct from a success
      *  confirmation. */
-    TRANSACTION_FAILED
+    TRANSACTION_FAILED,
+    /** The random initial PIN sent after admin-driven SIM activation (2026-11-03). */
+    INITIAL_PIN
 }

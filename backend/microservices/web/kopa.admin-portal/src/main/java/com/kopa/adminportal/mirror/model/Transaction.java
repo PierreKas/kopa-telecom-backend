@@ -63,4 +63,14 @@ public class Transaction {
 
     @Column(name = "duration_ms")
     private Long durationMs;
+
+    // Mirrored so TransactionLookupService can tell a genuinely-pending OTP_PENDING row from one
+    // whose window has simply lapsed without anyone re-attempting verify() - see
+    // kopa.customer-self-care's own Transaction.isOtpExpired(), the source of truth this mirrors.
+    @Column(name = "otp_expires_at")
+    private Instant otpExpiresAt;
+
+    public boolean isOtpExpired(Instant now) {
+        return otpExpiresAt == null || now.isAfter(otpExpiresAt);
+    }
 }

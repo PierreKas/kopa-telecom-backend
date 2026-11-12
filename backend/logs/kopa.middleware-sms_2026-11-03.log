@@ -1,0 +1,42 @@
+2026-11-03 13:14:16.949 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-03 13:14:17.376 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-11-03 13:18:15.946 [main] [none] INFO  com.kopa.middlewaresms.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 1062813 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-sms/target/kopa.middleware-sms-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-sms)
+2026-11-03 13:18:15.968 [main] [none] INFO  com.kopa.middlewaresms.Application - No active profile set, falling back to 1 default profile: "default"
+2026-11-03 13:18:18.297 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-11-03 13:18:20.780 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8086 (http)
+2026-11-03 13:18:20.841 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8086"]
+2026-11-03 13:18:20.850 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-03 13:18:20.854 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-11-03 13:18:21.043 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 4808 ms
+2026-11-03 13:18:23.211 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8086"]
+2026-11-03 13:18:23.264 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8086 (http) with context path '/kopa-middleware-sms'
+2026-11-03 13:18:23.310 [main] [none] INFO  com.kopa.middlewaresms.Application - Started Application in 10.633 seconds (process running for 12.71)
+2026-11-03 13:18:23.318 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-03 13:18:23.320 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-11-03 14:50:06.711 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-03 14:50:07.363 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-11-03 14:51:53.963 [main] [none] INFO  com.kopa.middlewaresms.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 1096097 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-sms/target/kopa.middleware-sms-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-sms)
+2026-11-03 14:51:53.970 [main] [none] INFO  com.kopa.middlewaresms.Application - No active profile set, falling back to 1 default profile: "default"
+2026-11-03 14:51:54.776 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-11-03 14:51:55.944 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8086 (http)
+2026-11-03 14:51:55.991 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8086"]
+2026-11-03 14:51:55.995 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-03 14:51:55.995 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-11-03 14:51:56.058 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 1946 ms
+2026-11-03 14:51:57.091 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8086"]
+2026-11-03 14:51:57.116 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8086 (http) with context path '/kopa-middleware-sms'
+2026-11-03 14:51:57.137 [main] [none] INFO  com.kopa.middlewaresms.Application - Started Application in 4.242 seconds (process running for 5.061)
+2026-11-03 14:51:57.144 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-03 14:51:57.145 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-11-03 15:17:46.854 [http-nio-8086-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-middleware-sms] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-03 15:17:46.901 [http-nio-8086-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-03 15:17:46.913 [http-nio-8086-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 11 ms
+2026-11-03 15:17:47.557 [http-nio-8086-exec-1] [c0c39080-20c8-4a58-ac5b-fb07a57837c3] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-03 15:18:29.704 [http-nio-8086-exec-2] [c0c39080-20c8-4a58-ac5b-fb07a57837c3] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-03 15:21:12.008 [http-nio-8086-exec-4] [38e521dd-9874-463f-826f-280ddc3f2c2e] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-03 15:21:31.215 [http-nio-8086-exec-5] [38e521dd-9874-463f-826f-280ddc3f2c2e] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-03 15:22:32.056 [http-nio-8086-exec-6] [9f7a1ffa-2150-4342-baff-1bf1f61982fe] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-03 15:22:52.507 [http-nio-8086-exec-7] [9f7a1ffa-2150-4342-baff-1bf1f61982fe] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-03 15:23:04.253 [http-nio-8086-exec-8] [dc596ccb-faee-4e93-a781-383c48915720] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-03 15:23:15.515 [http-nio-8086-exec-9] [dc596ccb-faee-4e93-a781-383c48915720] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-03 16:05:12.260 [http-nio-8086-exec-1] [c9e6cffa-7083-442b-b196-c64428d93363] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]

@@ -2,6 +2,7 @@ com/kopa/customerselfcare/balance/client/dto/BundleHistoryEntryDto.class
 com/kopa/customerselfcare/config/WebMvcConfig.class
 com/kopa/customerselfcare/auth/model/Customer.class
 com/kopa/customerselfcare/transaction/service/TransactionFailureRecorder.class
+com/kopa/customerselfcare/usage/client/dto/UsageBalance.class
 com/kopa/customerselfcare/balance/model/BalanceInquiryLog.class
 com/kopa/customerselfcare/bundle/client/MiddlewareBundleClient.class
 com/kopa/customerselfcare/common/exception/NotFoundException.class
@@ -113,4 +114,5 @@ com/kopa/customerselfcare/auth/dto/CallerContext.class
 com/kopa/customerselfcare/usage/service/UsageInquiryServiceImpl.class
 com/kopa/customerselfcare/common/exception/BadRequestException.class
 com/kopa/customerselfcare/transaction/dto/TransactionOtpVerifyResponse.class
+com/kopa/customerselfcare/usage/dto/UsageBalanceDto.class
 com/kopa/customerselfcare/recharge/client/dto/RechargeVoucherRequest.class

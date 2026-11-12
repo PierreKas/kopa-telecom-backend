@@ -1,14 +1,65 @@
-2026-10-29 08:36:59.894 [http-nio-8086-exec-3] [131695b5-bd0d-44cb-8de6-651b88aebab9] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
-2026-10-29 08:38:56.957 [http-nio-8086-exec-5] [131695b5-bd0d-44cb-8de6-651b88aebab9] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
-2026-10-29 08:44:33.435 [http-nio-8086-exec-7] [6cc24a8b-a8ec-446c-b5aa-0ad7c125d34a] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
-2026-10-29 08:45:54.423 [http-nio-8086-exec-9] [6cc24a8b-a8ec-446c-b5aa-0ad7c125d34a] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
-2026-10-29 08:47:15.006 [http-nio-8086-exec-1] [8467feec-892a-49ba-ab23-c74a1408a780] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
-2026-10-29 08:48:11.249 [http-nio-8086-exec-2] [8467feec-892a-49ba-ab23-c74a1408a780] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
-2026-10-29 09:04:12.425 [http-nio-8086-exec-4] [74a5f8e5-1b6f-4f9a-bcc8-74cae3bad638] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
-2026-10-29 09:05:17.223 [http-nio-8086-exec-5] [74a5f8e5-1b6f-4f9a-bcc8-74cae3bad638] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
-2026-10-29 09:06:12.073 [http-nio-8086-exec-6] [40b4a117-536b-428d-86ae-4baae621d951] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
-2026-10-29 09:07:35.370 [http-nio-8086-exec-8] [40b4a117-536b-428d-86ae-4baae621d951] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
-2026-10-29 09:39:49.361 [http-nio-8086-exec-10] [20618c7e-1cfa-425b-a25f-a92ca79ee120] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
-2026-10-29 09:40:16.288 [http-nio-8086-exec-1] [20618c7e-1cfa-425b-a25f-a92ca79ee120] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
-2026-10-29 10:07:56.962 [http-nio-8086-exec-3] [718e0105-bfa3-4feb-877c-8daebf51f828] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
-2026-10-29 10:08:33.432 [http-nio-8086-exec-4] [d8f1b9e7-d914-4ac4-8a89-a5d6c74c171e] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 13:31:05.508 [main] [none] INFO  com.kopa.middlewaresms.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 100720 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-sms/target/kopa.middleware-sms-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-sms)
+2026-11-10 13:31:05.520 [main] [none] INFO  com.kopa.middlewaresms.Application - No active profile set, falling back to 1 default profile: "default"
+2026-11-10 13:31:06.546 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-11-10 13:31:08.437 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8086 (http)
+2026-11-10 13:31:08.478 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8086"]
+2026-11-10 13:31:08.487 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-10 13:31:08.490 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-11-10 13:31:08.665 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 2968 ms
+2026-11-10 13:31:11.227 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8086"]
+2026-11-10 13:31:11.354 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8086 (http) with context path '/kopa-middleware-sms'
+2026-11-10 13:31:11.404 [main] [none] INFO  com.kopa.middlewaresms.Application - Started Application in 7.91 seconds (process running for 10.065)
+2026-11-10 13:31:11.422 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-10 13:31:11.428 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-11-10 14:32:57.149 [http-nio-8086-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-middleware-sms] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-10 14:32:57.212 [http-nio-8086-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-10 14:32:57.319 [http-nio-8086-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 104 ms
+2026-11-10 14:32:58.399 [http-nio-8086-exec-1] [5cc4f0ad-d2c8-4914-9f09-fa62a054f3b0] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 14:33:27.876 [http-nio-8086-exec-2] [5cc4f0ad-d2c8-4914-9f09-fa62a054f3b0] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 14:34:18.345 [http-nio-8086-exec-3] [57bcff21-1d1b-4e67-9ba6-7f2a7ff3b209] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 14:34:43.255 [http-nio-8086-exec-4] [57bcff21-1d1b-4e67-9ba6-7f2a7ff3b209] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 14:36:53.485 [http-nio-8086-exec-6] [cc0611ff-ddf3-4e8b-adb2-a1d81c090676] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 14:37:12.935 [http-nio-8086-exec-7] [cc0611ff-ddf3-4e8b-adb2-a1d81c090676] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 14:37:36.142 [http-nio-8086-exec-8] [6d6c908e-d578-4379-8b7a-b366e44a2ff1] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 14:38:33.114 [http-nio-8086-exec-9] [10e023f4-f524-48ea-b001-63e401c7111d] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 14:38:54.463 [http-nio-8086-exec-10] [10e023f4-f524-48ea-b001-63e401c7111d] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 15:03:51.452 [http-nio-8086-exec-2] [6d8a5990-9b9a-4d40-84e8-13ed1350070c] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 15:04:12.094 [http-nio-8086-exec-3] [6d8a5990-9b9a-4d40-84e8-13ed1350070c] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 15:04:38.882 [http-nio-8086-exec-4] [45073969-a313-45bb-b762-f158413526c8] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 15:04:52.291 [http-nio-8086-exec-5] [5c3d8fea-fe9e-4991-a903-c3f86fbd45c1] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 15:05:02.506 [http-nio-8086-exec-6] [5c3d8fea-fe9e-4991-a903-c3f86fbd45c1] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 15:26:21.635 [http-nio-8086-exec-8] [9694149b-f063-45f5-a480-549bece3478b] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 16:08:39.192 [http-nio-8086-exec-10] [6fcc1255-2652-4688-a5d4-2632a538998c] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 16:19:58.694 [http-nio-8086-exec-2] [48dea80f-b234-442b-abf1-f0de961e6047] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 16:21:06.904 [http-nio-8086-exec-3] [be801c69-57f0-4476-b129-81b46787a838] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 16:32:12.116 [http-nio-8086-exec-5] [83f200cb-901a-4a52-8ec6-27a03d9acbe8] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 16:32:36.984 [http-nio-8086-exec-6] [83f200cb-901a-4a52-8ec6-27a03d9acbe8] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 16:38:49.164 [http-nio-8086-exec-8] [d85b0f1d-fc42-45ff-bc9c-4b72ffcafcb7] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 17:02:51.212 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-10 17:02:51.292 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-11-10 17:03:50.697 [main] [none] INFO  com.kopa.middlewaresms.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 181659 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-sms/target/kopa.middleware-sms-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-sms)
+2026-11-10 17:03:50.748 [main] [none] INFO  com.kopa.middlewaresms.Application - No active profile set, falling back to 1 default profile: "default"
+2026-11-10 17:03:56.433 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-11-10 17:04:05.192 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8086 (http)
+2026-11-10 17:04:05.261 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8086"]
+2026-11-10 17:04:05.275 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-10 17:04:05.282 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-11-10 17:04:06.267 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 14851 ms
+2026-11-10 17:04:13.310 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8086"]
+2026-11-10 17:04:13.492 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8086 (http) with context path '/kopa-middleware-sms'
+2026-11-10 17:04:13.612 [main] [none] INFO  com.kopa.middlewaresms.Application - Started Application in 31.744 seconds (process running for 36.878)
+2026-11-10 17:04:13.648 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-10 17:04:13.656 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'
+2026-11-10 18:10:55.385 [http-nio-8086-exec-1] [none] INFO  o.a.c.c.C.[.[.[/kopa-middleware-sms] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-11-10 18:10:55.402 [http-nio-8086-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2026-11-10 18:10:55.405 [http-nio-8086-exec-1] [none] INFO  o.s.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2026-11-10 18:10:55.864 [http-nio-8086-exec-1] [6461f65a-355a-46d3-aa3f-bbf1621ca5f2] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 18:11:35.116 [http-nio-8086-exec-2] [6461f65a-355a-46d3-aa3f-bbf1621ca5f2] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 18:20:48.244 [http-nio-8086-exec-4] [6e9bdbdc-ef25-491b-958d-39850bff4a00] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 18:21:13.021 [http-nio-8086-exec-5] [6e9bdbdc-ef25-491b-958d-39850bff4a00] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 18:21:59.062 [http-nio-8086-exec-7] [4c67b5bc-0a72-4bfb-a30e-b56ed1287d5f] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 18:22:18.056 [http-nio-8086-exec-6] [4c67b5bc-0a72-4bfb-a30e-b56ed1287d5f] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 18:23:46.007 [http-nio-8086-exec-8] [89fefc37-2041-4f5c-88a5-f3971277eefd] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 18:24:05.898 [http-nio-8086-exec-10] [89fefc37-2041-4f5c-88a5-f3971277eefd] INFO  c.k.m.sms.gateway.IntouchSmsClient - Sending to InTouch: contentType=multipart/form-data fields=[recipients, message, sender]
+2026-11-10 20:09:07.731 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-10 20:09:07.888 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete

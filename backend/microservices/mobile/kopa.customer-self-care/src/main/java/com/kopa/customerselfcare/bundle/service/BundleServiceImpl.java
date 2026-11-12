@@ -1,10 +1,10 @@
 package com.kopa.customerselfcare.bundle.service;
 
+import com.kopa.customerselfcare.auth.model.Customer;
+import com.kopa.customerselfcare.auth.repository.CustomerRepository;
 import com.kopa.customerselfcare.bundle.client.MiddlewareBundleClient;
 import com.kopa.customerselfcare.bundle.client.dto.BundleListRequest;
 import com.kopa.customerselfcare.bundle.client.dto.BundleListResponse;
-import com.kopa.customerselfcare.bundle.client.dto.BundlePurchaseCheckRequest;
-import com.kopa.customerselfcare.bundle.client.dto.BundlePurchaseCheckResponse;
 import com.kopa.customerselfcare.bundle.client.dto.BundlePurchaseRequest;
 import com.kopa.customerselfcare.bundle.client.dto.BundlePurchaseResponse;
 import com.kopa.customerselfcare.bundle.client.dto.EWalletCheckRequest;
@@ -51,11 +51,13 @@ public class BundleServiceImpl implements BundleService {
     private final TransactionOtpService otpService;
     private final EventPublisher eventPublisher;
     private final TransactionFailureRecorder failureRecorder;
+    private final CustomerRepository customers;
 
     public BundleServiceImpl(MiddlewareBundleClient middlewareClient, KopaBusinessProperties businessProperties,
                              TransactionRepository transactions, TransactionLimitService limitService,
                              ServiceInquiryLogRepository inquiryLogs, TransactionOtpService otpService,
-                             EventPublisher eventPublisher, TransactionFailureRecorder failureRecorder) {
+                             EventPublisher eventPublisher, TransactionFailureRecorder failureRecorder,
+                             CustomerRepository customers) {
         this.middlewareClient = middlewareClient;
         this.businessProperties = businessProperties;
         this.transactions = transactions;
@@ -64,6 +66,7 @@ public class BundleServiceImpl implements BundleService {
         this.otpService = otpService;
         this.eventPublisher = eventPublisher;
         this.failureRecorder = failureRecorder;
+        this.customers = customers;
     }
 
     @Override
@@ -129,12 +132,13 @@ public class BundleServiceImpl implements BundleService {
                 throw fail(transaction, "KTRN_BUSINESS", detail);
             }
 
-            BundlePurchaseCheckResponse check = middlewareClient.checkPurchase(
-                    new BundlePurchaseCheckRequest(soId, request.productCode(), msisdn));
-            if (!"Y".equalsIgnoreCase(check.result())) {
-                String detail = check.message() != null ? check.message() : "KTRN declined this bundle purchase.";
-                throw fail(transaction, "KTRN_BUSINESS", detail);
-            }
+            // 2026-10-29 live-confirmed: HPOP403 (checkPurchase) unconditionally returns
+            // "-7002 Data is not found.." on the live gateway, regardless of product/msisdn - it
+            // blocked every real purchase at this gate. The ewallet-check above already covers
+            // "can this product actually be bought," and the real purchase call below was
+            // confirmed to succeed end to end (balance debited, bundle live in BUNDLE_HIST/
+            // PURCHASED_LIST) without ever calling HPOP403 - so it's no longer a precondition here.
+            // Reported to KTRN separately as a standing gap; revisit if they fix it.
         } catch (ServiceUnavailableException ex) {
             throw fail(transaction, "MIDDLEWARE", ex.getMessage());
         }
@@ -157,7 +161,9 @@ public class BundleServiceImpl implements BundleService {
                     new BundlePurchaseRequest(transaction.getMsisdn(), soId, transaction.getProductCode()));
 
             if (purchaseResult.result() == null || purchaseResult.result().isBlank()) {
-                throw fail(transaction, "KTRN_BUSINESS", "KTRN did not confirm the bundle purchase.");
+                String detail = purchaseResult.message() != null
+                        ? purchaseResult.message() : "KTRN did not confirm the bundle purchase.";
+                throw fail(transaction, "KTRN_BUSINESS", detail);
             }
 
             transaction.setStatus(TransactionStatus.SUCCESS);
@@ -187,14 +193,15 @@ public class BundleServiceImpl implements BundleService {
 
     private void publishOutcome(Transaction transaction, boolean success) {
         String amount = transaction.getAmount() == null ? null : transaction.getAmount().toPlainString();
+        String fullName = customers.findByMsisdn(transaction.getMsisdn()).map(Customer::getFullName).orElse(null);
         if (success) {
             eventPublisher.publish(RabbitConfig.ROUTING_KEY_TRANSACTION_COMPLETED, new TransactionCompletedEvent(
                     transaction.getId(), transaction.getMsisdn(), transaction.getTransactionType().name(),
-                    amount, transaction.getProductCode(), transaction.getCorrelationId()));
+                    amount, transaction.getProductCode(), transaction.getCorrelationId(), fullName));
         } else {
             eventPublisher.publish(RabbitConfig.ROUTING_KEY_TRANSACTION_FAILED, new TransactionFailedEvent(
                     transaction.getId(), transaction.getMsisdn(), transaction.getTransactionType().name(),
-                    transaction.getFailureDetail(), transaction.getCorrelationId()));
+                    transaction.getFailureDetail(), transaction.getCorrelationId(), fullName));
         }
     }
 

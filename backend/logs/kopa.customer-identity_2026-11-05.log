@@ -1,0 +1,1 @@
+2026-11-05 12:53:17.624 [http-nio-8083-exec-1] [0a786ed7-7363-426b-8907-3e48ce10ab61] INFO  o.s.api.AbstractOpenApiResource - Init duration for springdoc-openapi is: 943 ms

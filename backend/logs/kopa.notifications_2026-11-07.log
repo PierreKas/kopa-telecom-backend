@@ -1,0 +1,9 @@
+2026-11-07 06:35:58.751 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] [none] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2026-11-07 06:35:58.746 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] [none] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2026-11-07 06:35:58.745 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] [none] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Waiting for workers to finish.
+2026-11-07 06:35:59.254 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#0-2] [none] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2026-11-07 06:35:59.253 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#1-2] [none] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2026-11-07 06:35:59.259 [org.springframework.amqp.rabbit.RabbitListenerEndpointContainer#2-2] [none] INFO  o.s.a.r.l.SimpleMessageListenerContainer - Successfully waited for workers to finish.
+2026-11-07 06:35:59.509 [SpringApplicationShutdownHook] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Commencing graceful shutdown. Waiting for active requests to complete
+2026-11-07 06:35:59.614 [tomcat-shutdown] [none] INFO  o.s.boot.tomcat.GracefulShutdown - Graceful shutdown complete
+2026-11-07 06:35:59.773 [SpringApplicationShutdownHook] [none] INFO  o.s.o.j.LocalContainerEntityManagerFactoryBean - Closing JPA EntityManagerFactory for persistence unit 'default'

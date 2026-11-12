@@ -1,0 +1,13 @@
+2026-11-08 20:23:29.081 [main] [none] INFO  com.kopa.middlewarektrn.Application - Starting Application v0.0.1-SNAPSHOT using Java 17.0.20.1 with PID 10626 (/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn/target/kopa.middleware-ktrn-0.0.1-SNAPSHOT.jar started by pierre-kasanani in /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/middleware/kopa.middleware-ktrn)
+2026-11-08 20:23:29.123 [main] [none] INFO  com.kopa.middlewarektrn.Application - No active profile set, falling back to 1 default profile: "default"
+2026-11-08 20:23:31.425 [background-preinit] [none] INFO  o.h.validator.internal.util.Version - HV000001: Hibernate Validator 9.1.0.Final
+2026-11-08 20:23:33.800 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat initialized with port 8082 (http)
+2026-11-08 20:23:33.869 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8082"]
+2026-11-08 20:23:33.879 [main] [none] INFO  o.a.catalina.core.StandardService - Starting service [Tomcat]
+2026-11-08 20:23:33.883 [main] [none] INFO  o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/11.0.22]
+2026-11-08 20:23:34.095 [main] [none] INFO  o.s.b.w.c.s.WebApplicationContextInitializer - Root WebApplicationContext: initialization completed in 4639 ms
+2026-11-08 20:23:36.026 [main] [none] INFO  o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8082"]
+2026-11-08 20:23:36.059 [main] [none] INFO  o.s.boot.tomcat.TomcatWebServer - Tomcat started on port 8082 (http) with context path '/kopa-middleware-ktrn'
+2026-11-08 20:23:36.092 [main] [none] INFO  com.kopa.middlewarektrn.Application - Started Application in 12.037 seconds (process running for 16.457)
+2026-11-08 20:23:36.102 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /v3/api-docs endpoint is enabled by default. To disable it in production, set the property 'springdoc.api-docs.enabled=false'
+2026-11-08 20:23:36.103 [main] [none] WARN  o.s.c.events.SpringDocAppInitializer - SpringDoc /swagger-ui.html endpoint is enabled by default. To disable it in production, set the property 'springdoc.swagger-ui.enabled=false'

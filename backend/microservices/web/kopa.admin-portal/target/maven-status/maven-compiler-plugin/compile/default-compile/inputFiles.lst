@@ -1,7 +1,12 @@
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/Application.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/client/CustomerIdentityClient.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/controller/AdminAuthController.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/dto/ActivateSimRequest.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/dto/ActivateSimResponse.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/dto/AdminCallerContext.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/dto/BootstrapAdminRequest.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/dto/CreateCustomerRequest.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/dto/CreateCustomerResponse.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/dto/LoginRequest.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/dto/LoginResponse.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/model/AdminAuthToken.java
@@ -11,6 +16,7 @@
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/security/AdminCallerContextArgumentResolver.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/service/AdminAuthService.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/service/AdminAuthServiceImpl.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/admin/service/CustomerCreationService.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/common/CorrelationIdHolder.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/common/dto/ApiResponse.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/common/dto/ErrorDto.java
@@ -25,6 +31,7 @@
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/config/Consts.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/config/CorrelationIdFilter.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/config/CorsProperties.java
+/media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/config/CustomerIdentityProperties.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/config/DatabaseProperties.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/config/InternalApiKeyFilter.java
 /media/pierre-kasanani/240D8B9875FBC7EA/my_kope/kopa/backend/microservices/web/kopa.admin-portal/src/main/java/com/kopa/adminportal/config/InternalApiKeyProperties.java

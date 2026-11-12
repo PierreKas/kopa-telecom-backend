@@ -21,6 +21,10 @@ server:
 internal:
   api-key: ${kopa.internal.admin-portal-api-key}
 
+customer-identity:
+  base-url: ${kopa.customer-identity.base-url}
+  api-key: ${kopa.internal.customer-identity-api-key}
+
 # Browser origins allowed to call this service's APIs (CORS) - the only service in this
 # architecture a browser calls directly; see architecture-reference.md s3/s6.
 web:

@@ -28,7 +28,11 @@ ktrn:
   # tunnel were timing out at exactly the old 8000ms (e.g. a live HPOP501/HPOP313 call during
   # registration testing) because of this, misleadingly suggesting the tunnel/gateway was slow.
   connect-timeout-ms: 10000
-  read-timeout-ms: 25000
+  # 2026-11-03: HPOP501/HPOP302 live-confirmed taking right around 25000ms over the dev SSH
+  # tunnel (two real requests timed out at almost exactly the old value while KTRN kept
+  # processing and completed anyway) - raised with headroom. customer-identity's and
+  # admin-portal's own downstream client timeouts must stay above this.
+  read-timeout-ms: 60000
 
 internal:
   api-key: ${kopa.internal.middleware-ktrn-api-key}
