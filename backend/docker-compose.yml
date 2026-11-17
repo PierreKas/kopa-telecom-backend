@@ -1,12 +1,13 @@
 services:
   postgres:
     image: postgres:16-alpine
+    restart: unless-stopped
     environment:
       POSTGRES_DB: ${POSTGRES_DB}
       POSTGRES_USER: ${KOPA_DB_USERNAME}
       POSTGRES_PASSWORD: ${KOPA_DB_PASSWORD}
     ports:
-      - "5432:5432"
+      - "127.0.0.1:5432:5432"        # localhost only - not exposed to the internet
     volumes:
       - kopa_pgdata:/var/lib/postgresql/data
     healthcheck:
@@ -14,38 +15,62 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   rabbitmq:
     image: rabbitmq:4-management-alpine
+    restart: unless-stopped
     environment:
       RABBITMQ_DEFAULT_USER: ${SPRING_RABBITMQ_USERNAME}
       RABBITMQ_DEFAULT_PASS: ${SPRING_RABBITMQ_PASSWORD}
     ports:
-      - "5672:5672"
-      - "15672:15672"
+      - "127.0.0.1:5672:5672"        # localhost only
+      - "127.0.0.1:15672:15672"      # management UI - localhost only (use an SSH tunnel)
     healthcheck:
       test: ["CMD", "rabbitmq-diagnostics", "-q", "ping"]
       interval: 5s
       timeout: 5s
       retries: 10
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   # Stateless gateway to the real RBSS-CCBS (KTRN) system - reaching the live gateway needs the
   # VPN tunnel into Kopa's network, same as when run directly on the host (see .env comments).
   kopa-middleware-ktrn:
     build: ./middleware/kopa.middleware-ktrn
+    restart: unless-stopped
     env_file: .env
     ports:
       - "8082:8082"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   # Stateless gateway to the InTouch SMS gateway.
   kopa-middleware-sms:
     build: ./middleware/kopa.middleware-sms
+    restart: unless-stopped
     env_file: .env
     ports:
       - "8086:8086"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   kopa-notifications:
     build: ./microservices/mobile/kopa.notifications
+    restart: unless-stopped
     env_file: .env
     depends_on:
       postgres:
@@ -56,9 +81,15 @@ services:
         condition: service_started
     ports:
       - "8084:8084"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   kopa-customer-identity:
     build: ./microservices/mobile/kopa.customer-identity
+    restart: unless-stopped
     env_file: .env
     depends_on:
       postgres:
@@ -71,9 +102,15 @@ services:
         condition: service_started
     ports:
       - "8083:8083"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 
   kopa-customer-self-care:
     build: ./microservices/mobile/kopa.customer-self-care
+    restart: unless-stopped
     env_file: .env
     depends_on:
       postgres:
@@ -86,6 +123,43 @@ services:
         condition: service_started
     ports:
       - "8081:8081"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # Web-side backend behind the Next.js admin frontend - the only service a browser calls
+  # directly (via the frontend's own Route Handlers, see architecture-reference.md s3/s6).
+  # Deployed as a separate compose project (see frontend/kopa-telecom-admin/docker-compose.yml) -
+  # joins the shared "kopa-net" external network, below, so that stack can still reach this
+  # service by its container name rather than needing a host IP/port.
+  kopa-admin-portal:
+    build: ./microservices/web/kopa.admin-portal
+    restart: unless-stopped
+    env_file: .env
+    depends_on:
+      postgres:
+        condition: service_healthy
+      kopa-customer-identity:
+        condition: service_started
+    networks:
+      - default
+      - kopa-net
+    ports:
+      - "8085:8085"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
 
 volumes:
   kopa_pgdata:
+
+# External: created once with `docker network create kopa-net` before either stack's first
+# `docker compose up` - lets the independently-deployed frontend stack resolve kopa-admin-portal
+# by container name across the two separate compose projects.
+networks:
+  kopa-net:
+    external: true

@@ -1,0 +1,27 @@
+services:
+  # Reaches kopa-admin-portal by container name over the shared "kopa-net" external network -
+  # see backend/docker-compose.yml, the other half of this deployment (deployed as its own,
+  # separate compose project/folder).
+  kopa-admin-frontend:
+    build: .
+    restart: unless-stopped
+    environment:
+      ADMIN_PORTAL_API_BASE_URL: http://kopa-admin-portal:8085/kopa-admin-portal
+      # Plain HTTP, no reverse proxy/TLS yet (direct IP:port) - a Secure cookie would be silently
+      # dropped by the browser here. Flip to "true" once this sits behind HTTPS.
+      COOKIE_SECURE: "false"
+    networks:
+      - kopa-net
+    ports:
+      - "3000:3000"
+    logging:
+      driver: json-file
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+# External: created once with `docker network create kopa-net` before either stack's first
+# `docker compose up` - see backend/docker-compose.yml's identical note.
+networks:
+  kopa-net:
+    external: true

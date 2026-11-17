@@ -44,7 +44,13 @@ export async function POST(req: NextRequest) {
   const maxAgeSeconds = Math.max(1, Math.floor((new Date(expiresAt).getTime() - Date.now()) / 1000));
   response.cookies.set(TOKEN_COOKIE, token, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    // Defaults to NODE_ENV==='production', but a deployment served over plain HTTP (no TLS/
+    // reverse proxy yet - direct IP:port) must override this to "false": a Secure cookie is
+    // silently dropped by the browser on a non-HTTPS origin, which would make login look like it
+    // succeeds (200 response) while no session cookie is ever actually stored.
+    secure: process.env.COOKIE_SECURE != null
+      ? process.env.COOKIE_SECURE === 'true'
+      : process.env.NODE_ENV === 'production',
     sameSite: 'lax',
     path: '/',
     maxAge: maxAgeSeconds,
